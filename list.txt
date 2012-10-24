@@ -1,5 +1,12 @@
+<<<<<<< HEAD
 Milk
 Milk
 Milk
 Breytti - Fannar
 Siggi að prófa líka
+=======
+Light Milk
+Whole Milk
+Skimmed Milk
+
+>>>>>>> b92dde6d525cff2b8c32e138921f6f55f8158510
