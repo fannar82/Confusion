@@ -16,6 +16,15 @@ Semi-skimmed Milk
 Whole Milk
 Skimmed Milk
 <<<<<<< HEAD
+
+
+blah
+=======
+<<<<<<< HEAD
 Cool Aid
 No milk BEER!
+<<<<<<< HEAD
+>>>>>>> 87b3831cd60fc944b215708975cdc0e00c01ff4a
+=======
 >>>>>>> 974b983a78ab3c44c00940f54116ca0ea0b5b3fe
+>>>>>>> 6d1f4b6a787b144c4842de66bcf58511f63fd763
