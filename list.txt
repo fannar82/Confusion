@@ -1,4 +1,6 @@
 Semi-skimmed Milk
 Whole Milk
 Skimmed Milk
+<<<<<<< HEAD
 Cool Aid
+No milk BEER!
