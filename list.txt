@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 Milk
 Milk
 Milk
@@ -10,3 +11,9 @@ Whole Milk
 Skimmed Milk
 
 >>>>>>> b92dde6d525cff2b8c32e138921f6f55f8158510
+=======
+Semi-skimmed Milk
+Whole Milk
+Skimmed Milk
+No milk BEER!
+>>>>>>> 974b983a78ab3c44c00940f54116ca0ea0b5b3fe
