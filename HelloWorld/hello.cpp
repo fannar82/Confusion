@@ -4,7 +4,7 @@
 #include "hjalti.h"
 #include "hilmar.h"
 #include "fannar.h"
-#include "SiggaClassi.h"
+//#include "SiggaClassi.h"
 using namespace std;
 
 int main()
@@ -39,8 +39,8 @@ int main()
 	//Hilmar out
 
 	//Siggi in
-	string name = SiggaClassi.getName();
-	cout << name;
+	//string name = SiggaClassi.getName();
+	//cout << name;
 	//Siggi out
 
     return 0;
