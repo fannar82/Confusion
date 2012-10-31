@@ -4,6 +4,7 @@
 #include "hjalti.h"
 #include "hilmar.h"
 #include "fannar.h"
+#include "SiggiClassi.h"
 using namespace std;
 
 int main()
@@ -36,6 +37,11 @@ int main()
 	cout << "Hello snapahead" << endl;
 	cout << hilmar << endl;
 	//Hilmar out
+
+	//Siggi in
+	string name = SiggiClassi.getName();
+	cout << name;
+	//Siggi out
 
     return 0;
 }
