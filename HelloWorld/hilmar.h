@@ -18,7 +18,7 @@ hilmar::hilmar(){}
 
 ostream& operator <<(ostream& straumur, const hilmar& hilmar)
 {
-	straumur << name;
+	straumur << name << endl;
 };
 
 #endif //HILMAR_H
