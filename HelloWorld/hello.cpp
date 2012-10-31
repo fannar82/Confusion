@@ -14,7 +14,7 @@ int main()
     // from: Finnbjorn
     FinnbjornsKlasi fk;
     string finnbjornSegir = fk.getName();
-    cout << finnbjornSegir;
+    cout << finnbjornSegir << endl;
     // finished from Finnbjorn
 
 	//from: Hilmar
