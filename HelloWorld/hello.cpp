@@ -19,7 +19,7 @@ int main()
 
 	//from: Hilmar
 	hilmar hilmar;
-	cout << "Hello snapahead";
+	cout << "Hello snapahead" << endl;
 	cout << hilmar << endl;
 	//Hilmar out
 
