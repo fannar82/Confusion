@@ -2,6 +2,7 @@
 #include "FinnbjornsKlasi.h"
 #include "jonhallur.h"
 #include "hjalti.h"
+#include "hilmar.h"
 using namespace std;
 
 int main()
@@ -18,8 +19,16 @@ int main()
     cout << finnbjornSegir << endl;
     // finished from Finnbjorn
 
+
     // from: Hjalti
     cout << hs << endl;
     // Finished from Hjalti
+
+	//from: Hilmar
+	hilmar hilmar;
+	cout << "Hello snapahead";
+	cout << hilmar << endl;
+	//Hilmar out
+
     return 0;
 }
