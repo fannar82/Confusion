@@ -1,5 +1,5 @@
 #ifndef HILMAR_H
-#DEFINE HILMAR_H
+#define HILMAR_H
 
 #include <iostream>
 #include <string>
@@ -10,8 +10,7 @@ const string name="Hilmar";
 class hilmar
 {
 public:
-	hilmar();
-	
+	hilmar();	
 	friend ostream& operator << (ostream& Outs, const hilmar& hilmar);
 };
 
@@ -22,4 +21,4 @@ ostream& operator <<(ostream& straumur, const hilmar& hilmar)
 	straumur << name;
 };
 
-
+#endif //HILMAR_H
