@@ -3,6 +3,7 @@
 #include "jonhallur.h"
 #include "hjalti.h"
 #include "hilmar.h"
+#include "fannar.h"
 using namespace std;
 
 int main()
@@ -12,6 +13,12 @@ int main()
     cout<< "Hello world\nHello guys\n";
 
     cout << jonh << endl;
+
+// from: Fannar
+	fannar fann;
+	cout << fann << endl;
+// finished Fannar
+
 
     // from: Finnbjorn
     FinnbjornsKlasi fk;
