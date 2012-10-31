@@ -10,10 +10,11 @@ int main()
 
     cout << jonh << endl;
 
-    // Fra Finnbirni
+    // from: Finnbjorn
     FinnbjornsKlasi fk;
+    string finnbjornSegir = fk.getName();
+    cout << finnbjornSegir;
+    // finished from Finnbjorn
 
-    string stuff = fk.getName();
-    // buid fra Finnbirni
     return 0;
 }
