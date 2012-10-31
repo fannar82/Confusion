@@ -4,7 +4,7 @@
 #include "hjalti.h"
 #include "hilmar.h"
 #include "fannar.h"
-#include "SiggiClassi.h"
+#include "SiggaClassi.h"
 using namespace std;
 
 int main()
@@ -39,7 +39,7 @@ int main()
 	//Hilmar out
 
 	//Siggi in
-	string name = SiggiClassi.getName();
+	string name = SiggaClassi.getName();
 	cout << name;
 	//Siggi out
 
