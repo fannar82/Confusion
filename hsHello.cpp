@@ -3,8 +3,8 @@ using namespace std;
 
 int main()
 {
-   
-    cout<< "Hello world\n";
+
+    cout<< "Hello world\nFrom Hjalti\n";
 
     return 0;
 }
