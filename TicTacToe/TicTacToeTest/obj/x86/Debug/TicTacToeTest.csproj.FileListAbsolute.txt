@@ -10,3 +10,15 @@ C:\Users\xpo\Documents\Visual Studio 2010\Projects\TicTacToe\TicTacToeTest\bin\D
 C:\Users\xpo\Documents\Visual Studio 2010\Projects\TicTacToe\TicTacToeTest\obj\x86\Debug\ResolveAssemblyReference.cache
 C:\Users\xpo\Documents\Visual Studio 2010\Projects\TicTacToe\TicTacToeTest\obj\x86\Debug\TicTacToeTest.exe
 C:\Users\xpo\Documents\Visual Studio 2010\Projects\TicTacToe\TicTacToeTest\obj\x86\Debug\TicTacToeTest.pdb
+D:\VisualStudioProjects\Confusion\TicTacToe\TicTacToeTest\obj\x86\Debug\TicTacToeTest.exe
+D:\VisualStudioProjects\Confusion\TicTacToe\TicTacToeTest\obj\x86\Debug\TicTacToeTest.pdb
+D:\VisualStudioProjects\Confusion\TicTacToe\TicTacToeTest\bin\Debug\TicTacToeTest.exe
+D:\VisualStudioProjects\Confusion\TicTacToe\TicTacToeTest\bin\Debug\TicTacToeTest.pdb
+D:\VisualStudioProjects\Confusion\TicTacToe\TicTacToeTest\bin\Debug\nunit-console-runner.dll
+D:\VisualStudioProjects\Confusion\TicTacToe\TicTacToeTest\bin\Debug\nunit.framework.dll
+D:\VisualStudioProjects\Confusion\TicTacToe\TicTacToeTest\bin\Debug\TicTacToe.exe
+D:\VisualStudioProjects\Confusion\TicTacToe\TicTacToeTest\bin\Debug\nunit.util.dll
+D:\VisualStudioProjects\Confusion\TicTacToe\TicTacToeTest\bin\Debug\nunit.core.interfaces.dll
+D:\VisualStudioProjects\Confusion\TicTacToe\TicTacToeTest\bin\Debug\nunit.core.dll
+D:\VisualStudioProjects\Confusion\TicTacToe\TicTacToeTest\bin\Debug\TicTacToe.pdb
+D:\VisualStudioProjects\Confusion\TicTacToe\TicTacToeTest\obj\x86\Debug\ResolveAssemblyReference.cache

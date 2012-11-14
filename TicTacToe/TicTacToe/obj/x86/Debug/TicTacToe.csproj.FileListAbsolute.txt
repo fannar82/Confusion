@@ -3,3 +3,6 @@ c:\users\xpo\documents\visual studio 2010\Projects\TicTacToe\TicTacToe\bin\Debug
 c:\users\xpo\documents\visual studio 2010\Projects\TicTacToe\TicTacToe\obj\x86\Debug\ResolveAssemblyReference.cache
 c:\users\xpo\documents\visual studio 2010\Projects\TicTacToe\TicTacToe\obj\x86\Debug\TicTacToe.exe
 c:\users\xpo\documents\visual studio 2010\Projects\TicTacToe\TicTacToe\obj\x86\Debug\TicTacToe.pdb
+D:\VisualStudioProjects\Confusion\TicTacToe\TicTacToe\obj\x86\Debug\TicTacToe.exe
+D:\VisualStudioProjects\Confusion\TicTacToe\TicTacToe\obj\x86\Debug\TicTacToe.pdb
+D:\VisualStudioProjects\Confusion\TicTacToe\TicTacToe\obj\x86\Debug\ResolveAssemblyReference.cache
