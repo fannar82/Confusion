@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!--This file represents the results of running a test suite-->
+<test-results name="C:\Users\xpo\Documents\Visual Studio 2010\Projects\TicTacToe\TicTacToeTest\bin\Debug\TicTacToeTest.exe" total="2" errors="0" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2012-11-14" time="22:37:57">
+  <environment nunit-version="2.5.10.11092" clr-version="4.0.30319.269" os-version="Microsoft Windows NT 6.1.7601 Service Pack 1" platform="Win32NT" cwd="C:\Users\xpo\Documents\Visual Studio 2010\Projects\TicTacToe\TicTacToeTest\bin\Debug" machine-name="XPO-THINK" user="xpo" user-domain="xpo-THINK" />
+  <culture-info current-culture="is-IS" current-uiculture="en-US" />
+  <test-suite type="Assembly" name="C:\Users\xpo\Documents\Visual Studio 2010\Projects\TicTacToe\TicTacToeTest\bin\Debug\TicTacToeTest.exe" executed="True" result="Success" success="True" time="0.031" asserts="0">
+    <results>
+      <test-suite type="Namespace" name="TicTacToeTest" executed="True" result="Success" success="True" time="0.016" asserts="0">
+        <results>
+          <test-suite type="TestFixture" name="TestFixture1" executed="True" result="Success" success="True" time="0.016" asserts="0">
+            <results>
+              <test-case name="TicTacToeTest.TestFixture1.TestFault" executed="True" result="Success" success="True" time="0.016" asserts="1" />
+              <test-case name="TicTacToeTest.TestFixture1.TestTrue" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+            </results>
+          </test-suite>
+        </results>
+      </test-suite>
+    </results>
+  </test-suite>
+</test-results>
