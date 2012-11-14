@@ -7,18 +7,18 @@ namespace TicTacToe
 {
     public class Board
     {
-        private char[] board;
+        private char[,] board;
 
         // Default constructor is of size 3
-        Board()
+        public Board()
         {
-            board = char[3,3]; 
+            board = new char[3,3]; 
         }
 
         // Custom size
-        Board(int size)
+        public Board(int size)
         {
-            board = char[size,size]; 
+            board = new char[size,size]; 
         }
     }
 }
