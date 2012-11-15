@@ -20,5 +20,20 @@ namespace TicTacToe
         {
             board = new char[size,size]; 
         }
+
+        /// <summary>
+        /// Return true if the move was legal
+        /// </summary>
+        /// <param name="x">x coordination</param>
+        /// <param name="y">y coordination</param>
+        /// <returns></returns>
+        public bool newMove(int x, int y, char value)
+        {
+            if (board[x, y] != null)
+                return false;
+
+            board[x, y] = value;
+            return true;
+        }
     }
 }
