@@ -25,7 +25,7 @@ namespace TicTacToe
         }
 
         /// <summary>
-        /// Return true if the move was legal
+        /// Return true if the move was legal.
         /// </summary>
         /// <param name="x">x coordination</param>
         /// <param name="y">y coordination</param>
@@ -33,12 +33,14 @@ namespace TicTacToe
         /// <returns></returns>
         public bool newMove(int x, int y, string value)
         {
-            if (x >= size || y >= size)
-                return false;
+            // Check for out of bound cases
+            if ( x >= size ) return false;
+            if ( y >= size ) return false;
+            if ( x-1 < 0 ) return false;
+            if ( y-1 < 0 ) return false;
+            if ( board[x-1, y-1] != null ) return false;
 
-            if (board[x-1, y-1] != null)
-                return false;
-
+            // The move is legal, make it happen!
             board[x-1, y-1] = value;
             return true;
         }
