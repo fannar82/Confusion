@@ -13,23 +13,16 @@ namespace TicTacToe
         // Default constructor is of size 3
         public Board()
         {
-            board = new string[3,3]; 
+            board = new string[3,3];
+            size = 3;
         }
 
         // Custom size
         public Board(int size)
         {
             board = new string[size, size];
-            //clearBoard();
+            this.size = size;
         }
-
-        /*private void clearBoard()
-        {
-            foreach (string coord in board)
-            {
-                coord = null;
-            }
-        }*/
 
         /// <summary>
         /// Return true if the move was legal
