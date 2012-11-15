@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<project name="Build" default="build">
+  <property name="project.version" value="0.1" />
+  <property name="project.config" value="release" />
+  <target name="init">
+    <call target="${project.config}" />
+  </target>
+  <target name="debug">
+    <property name="project.config" value="debug" />
+    <property name="build.debug" value="true" />
+    <property name="basedir.suffix" value="debug" />
+  </target>
+  <target name="release">
+    <property name="project.config" value="release" />
+    <property name="build.debug" value="false" />
+    <property name="basedir.suffix" value="release" />
+  </target>
+  <target name="build" depends="init" description="compiles the source code">
+ 	<property name="build.number" value="${math::abs(math::floor(timespan::get-total-days(datetime::now() - datetime::parse('01/01/2012'))))}" />
+    <property name="build.dir" value="${project::get-base-directory()}/${project::get-name()}_${project.version}_${build.number}_${basedir.suffix}"/>
+    <mkdir dir="${build.dir}" />
+    <csc target="library" output="${build.dir}/board.dll" debug="${build.debug}">
+      <sources>
+        <include name="board.cs" />
+      </sources>
+    </csc>
+  </target>
+</project>
