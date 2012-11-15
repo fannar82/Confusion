@@ -5,7 +5,20 @@ using System.Text;
 
 namespace TicTacToe
 {
-    class Board
+    public class Board
     {
+        private char[,] board;
+
+        // Default constructor is of size 3
+        public Board()
+        {
+            board = new char[3,3]; 
+        }
+
+        // Custom size
+        public Board(int size)
+        {
+            board = new char[size,size]; 
+        }
     }
 }
