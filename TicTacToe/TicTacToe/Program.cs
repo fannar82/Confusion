@@ -10,6 +10,20 @@ namespace TicTacToe
         static void Main(string[] args)
         {
 
+            FannarClass fannar = new FannarClass();
+
+
         }
+
+ 
+    }
+
+    public class FannarClass
+    {
+        public bool fannar()
+        {
+            return true;
+        }
+
     }
 }
