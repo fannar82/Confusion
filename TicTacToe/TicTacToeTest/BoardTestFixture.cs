@@ -39,8 +39,20 @@ namespace TicTacToeTest
 
             //Assert
             Assert.IsTrue(actioal.Equals(expected));
-
         }
 
+        [Test]
+        public void TestingArrey_SendigCoord_InRange()
+        {
+            //Arrange
+            Board br = new Board();
+            var expected = true;
+
+            //Act
+            var actioal = br.newMove(2, 2, "X");
+
+            //Assert
+            Assert.IsTrue(actioal.Equals(expected));
+        }
     }
 }

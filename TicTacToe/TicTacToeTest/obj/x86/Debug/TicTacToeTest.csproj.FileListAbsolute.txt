@@ -37,3 +37,15 @@ D:\VisualStudioProjects\Confusion\TicTacToe\TicTacToeTest\bin\Debug\nunit.core.d
 D:\VisualStudioProjects\Confusion\TicTacToe\TicTacToeTest\bin\Debug\TicTacToe.pdb
 D:\VisualStudioProjects\Confusion\TicTacToe\TicTacToeTest\obj\x86\Debug\ResolveAssemblyReference.cache
 >>>>>>> b960e8fc27039435877d99fa73b67b44b6f1e814
+C:\Users\sigurdur\Documents\GitHub\Confusion\TicTacToe\TicTacToeTest\obj\x86\Debug\TicTacToeTest.exe
+C:\Users\sigurdur\Documents\GitHub\Confusion\TicTacToe\TicTacToeTest\obj\x86\Debug\TicTacToeTest.pdb
+C:\Users\sigurdur\Documents\GitHub\Confusion\TicTacToe\TicTacToeTest\bin\Debug\TicTacToeTest.exe
+C:\Users\sigurdur\Documents\GitHub\Confusion\TicTacToe\TicTacToeTest\bin\Debug\TicTacToeTest.pdb
+C:\Users\sigurdur\Documents\GitHub\Confusion\TicTacToe\TicTacToeTest\bin\Debug\nunit-console-runner.dll
+C:\Users\sigurdur\Documents\GitHub\Confusion\TicTacToe\TicTacToeTest\bin\Debug\nunit.framework.dll
+C:\Users\sigurdur\Documents\GitHub\Confusion\TicTacToe\TicTacToeTest\bin\Debug\TicTacToe.exe
+C:\Users\sigurdur\Documents\GitHub\Confusion\TicTacToe\TicTacToeTest\bin\Debug\nunit.util.dll
+C:\Users\sigurdur\Documents\GitHub\Confusion\TicTacToe\TicTacToeTest\bin\Debug\nunit.core.interfaces.dll
+C:\Users\sigurdur\Documents\GitHub\Confusion\TicTacToe\TicTacToeTest\bin\Debug\nunit.core.dll
+C:\Users\sigurdur\Documents\GitHub\Confusion\TicTacToe\TicTacToeTest\bin\Debug\TicTacToe.pdb
+C:\Users\sigurdur\Documents\GitHub\Confusion\TicTacToe\TicTacToeTest\obj\x86\Debug\ResolveAssemblyReference.cache
