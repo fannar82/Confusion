@@ -1,0 +1,13 @@
+The enviroment has to be a linux apt-get enviroment.
+
+Step 1. Choose a location for the project.
+Step 2. Make sure you have an active internet connection.
+Step 3. Make sure you have access to git package distribution tool.
+Step 4. git clone https://github.com/fannar82/Confusion/TicTacToe.
+Step 5. sudo apt-get install mono-develop
+Step 6. sudo apt-get install nunit-console
+Step 7. add buildAndTest.sh into crontab.
+
+
+Buildscript
+

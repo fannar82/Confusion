@@ -19,7 +19,12 @@
  	<property name="build.number" value="${math::abs(math::floor(timespan::get-total-days(datetime::now() - datetime::parse('01/01/2012'))))}" />
     <property name="build.dir" value="${project::get-base-directory()}/${project::get-name()}_${project.version}_${build.number}_${basedir.suffix}"/>
     <mkdir dir="${build.dir}" />
-    <csc target="library" output="${build.dir}/bin/board.dll" debug="${build.debug}">
+    <csc target="library" output="${build.dir}/bin/player.dll" debug="${build.debug}">
+	  <sources>
+		<include name="player.cs" />
+	  </sources>
+	</csc>
+	<csc target="library" output="${build.dir}/bin/board.dll" debug="${build.debug}">
       <sources>
         <include name="board.cs" />
       </sources>
@@ -39,6 +44,7 @@
       <references basedir="${build.dir}/bin">
         <include name="board.dll" />
         <include name="ui.dll" />
+		<include name="player.dll" />
       </references>
 	</csc>
   </target>

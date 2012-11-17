@@ -50,9 +50,33 @@ namespace confusion.tictactoe
 			gameBoard[x,y] = value;
 		}
 
-		public int getSquare(int x, int y)
+		public char getSquare(int x, int y)
 		{
-			return gameBoard[x,y];
+			int value = gameBoard[x,y];
+			char symbol = valueToSymbol(value);
+			return symbol;
+		}
+		
+		public char valueToSymbol(int value)
+		{
+			char symbol;
+			switch (value)
+            {
+                case 0:
+                    symbol = ' ';
+					break;
+                case 1:
+                    symbol = 'X'; 
+					break;
+				case 2:
+					symbol = 'O';
+					break;
+				default:
+					symbol = 'E';
+					break;
+            }
+			return symbol;
+
 		}
 	}
 }

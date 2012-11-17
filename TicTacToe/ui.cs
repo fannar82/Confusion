@@ -10,18 +10,28 @@ namespace confusion.tictactoe
 
 		public static void drawBoard(Board gameboard)
 		{
+			drawHeader();
 			for (int y = 0; y < gameboard.boardSize; y++)
 			{
 				for (int x = 0; x < gameboard.boardSize; x++)
 				{
-					Console.Write(" " + gameboard.getSquare(x,y).ToString() + " ");
+					char symbol = gameboard.getSquare(x,y);
+					if (x == 0)
+						Console.Write(" " + symbol.ToString() + " |");
+					else if (x == gameboard.boardSize -1)
+						Console.Write("| " + symbol.ToString() + " ");
+					else
+						Console.Write(" " + symbol.ToString() + " ");
 				}
 				if (y == selectedRow)
 				{
 					Console.Write( " < " );
 				}
 				Console.WriteLine( );
+				if (y != gameboard.boardSize - 1)
+					Console.WriteLine("-----------");
 			}
+			Console.WriteLine();
 			for (int x = 0; x < gameboard.boardSize; x++)
 			{
 				if (x == selectedColumn)
@@ -39,6 +49,22 @@ namespace confusion.tictactoe
 		public static void clearScreen()
 		{
 			Console.Clear();
+		}
+
+		public static string getPlayersName(string player)
+		{
+			Console.Write("Please enter your name ");
+			Console.Write(player);
+			Console.Write(": ");
+			return Console.ReadLine();
+		}
+
+		public static void drawHeader()
+		{
+			Console.WriteLine("#################");
+			Console.WriteLine("## Tic Tac Toe ##");
+			Console.WriteLine("#################");
+			Console.WriteLine();
 		}
 	}
 }
