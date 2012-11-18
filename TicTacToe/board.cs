@@ -6,6 +6,7 @@ namespace confusion.tictactoe
 	{
 		int[,] gameBoard;
 		public int boardSize;
+		public int playerPlaying = 1;
 		public Board()
 		{
 			gameBoard = new int[3,3];
@@ -77,6 +78,34 @@ namespace confusion.tictactoe
             }
 			return symbol;
 
+		}
+
+		public bool checkForVictory()
+		{
+			for (int y = 0; y < boardSize; y++)
+			{
+				int rowValue = gameBoard[0,y];
+				int columnValue = gameBoard[y,0];
+				int crossValue = gameBoard[y,y];
+                int invCrossValue = gameBoard[y, boardSize-y];
+
+				if (rowValue == 0  || columnValue == 0)
+					return false;
+				for (int x = 1; x < boardSize; x++)
+				{
+					if ((x == y) && (crossValue == gameBoard[y,y]))
+						continue;
+					if ((x == boardSize - y) && (invCrossValue == gameBoard[y, boardSize - y]))
+						continue;
+					if (rowValue == gameBoard[x,y])
+						continue;
+					if (columnValue == gameBoard[y,x])
+						continue;
+					else
+						return false;
+				}
+			}
+			return true;
 		}
 	}
 }

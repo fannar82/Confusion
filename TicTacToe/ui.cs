@@ -40,7 +40,7 @@ namespace confusion.tictactoe
 				}
 				else
 				{
-					Console.Write("   ");
+					Console.Write("    ");
 				}
 			}
 			Console.WriteLine();
@@ -65,6 +65,46 @@ namespace confusion.tictactoe
 			Console.WriteLine("## Tic Tac Toe ##");
 			Console.WriteLine("#################");
 			Console.WriteLine();
+		}
+
+		public static bool askForAnotherGame()
+		{
+			Console.WriteLine("Do you want another game? (y/n)");
+			ConsoleKeyInfo key = Console.ReadKey();
+			if (key.Key == ConsoleKey.Y)
+			{
+				return true;
+			}
+			return false;
+
+		}
+
+		public static void announceWinner(Player pl)
+		{
+			Console.Write("Yay, player ");
+			Console.Write(pl.name);
+			Console.Write(" just won the game !!!");
+			Console.WriteLine();
+		}
+
+		public static void announceDraw(Player pl1, Player pl2)
+		{
+			Console.Write("Ohh, what a pity, neither ");
+			Console.Write(pl1.name);
+			Console.Write(" nor ");
+			Console.Write(pl2.name);
+			Console.Write(" won the game.");
+			Console.WriteLine();
+		}
+
+		public static ConsoleKeyInfo askPlayerForInput(Player pl)
+		{
+			ConsoleKeyInfo input;
+			Console.Write(pl.name);
+			Console.Write(" please move your cursor with the arrow keys");
+			input = Console.ReadKey();
+			return input;
+
 		}
 	}
 }

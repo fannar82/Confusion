@@ -35,6 +35,7 @@
 	  </sources>
 	  <references basedir="${build.dir}/bin">
         <include name="board.dll" />
+		<include name="player.dll" />
       </references>
 	</csc>
 	<csc target="exe" output="${build.dir}/bin/TicTacToe.exe" debug="${build.debug}">
