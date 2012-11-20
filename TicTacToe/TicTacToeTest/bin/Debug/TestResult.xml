@@ -1,15 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <!--This file represents the results of running a test suite-->
-<test-results name="C:\Users\xpo\Documents\Skolaverkefni\Confusion\TicTacToe\TicTacToeTest\bin\Debug\TicTacToeTest.exe" total="1" errors="0" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2012-11-14" time="23:17:22">
-  <environment nunit-version="2.5.10.11092" clr-version="4.0.30319.269" os-version="Microsoft Windows NT 6.1.7601 Service Pack 1" platform="Win32NT" cwd="C:\Users\xpo\Documents\Skolaverkefni\Confusion\TicTacToe\TicTacToeTest\bin\Debug" machine-name="XPO-THINK" user="xpo" user-domain="xpo-THINK" />
+<test-results name="C:\Users\sigurdur\Documents\GitHub\Confusion\TicTacToe\TicTacToeTest\bin\Debug\TicTacToeTest.exe" total="4" errors="0" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2012-11-20" time="20:22:47">
+  <environment nunit-version="2.5.10.11092" clr-version="4.0.30319.586" os-version="Microsoft Windows NT 6.1.7601 Service Pack 1" platform="Win32NT" cwd="C:\Users\sigurdur\Documents\GitHub\Confusion\TicTacToe\TicTacToeTest\bin\Debug" machine-name="SIGGI2012" user="sigurdur" user-domain="NT" />
   <culture-info current-culture="is-IS" current-uiculture="en-US" />
-  <test-suite type="Assembly" name="C:\Users\xpo\Documents\Skolaverkefni\Confusion\TicTacToe\TicTacToeTest\bin\Debug\TicTacToeTest.exe" executed="True" result="Success" success="True" time="5.103" asserts="0">
+  <test-suite type="Assembly" name="C:\Users\sigurdur\Documents\GitHub\Confusion\TicTacToe\TicTacToeTest\bin\Debug\TicTacToeTest.exe" executed="True" result="Success" success="True" time="0.062" asserts="0">
     <results>
-      <test-suite type="Namespace" name="TicTacToeTest" executed="True" result="Success" success="True" time="5.100" asserts="0">
+      <test-suite type="Namespace" name="TicTacToeTest" executed="True" result="Success" success="True" time="0.062" asserts="0">
         <results>
-          <test-suite type="TestFixture" name="PlayerTestFixture" executed="True" result="Success" success="True" time="5.095" asserts="0">
+          <test-suite type="TestFixture" name="BoardTestFixture" executed="True" result="Success" success="True" time="0.047" asserts="0">
             <results>
-              <test-case name="TicTacToeTest.PlayerTestFixture.TestFault" executed="True" result="Success" success="True" time="5.090" asserts="1" />
+              <test-case name="TicTacToeTest.BoardTestFixture.TestingArray_SendingCoord_OutofRange_ToLow" executed="True" result="Success" success="True" time="0.031" asserts="1" />
+              <test-case name="TicTacToeTest.BoardTestFixture.TestingArrey_SendigCoord_InRange" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+              <test-case name="TicTacToeTest.BoardTestFixture.TestingArrey_SendigCoord_OutofRange_ToHigh" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+            </results>
+          </test-suite>
+          <test-suite type="TestFixture" name="PlayerTestFixture" executed="True" result="Success" success="True" time="0.000" asserts="0">
+            <results>
+              <test-case name="TicTacToeTest.PlayerTestFixture.PlayerName_ValidInputs_CorrectResult" executed="True" result="Success" success="True" time="0.000" asserts="1" />
             </results>
           </test-suite>
           <test-suite type="TestFixture" name="TestFixture1" executed="True" result="Inconclusive" success="False" time="0.000" asserts="0" />

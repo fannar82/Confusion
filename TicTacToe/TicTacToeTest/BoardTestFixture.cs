@@ -10,8 +10,6 @@ namespace TicTacToeTest
     [TestFixture]
     public class BoardTestFixture
     {
-
-
         [Test]
         public void TestingArray_SendingCoord_OutofRange_ToLow()
         {
@@ -20,13 +18,11 @@ namespace TicTacToeTest
             var expected = false;
 
             //Act
-            var actioal = br.newMove(0, 0, "X");
+            var actioal = br.newMove(0, 0, 1);
 
             //Assert
             Assert.IsTrue(actioal.Equals(expected));
-
         }
-
         [Test]
         public void TestingArrey_SendigCoord_OutofRange_ToHigh()
         {
@@ -35,12 +31,11 @@ namespace TicTacToeTest
             var expected = false;
 
             //Act
-            var actioal = br.newMove(5, 5, "X");
+            var actioal = br.newMove(5, 5, 2);
 
             //Assert
             Assert.IsTrue(actioal.Equals(expected));
         }
-
         [Test]
         public void TestingArrey_SendigCoord_InRange()
         {
@@ -49,10 +44,12 @@ namespace TicTacToeTest
             var expected = true;
 
             //Act
-            var actioal = br.newMove(2, 2, "X");
+            var actioal = br.newMove(2, 2, 1);
 
             //Assert
             Assert.IsTrue(actioal.Equals(expected));
         }
+        //[Test]
+        //public void TestEmptyArray
     }
 }
