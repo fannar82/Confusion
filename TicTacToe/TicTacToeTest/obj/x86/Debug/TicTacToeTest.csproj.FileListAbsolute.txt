@@ -49,3 +49,15 @@ C:\Users\sigurdur\Documents\GitHub\Confusion\TicTacToe\TicTacToeTest\bin\Debug\n
 C:\Users\sigurdur\Documents\GitHub\Confusion\TicTacToe\TicTacToeTest\bin\Debug\nunit.core.dll
 C:\Users\sigurdur\Documents\GitHub\Confusion\TicTacToe\TicTacToeTest\bin\Debug\TicTacToe.pdb
 C:\Users\sigurdur\Documents\GitHub\Confusion\TicTacToe\TicTacToeTest\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Hugbunadarfraedi\Confusion\TicTacToe\TicTacToeTest\obj\x86\Debug\TicTacToeTest.exe
+C:\Hugbunadarfraedi\Confusion\TicTacToe\TicTacToeTest\obj\x86\Debug\TicTacToeTest.pdb
+C:\Hugbunadarfraedi\Confusion\TicTacToe\TicTacToeTest\bin\Debug\TicTacToeTest.exe
+C:\Hugbunadarfraedi\Confusion\TicTacToe\TicTacToeTest\bin\Debug\TicTacToeTest.pdb
+C:\Hugbunadarfraedi\Confusion\TicTacToe\TicTacToeTest\bin\Debug\nunit-console-runner.dll
+C:\Hugbunadarfraedi\Confusion\TicTacToe\TicTacToeTest\bin\Debug\nunit.framework.dll
+C:\Hugbunadarfraedi\Confusion\TicTacToe\TicTacToeTest\bin\Debug\TicTacToe.exe
+C:\Hugbunadarfraedi\Confusion\TicTacToe\TicTacToeTest\bin\Debug\nunit.util.dll
+C:\Hugbunadarfraedi\Confusion\TicTacToe\TicTacToeTest\bin\Debug\nunit.core.interfaces.dll
+C:\Hugbunadarfraedi\Confusion\TicTacToe\TicTacToeTest\bin\Debug\nunit.core.dll
+C:\Hugbunadarfraedi\Confusion\TicTacToe\TicTacToeTest\bin\Debug\TicTacToe.pdb
+C:\Hugbunadarfraedi\Confusion\TicTacToe\TicTacToeTest\obj\x86\Debug\ResolveAssemblyReference.cache
