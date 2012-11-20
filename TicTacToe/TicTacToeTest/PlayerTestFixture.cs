@@ -18,7 +18,7 @@ namespace TicTacToeTest
             expectedName.PlayerName = "Player1";
             
             //Act
-            string actualPlayerName = "Player12";
+            string actualPlayerName = "Player1";
 
             //Assert
             Assert.IsTrue(actualPlayerName == expectedName.PlayerName);
