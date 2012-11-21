@@ -10,6 +10,9 @@ namespace TicTacToeTest
     [TestFixture]
     public class BoardTestFixture
     {
+        /// <summary>
+        /// 
+        /// </summary>
         [Test]
         public void TestingArray_SendingCoord_OutofRange_ToLow()
         {
@@ -23,6 +26,9 @@ namespace TicTacToeTest
             //Assert
             Assert.IsTrue(actual.Equals(expected));
         }
+        /// <summary>
+        /// 
+        /// </summary>
         [Test]
         public void TestingArray_SendigCoord_OutofRange_ToHigh()
         {
@@ -36,6 +42,9 @@ namespace TicTacToeTest
             //Assert
             Assert.IsTrue(actual.Equals(expected));
         }
+        /// <summary>
+        /// 
+        /// </summary>
         [Test]
         public void TestingArray_SendigCoord_InRange()
         {
@@ -49,8 +58,11 @@ namespace TicTacToeTest
             //Assert
             Assert.IsTrue(actual.Equals(expected));
         }
+        /// <summary>
+        /// 
+        /// </summary>
         [Test]
-        public void TestEmptyArray_Low()
+        public void TestingEmptyArray_Low()
         {
             //Arrange
             Board br = new Board();
@@ -58,15 +70,18 @@ namespace TicTacToeTest
 
             //Act
             br.initializeBoard();
-            var Empty_Arrey = br.sendArray();
+            var Empty_Arrey = br.getArray();
             var actual = Empty_Arrey[0, 0];
    
 
             //Assert
             Assert.AreEqual(expected,actual);
         }
+        /// <summary>
+        /// 
+        /// </summary>
         [Test]
-        public void TestEmptyArray_High()
+        public void TestingEmptyArray_High()
         {
             //Arrange
             Board br = new Board();
@@ -74,15 +89,18 @@ namespace TicTacToeTest
 
             //Act
             br.initializeBoard();
-            var Empty_Arrey = br.sendArray();
+            var Empty_Arrey = br.getArray();
             var actual = Empty_Arrey[2, 2];
 
 
             //Assert
             Assert.AreEqual(expected, actual);
         }
+        /// <summary>
+        /// 
+        /// </summary>
         [Test]
-        public void TestEmptyArray_Mid()
+        public void TestingEmptyArray_Mid()
         {
             //Arrange
             Board br = new Board();
@@ -90,15 +108,18 @@ namespace TicTacToeTest
 
             //Act
             br.initializeBoard();
-            var Empty_Arrey = br.sendArray();
+            var Empty_Arrey = br.getArray();
             var actual = Empty_Arrey[1, 1];
 
 
             //Assert
             Assert.AreEqual(expected, actual);
         }
+        /// <summary>
+        /// 
+        /// </summary>
         [Test]
-        public void TestArrayInput_SendingIn_GettingOut()
+        public void TestingArrayInput_SendingIn_GettingOut()
         {
             //Arrange
             Board br = new Board();
@@ -106,12 +127,15 @@ namespace TicTacToeTest
 
             //Act
             br.newMove(2, 2, 2); //Array grid 1,1
-            var Array = br.sendArray();
+            var Array = br.getArray();
             var actual = Array[1, 1];
 
             //Assert
             Assert.AreEqual(expected, actual);
         }
+        /// <summary>
+        /// 
+        /// </summary>
         [Test]
         public void TestingValueToSymbol_SeningIn0_ExpectingSpace()
         {
@@ -125,6 +149,9 @@ namespace TicTacToeTest
             //Assert
             Assert.AreEqual(expected, actual);
         }
+        /// <summary>
+        /// 
+        /// </summary>
         [Test]
         public void TestingValueToSymbol_SeningIn1_ExpectingX()
         {
@@ -138,6 +165,9 @@ namespace TicTacToeTest
             //Assert
             Assert.AreEqual(expected, actual);
         }
+        /// <summary>
+        /// 
+        /// </summary>
         [Test]
         public void TestingValueToSymbol_SeningIn2_ExpectingO()
         {
@@ -151,6 +181,9 @@ namespace TicTacToeTest
             //Assert
             Assert.AreEqual(expected, actual);
         }
+        /// <summary>
+        /// 
+        /// </summary>
         [Test]
         public void TestingValueToSymbol_SeningHIn_ExpectingE()
         {
@@ -164,5 +197,69 @@ namespace TicTacToeTest
             //Assert
             Assert.AreEqual(expected, actual);
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        [Test]
+        public void TestingGetBoardSize_SendingIn3_ExpectingBoardSize()
+        {
+            //Arrange
+            Board br = new Board(3);
+            var expected = 3;
+
+            //Act
+            var actual = br.getBoardSize();
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        [Test]
+        public void TestingBoardConstructor()
+        {
+            //Arrange
+            Board br = new Board();
+            var expected = 3;
+
+            //Act
+            var actual = br.getBoardSize();
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        [Test]
+        public void TestingCheckForVictory_True()
+        {
+            //Arrange
+            Board br = new Board();
+            bool expected = false;
+
+            //Act
+            var actual = br.checkForVictory();
+
+            //Assert
+            Assert.IsTrue(actual.Equals(expected));
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /*[Test]
+        public void TestingCheckForVictory_False()
+        {
+            //Arrange
+            Board br = new Board();
+            bool expected = true;
+
+            //Act
+            var actual = false;
+
+            //Assert
+            Assert.IsTrue(actual.Equals(expected));
+        }*/
     }
 }
