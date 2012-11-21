@@ -49,11 +49,37 @@ namespace TicTacToe
             if ( y >= boardSize ) return false;
             if ( x-1 < 0 ) return false;
             if ( y-1 < 0 ) return false;
-            //if ( gameBoard[x-1, y-1] != null ) return false;
+            if ( gameBoard[x-1, y-1] >0 ) return false;
 
             // The move is legal, make it happen!
-            //board[x-1, y-1] = value;
+            gameBoard[x-1, y-1] = value;
             return true;
         }
+        public char valueToSymbol(int value)
+        {
+            char symbol;
+            switch (value)
+            {
+                case 0:
+                    symbol = ' ';
+                    break;
+                case 1:
+                    symbol = 'X';
+                    break;
+                case 2:
+                    symbol = 'O';
+                    break;
+                default:
+                    symbol = 'E';
+                    break;
+            }
+            return symbol;
+
+        }
+        public int[,] sendArray()
+        {
+            return gameBoard;
+        }
+
     }
 }

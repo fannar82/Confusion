@@ -15,7 +15,7 @@ namespace confusion.tictactoe
 		public Board(int size)
 		{
 			gameBoard = new int[size, size];
-			boardSize = 3;
+			boardSize = size;
 		}
 		public void initializeBoard()
 		{

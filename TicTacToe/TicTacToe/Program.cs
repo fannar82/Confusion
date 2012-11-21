@@ -10,20 +10,13 @@ namespace TicTacToe
         static void Main(string[] args)
         {
 
-            FannarClass fannar = new FannarClass();
-
+            Console.WriteLine("Hello Worldz!");
           
         }
 
  
     }
 
-    public class FannarClass
-    {
-        public bool fannar()
-        {
-            return true;
-        }
+   
 
-    }
 }

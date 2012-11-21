@@ -53,6 +53,7 @@ namespace confusion.tictactoe
 					ui.announceWinner(playerTwo);
 					again = false;
 				}
+				turn++;
 
 			}
 			while (again);
@@ -64,17 +65,41 @@ namespace confusion.tictactoe
 			{
 				input = ui.askPlayerForInput(pl);
 				if (input.Key == ConsoleKey.UpArrow)
-						ui.selectedRow = (ui.selectedRow-1) % gb.boardSize;
+				{
+						ui.selectedRow = ui.selectedRow-1;
+				}
 				if (input.Key == ConsoleKey.DownArrow)
-						ui.selectedRow = (ui.selectedRow+1) % gb.boardSize;
+				{
+						ui.selectedRow = ui.selectedRow+1;
+				}
 				if (input.Key == ConsoleKey.LeftArrow)
-						ui.selectedColumn = (ui.selectedColumn-1) % gb.boardSize;
+				{
+						ui.selectedColumn = ui.selectedColumn-1;
+				}
 				if (input.Key == ConsoleKey.RightArrow)
-						ui.selectedColumn = (ui.selectedColumn+1) % gb.boardSize;
+				{
+						ui.selectedColumn = ui.selectedColumn+1;
+				}
+				ui.selectedRow = correctOutOfBounds(ui.selectedRow, gb.boardSize);
+				ui.selectedColumn = correctOutOfBounds(ui.selectedColumn, gb.boardSize);
 				ui.clearScreen();
 				ui.drawBoard(gb);
 			}
-			while ((input.Key != ConsoleKey.Enter) && (!gb.canPlay(ui.selectedColumn, ui.selectedRow)));
+			while (input.Key != ConsoleKey.Enter);
+		}
+
+		static int correctOutOfBounds(int number, int size)
+		{
+			if (number < 0 )
+			{
+				return size-1;
+			}
+			else if (number == size)
+			{
+				return 0;
+			}
+			return number;
 		}
 	}
 }
+
