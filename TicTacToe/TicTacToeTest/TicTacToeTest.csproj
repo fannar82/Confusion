@@ -57,6 +57,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestFixture.cs" />
+    <Compile Include="UiTestFixture.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="NUnit\nunit-console-runner.dll" />
