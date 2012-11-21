@@ -5,25 +5,35 @@ using System.Text;
 
 namespace TicTacToe
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class Board
     {
         private int[,] gameBoard;
         private int boardSize;
 
-        // Default constructor is of size 3
+        /// <summary>
+        /// 
+        /// </summary>
         public Board()
         {
             gameBoard = new int[3,3];
             boardSize = 3;
         }
 
-        // Custom size
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="size"></param>
         public Board(int size)
         {
             gameBoard = new int[size, size];
             this.boardSize = size;
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
         public void initializeBoard()
         {
             for (int x = 0; x < boardSize; x++)
@@ -55,6 +65,11 @@ namespace TicTacToe
             gameBoard[x-1, y-1] = value;
             return true;
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
         public char valueToSymbol(int value)
         {
             char symbol;
@@ -76,10 +91,41 @@ namespace TicTacToe
             return symbol;
 
         }
-        public int[,] sendArray()
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public int[,] getArray()
         {
             return gameBoard;
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public int getBoardSize()
+        {
+            return boardSize;
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public bool checkForVictory()
+        {
+            return false;
+        }
+        public void dummyFillingArray(int x, int y, int value)
+        {
+            gameBoard[0, 0] = 0;
+            gameBoard[0, 0] = 0;
+            gameBoard[0, 0] = 0;
+            gameBoard[0, 0] = 0;
+            gameBoard[0, 0] = 0;
+            gameBoard[0, 0] = 0;
+            gameBoard[0, 0] = 0;
+            gameBoard[0, 0] = 0;
+            gameBoard[0, 0] = 0;
+        }
     }
 }
