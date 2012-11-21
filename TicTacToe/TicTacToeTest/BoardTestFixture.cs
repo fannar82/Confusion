@@ -136,7 +136,7 @@ namespace TicTacToeTest
         /// <summary>
         /// 
         /// </summary>
-        [Test]
+        /*[Test]
         public void TestingValueToSymbol_SeningIn0_ExpectingSpace()
         {
             //Arrange
@@ -196,7 +196,7 @@ namespace TicTacToeTest
 
             //Assert
             Assert.AreEqual(expected, actual);
-        }
+        }*/
         /// <summary>
         /// 
         /// </summary>
@@ -237,14 +237,32 @@ namespace TicTacToeTest
         {
             //Arrange
             Board br = new Board();
-            bool expected = false;
+            bool expected = true;
 
             //Act
-            var actual = br.checkForVictory();
+            br.dummyFillingArray();
+            bool actual = br.checkForVictory();
 
             //Assert
-            Assert.IsTrue(actual.Equals(expected));
+            Assert.AreEqual(expected, actual);
         }
+
+        /*[Test]
+        public void TestingDummyArray()
+        {
+            //Arrange
+            Board br = new Board();
+            var expected = 1;
+
+            //Act
+            br.dummyFillingArray();
+            var Array = br.getArray();
+            var actual = Array[2, 1];
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }*/
+
         /// <summary>
         /// 
         /// </summary>

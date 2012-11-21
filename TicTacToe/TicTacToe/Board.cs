@@ -12,6 +12,7 @@ namespace TicTacToe
     {
         private int[,] gameBoard;
         private int boardSize;
+        private int newValue = 2;
 
         /// <summary>
         /// 
@@ -63,13 +64,10 @@ namespace TicTacToe
 
             // The move is legal, make it happen!
             gameBoard[x-1, y-1] = value;
+            newValue = value;
             return true;
         }
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="value"></param>
-        /// <returns></returns>
+        /*
         public char valueToSymbol(int value)
         {
             char symbol;
@@ -90,7 +88,7 @@ namespace TicTacToe
             }
             return symbol;
 
-        }
+        }*/
         /// <summary>
         /// 
         /// </summary>
@@ -113,19 +111,37 @@ namespace TicTacToe
         /// <returns></returns>
         public bool checkForVictory()
         {
+
+            if (gameBoard[0, 0] == newValue && gameBoard[0, 1] == newValue && gameBoard[0, 2] == newValue)
+                return true;
+            if (gameBoard[1, 0] == newValue && gameBoard[1, 1] == newValue && gameBoard[1, 2] == newValue)
+                return true;
+            if (gameBoard[2, 0] == newValue && gameBoard[2, 1] == newValue && gameBoard[2, 2] == newValue)
+                return true;
+            if (gameBoard[0, 0] == newValue && gameBoard[1, 0] == newValue && gameBoard[2, 0] == newValue)
+                return true;
+            if (gameBoard[0, 1] == newValue && gameBoard[1, 1] == newValue && gameBoard[2, 1] == newValue)
+                return true;
+            if (gameBoard[0, 2] == newValue && gameBoard[1, 2] == newValue && gameBoard[2, 2] == newValue)
+                return true;
+            if (gameBoard[0, 0] == newValue && gameBoard[1, 1] == newValue && gameBoard[2, 2] == newValue)
+                return true;
+            if (gameBoard[0, 2] == newValue && gameBoard[1, 1] == newValue && gameBoard[2, 0] == newValue)
+                return true;
+
             return false;
         }
-        public void dummyFillingArray(int x, int y, int value)
+        public void dummyFillingArray()
         {
             gameBoard[0, 0] = 0;//1
-            gameBoard[0, 1] = 0;//2
-            gameBoard[0, 2] = 0;//2
-            gameBoard[1, 0] = 0;//3
-            gameBoard[1, 1] = 0;//4
-            gameBoard[1, 2] = 0;//5
-            gameBoard[2, 0] = 0;//6
-            gameBoard[2, 1] = 0;//7
-            gameBoard[2, 2] = 0;//8
+            gameBoard[0, 1] = 1;//2
+            gameBoard[0, 2] = 0;//3
+            gameBoard[1, 0] = 2;//4
+            gameBoard[1, 1] = 2;//5
+            gameBoard[1, 2] = 2;//6
+            gameBoard[2, 0] = 0;//7
+            gameBoard[2, 1] = 1;//8
+            gameBoard[2, 2] = 0;//9
         }
     }
 }
