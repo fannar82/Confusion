@@ -117,15 +117,15 @@ namespace TicTacToe
         }
         public void dummyFillingArray(int x, int y, int value)
         {
-            gameBoard[0, 0] = 0;
-            gameBoard[0, 0] = 0;
-            gameBoard[0, 0] = 0;
-            gameBoard[0, 0] = 0;
-            gameBoard[0, 0] = 0;
-            gameBoard[0, 0] = 0;
-            gameBoard[0, 0] = 0;
-            gameBoard[0, 0] = 0;
-            gameBoard[0, 0] = 0;
+            gameBoard[0, 0] = 0;//1
+            gameBoard[0, 1] = 0;//2
+            gameBoard[0, 2] = 0;//2
+            gameBoard[1, 0] = 0;//3
+            gameBoard[1, 1] = 0;//4
+            gameBoard[1, 2] = 0;//5
+            gameBoard[2, 0] = 0;//6
+            gameBoard[2, 1] = 0;//7
+            gameBoard[2, 2] = 0;//8
         }
     }
 }
