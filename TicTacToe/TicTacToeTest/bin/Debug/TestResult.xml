@@ -1,36 +1,44 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <!--This file represents the results of running a test suite-->
-<test-results name="C:\Users\sigurdur\Documents\GitHub\Confusion\TicTacToe\TicTacToeTest\bin\Debug\TicTacToeTest.exe" total="15" errors="0" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2012-11-21" time="21:33:09">
-  <environment nunit-version="2.5.10.11092" clr-version="4.0.30319.586" os-version="Microsoft Windows NT 6.1.7601 Service Pack 1" platform="Win32NT" cwd="C:\Users\sigurdur\Documents\GitHub\Confusion\TicTacToe\TicTacToeTest\bin\Debug" machine-name="SIGGI2012" user="sigurdur" user-domain="NT" />
+<test-results name="C:\Users\Hilmar\Documents\GitHub\Confusion\TicTacToe\TicTacToeTest\bin\Debug\TicTacToeTest.exe" total="19" errors="0" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2012-11-21" time="22:39:59">
+  <environment nunit-version="2.5.10.11092" clr-version="4.0.30319.18010" os-version="Microsoft Windows NT 6.2.9200.0" platform="Win32NT" cwd="C:\Users\Hilmar\Documents\GitHub\Confusion\TicTacToe\TicTacToeTest\bin\Debug" machine-name="STAR" user="Hilmar" user-domain="STAR" />
   <culture-info current-culture="is-IS" current-uiculture="en-US" />
-  <test-suite type="Assembly" name="C:\Users\sigurdur\Documents\GitHub\Confusion\TicTacToe\TicTacToeTest\bin\Debug\TicTacToeTest.exe" executed="True" result="Success" success="True" time="0.080" asserts="0">
+  <test-suite type="Assembly" name="C:\Users\Hilmar\Documents\GitHub\Confusion\TicTacToe\TicTacToeTest\bin\Debug\TicTacToeTest.exe" executed="True" result="Success" success="True" time="0.107" asserts="0">
     <results>
-      <test-suite type="Namespace" name="TicTacToeTest" executed="True" result="Success" success="True" time="0.080" asserts="0">
+      <test-suite type="Namespace" name="TicTacToeTest" executed="True" result="Success" success="True" time="0.101" asserts="0">
         <results>
-          <test-suite type="TestFixture" name="BoardTestFixture" executed="True" result="Success" success="True" time="0.070" asserts="0">
+          <test-suite type="TestFixture" name="BoardTestFixture" executed="True" result="Success" success="True" time="0.080" asserts="0">
             <results>
-              <test-case name="TicTacToeTest.BoardTestFixture.TestingArray_SendigCoord_InRange" executed="True" result="Success" success="True" time="0.040" asserts="1" />
+              <test-case name="TicTacToeTest.BoardTestFixture.TestingArray_SendigCoord_InRange" executed="True" result="Success" success="True" time="0.043" asserts="1" />
               <test-case name="TicTacToeTest.BoardTestFixture.TestingArray_SendigCoord_OutofRange_ToHigh" executed="True" result="Success" success="True" time="0.000" asserts="1" />
-              <test-case name="TicTacToeTest.BoardTestFixture.TestingArray_SendingCoord_OutofRange_ToLow" executed="True" result="Success" success="True" time="0.000" asserts="1" />
-              <test-case name="TicTacToeTest.BoardTestFixture.TestingArrayInput_SendingIn_GettingOut" executed="True" result="Success" success="True" time="0.010" asserts="1" />
-              <test-case name="TicTacToeTest.BoardTestFixture.TestingBoardConstructor" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+              <test-case name="TicTacToeTest.BoardTestFixture.TestingArray_SendingCoord_OutofRange_ToLow" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+              <test-case name="TicTacToeTest.BoardTestFixture.TestingArrayInput_SendingIn_GettingOut" executed="True" result="Success" success="True" time="0.008" asserts="1" />
+              <test-case name="TicTacToeTest.BoardTestFixture.TestingBoardConstructor" executed="True" result="Success" success="True" time="0.001" asserts="1" />
               <test-case name="TicTacToeTest.BoardTestFixture.TestingCheckForVictory_True" executed="True" result="Success" success="True" time="0.000" asserts="1" />
-              <test-case name="TicTacToeTest.BoardTestFixture.TestingEmptyArray_High" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+              <test-case name="TicTacToeTest.BoardTestFixture.TestingEmptyArray_High" executed="True" result="Success" success="True" time="0.001" asserts="1" />
               <test-case name="TicTacToeTest.BoardTestFixture.TestingEmptyArray_Low" executed="True" result="Success" success="True" time="0.000" asserts="1" />
-              <test-case name="TicTacToeTest.BoardTestFixture.TestingEmptyArray_Mid" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+              <test-case name="TicTacToeTest.BoardTestFixture.TestingEmptyArray_Mid" executed="True" result="Success" success="True" time="0.001" asserts="1" />
               <test-case name="TicTacToeTest.BoardTestFixture.TestingGetBoardSize_SendingIn3_ExpectingBoardSize" executed="True" result="Success" success="True" time="0.000" asserts="1" />
-              <test-case name="TicTacToeTest.BoardTestFixture.TestingValueToSymbol_SeningHIn_ExpectingE" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+              <test-case name="TicTacToeTest.BoardTestFixture.TestingValueToSymbol_SeningHIn_ExpectingE" executed="True" result="Success" success="True" time="0.001" asserts="1" />
               <test-case name="TicTacToeTest.BoardTestFixture.TestingValueToSymbol_SeningIn0_ExpectingSpace" executed="True" result="Success" success="True" time="0.000" asserts="1" />
               <test-case name="TicTacToeTest.BoardTestFixture.TestingValueToSymbol_SeningIn1_ExpectingX" executed="True" result="Success" success="True" time="0.000" asserts="1" />
               <test-case name="TicTacToeTest.BoardTestFixture.TestingValueToSymbol_SeningIn2_ExpectingO" executed="True" result="Success" success="True" time="0.000" asserts="1" />
             </results>
           </test-suite>
-          <test-suite type="TestFixture" name="PlayerTestFixture" executed="True" result="Success" success="True" time="0.010" asserts="0">
+          <test-suite type="TestFixture" name="PlayerTestFixture" executed="True" result="Success" success="True" time="0.002" asserts="0">
             <results>
-              <test-case name="TicTacToeTest.PlayerTestFixture.PlayerName_ValidInputs_CorrectResult" executed="True" result="Success" success="True" time="0.010" asserts="1" />
+              <test-case name="TicTacToeTest.PlayerTestFixture.PlayerName_ValidInputs_CorrectResult" executed="True" result="Success" success="True" time="0.001" asserts="1" />
             </results>
           </test-suite>
           <test-suite type="TestFixture" name="TestFixture1" executed="True" result="Inconclusive" success="False" time="0.000" asserts="0" />
+          <test-suite type="TestFixture" name="UiTestFixture" executed="True" result="Success" success="True" time="0.005" asserts="0">
+            <results>
+              <test-case name="TicTacToeTest.UiTestFixture.TestingValueToSymbol_SendingIn0_ExpectingSpace" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+              <test-case name="TicTacToeTest.UiTestFixture.TestingValueToSymbol_SendingIn1_ExpectingX" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+              <test-case name="TicTacToeTest.UiTestFixture.TestingValueToSymbol_SendingIn2_ExpectingO" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+              <test-case name="TicTacToeTest.UiTestFixture.TestingValueToSymbol_SendingInH_ExpectingE" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+            </results>
+          </test-suite>
         </results>
       </test-suite>
     </results>
