@@ -51,3 +51,5 @@
   </target>
 </project>
 <!-- ég mátti ekki setja fannar -->
+
+<!-- HAHAHA EG SETTI FANNAR! -->
