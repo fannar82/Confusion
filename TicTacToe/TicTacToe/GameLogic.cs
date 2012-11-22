@@ -92,7 +92,7 @@ namespace TicTacToe
         /// <summary>   
         /// Returns the value of moveCount
         /// </summary>
-        public int getMoveCount()
+        public int GetMoveCount()
         {
             return moveCount;
         }
