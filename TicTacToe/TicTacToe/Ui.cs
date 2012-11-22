@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using TicTacToe;
 
 namespace TicTacToe
 {
-    public class Ui
+    public static class Ui
     {
 
         /// <summary>
@@ -13,7 +14,7 @@ namespace TicTacToe
         /// </summary>
         /// <param name="value"></param>
         /// <returns></returns>
-        public char valueToSymbol(int value)
+        public static char valueToSymbol(int value)
         {
             char symbol;
             switch (value)

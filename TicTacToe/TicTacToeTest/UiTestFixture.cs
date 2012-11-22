@@ -6,7 +6,7 @@ using TicTacToe;
 using NUnit.Framework;
 
 namespace TicTacToeTest
-{/* Það þarf að laga testin þannig að þau dependi ekki á aðra klasa. Smá mis í gangi.
+{
     [TestFixture]
     public class UiTestFixture
     {
@@ -17,16 +17,18 @@ namespace TicTacToeTest
         public void TestingValueToSymbol_SendingIn0_ExpectingSpace()
         {
             //Arrange
-            Board br = new Board();
-            var expected = ' ';
+            int value = 0;
+            char expected = ' ';
 
             //Act
-            var actual = br.valueToSymbol(0);
+            char actual = Ui.valueToSymbol(value);
 
             //Assert
             Assert.AreEqual(expected, actual);
         }
+    }
 
+/* Það þarf að laga testin þannig að þau dependi ekki á aðra klasa. Smá mis í gangi.
         /// <summary>
         /// Tests if input 1 return X
         /// </summary>
