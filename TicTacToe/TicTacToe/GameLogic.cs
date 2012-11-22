@@ -22,7 +22,7 @@ namespace TicTacToe
         {
 //            do
 //            {
-                createPlayers();
+                CreatePlayers();
                 PlayNewGame();
 //            } while (Ui.PlayAnothergame());
         }
@@ -72,7 +72,7 @@ namespace TicTacToe
         /// <summary>
         /// Creates two players and and sets gameCounts to zero.
         /// </summary>
-        public void createPlayers ()
+        public void CreatePlayers ()
         {
             player1 = new Player();
             player2 = new Player();
