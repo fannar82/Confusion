@@ -84,7 +84,7 @@ namespace TicTacToe
             return boardSize;
         }
         /// <summary>
-        /// 
+        /// Returns true if there is a winner
         /// </summary>
         /// <returns></returns>
         public bool checkForVictory()

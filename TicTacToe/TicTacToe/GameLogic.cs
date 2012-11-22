@@ -8,7 +8,7 @@ namespace TicTacToe
     public class GameLogic
     {
   // ath breyti moveCount og gameCount í public til að geta gert fleiri próf (sleppti því að búa til get og set á þær).
-        public int moveCount, gameCount;
+        private int moveCount, gameCount;
         public Player player1;
         public Player player2;
         public Board gameBoard;
@@ -19,32 +19,53 @@ namespace TicTacToe
         /// </summary>
         public void startGame()
         {
-            createPlayers();
-            playNewGame();
-            
-
+//            do
+//            {
+                createPlayers();
+                PlayNewGame();
+//            } while (Ui.PlayAnothergame());
         }
 
 
         /// <summary>
         /// This function is called to play a new game aftar createPlayers has been called.
         /// </summary>
-        public void playNewGame()
+        private void PlayNewGame()
         {
             newBoard();
-//            while(!gameBoard.newMove(Ui.newMove(),desidePlayersTurn());
-        
+            do
+            {
+                //          while(!gameBoard.newMove(Ui.getMove()[0], Ui.getMove()[1],desidePlayersTurn());)
+                //while - kallar aftur í newMove fallið í gameboard ef leikur var ólöglegur (gameboards skilaði false)       
+                
+                if (moveCount >= (gameBoard.getBoardSize() * gameBoard.getBoardSize()))
+                {
+                    // There is a draw - break loop
+//                    Ui.PresentDraw(decidePlayersTurn());
+                    break;
+                }
+
+                // check if we have played enaugh moves to
+                // have a possible win 
+                if (moveCount >= gameBoard.getBoardSize() * 2 - 1)
+                {
+                    if (gameBoard.checkForVictory())
+                    {
+                        //the current player is the winner
+                        //ui.presentTheWinner(decidePlayersTurn());
+                        break;
+                    }
+                }
+                moveCount++;
+            } while (true);
         }
 
         /// <sumary>
         /// This funciton desieds witch players turn it is.
         /// </sumary>
-        public int desidePlayersTurn()
+        public int decidePlayersTurn()
         {
-            if (moveCount % 2 == 0)
-            { return 1; }
-            else
-            { return 2; }
+            return (moveCount % 2 + 1);
         }
 
         /// <summary>
@@ -54,8 +75,7 @@ namespace TicTacToe
         {
             player1 = new Player();
             player2 = new Player();
-            gameCount = 0;
-            
+            gameCount = 0;    
         }
 
         /// <summary>
@@ -65,7 +85,6 @@ namespace TicTacToe
         {
             gameBoard = new Board();
             moveCount = 0;
-
         }
 
 
@@ -85,6 +104,9 @@ namespace TicTacToe
             return gameCount;
         }
 
-
+        public void setMoveCount(int i)
+        {
+            moveCount = i;
+        }
     }
 }

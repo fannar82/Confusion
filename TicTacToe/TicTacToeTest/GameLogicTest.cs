@@ -16,14 +16,14 @@ namespace TicTacToeTest
             //Arrange
             GameLogic GLnewgame = new GameLogic();
             GLnewgame.createPlayers();
-                       
+
             //Act
             Player ActualPlayer1, ActualPlayer2;
             ActualPlayer1 = GLnewgame.player1;
             ActualPlayer2 = GLnewgame.player2;
 
             //Assert
-            Assert.IsInstanceOf<Player>(ActualPlayer1 );
+            Assert.IsInstanceOf<Player>(ActualPlayer1);
             Assert.IsInstanceOf<Player>(ActualPlayer2);
         }
 
@@ -37,7 +37,7 @@ namespace TicTacToeTest
             //Act
             Board ActualBoard;
             ActualBoard = GLnewgame.gameBoard;
-            
+
             //Assert
             Assert.IsInstanceOf<Board>(ActualBoard);
 
@@ -57,7 +57,7 @@ namespace TicTacToeTest
             actualMoveCount = GLnewgame.getMoveCount();
 
             //Assert
-            Assert.AreEqual (expectedMoveCount, actualMoveCount);
+            Assert.AreEqual(expectedMoveCount, actualMoveCount);
 
         }
 
@@ -76,31 +76,31 @@ namespace TicTacToeTest
             //Assert
             Assert.AreEqual(expectedGameCount, actualGameCount);
         }
-// svolítið asnalegt próf þar sem við viljum hafa moveCount private en verðum þá að setja get og set fyrir hana til að geta testað 
-// og hver er þá tilgangurinn að vera með hana private, ATH breytti henni í public.
+        // svolítið asnalegt próf þar sem við viljum hafa moveCount private en verðum þá að setja get og set fyrir hana til að geta testað 
+        // og hver er þá tilgangurinn að vera með hana private, ATH breytti henni í public.
         [Test]
         public void TestingDesedePlayersTurn()
         {
-         //Arrange - test 0
+            //Arrange - test 0
             GameLogic GLnewgame = new GameLogic();
-            GLnewgame.moveCount = 0;
+            GLnewgame.setMoveCount(0);
             int expectedReturn = 1;
-          //Act
+            //Act
             int actualReturn;
-            actualReturn = GLnewgame.desidePlayersTurn();
-           //Assert
+            actualReturn = GLnewgame.decidePlayersTurn();
+            //Assert
             Assert.AreEqual(expectedReturn, actualReturn);
-        //Arrange - test 5
-            GLnewgame.moveCount = 5;
+            //Arrange - test 5
+            GLnewgame.setMoveCount(5);
             expectedReturn = 2;
-          //Act
-            actualReturn = GLnewgame.desidePlayersTurn();
-          //Assert
+            //Act
+            actualReturn = GLnewgame.decidePlayersTurn();
+            //Assert
             Assert.AreEqual(expectedReturn, actualReturn);
 
         }
 
 
-
-        }
+    }
 }
+
