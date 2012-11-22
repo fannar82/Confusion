@@ -32,8 +32,7 @@ namespace TicTacToe
         public void playNewGame()
         {
             newBoard();
-//            if (desidePlayersTurn() == 1)
-
+//            while(!gameBoard.newMove(Ui.newMove(),desidePlayersTurn());
         
         }
 
