@@ -24,7 +24,7 @@ namespace TicTacToeTest
             var actual = br.newMove(0, 0, 1);
 
             //Assert
-            Assert.IsTrue(actual.Equals(expected));
+            Assert.AreEqual(expected, actual);
         }
         /// <summary>
         /// 
@@ -40,7 +40,7 @@ namespace TicTacToeTest
             var actual = br.newMove(5, 5, 2);
 
             //Assert
-            Assert.IsTrue(actual.Equals(expected));
+            Assert.AreEqual(expected, actual);
         }
         /// <summary>
         /// 
@@ -56,7 +56,7 @@ namespace TicTacToeTest
             var actual = br.newMove(2, 2, 1);
 
             //Assert
-            Assert.IsTrue(actual.Equals(expected));
+            Assert.AreEqual(expected, actual);
         }
         /// <summary>
         /// 
@@ -136,70 +136,6 @@ namespace TicTacToeTest
         /// <summary>
         /// 
         /// </summary>
-        /*[Test]
-        public void TestingValueToSymbol_SeningIn0_ExpectingSpace()
-        {
-            //Arrange
-            Board br = new Board();
-            var expected = ' ';
-
-            //Act
-            var actual = br.valueToSymbol(0);
-
-            //Assert
-            Assert.AreEqual(expected, actual);
-        }
-        /// <summary>
-        /// 
-        /// </summary>
-        [Test]
-        public void TestingValueToSymbol_SeningIn1_ExpectingX()
-        {
-            //Arrange
-            Board br = new Board();
-            var expected = 'X';
-
-            //Act
-            var actual = br.valueToSymbol(1);
-
-            //Assert
-            Assert.AreEqual(expected, actual);
-        }
-        /// <summary>
-        /// 
-        /// </summary>
-        [Test]
-        public void TestingValueToSymbol_SeningIn2_ExpectingO()
-        {
-            //Arrange
-            Board br = new Board();
-            var expected = 'O';
-
-            //Act
-            var actual = br.valueToSymbol(2);
-
-            //Assert
-            Assert.AreEqual(expected, actual);
-        }
-        /// <summary>
-        /// 
-        /// </summary>
-        [Test]
-        public void TestingValueToSymbol_SeningHIn_ExpectingE()
-        {
-            //Arrange
-            Board br = new Board();
-            var expected = 'E';
-
-            //Act
-            var actual = br.valueToSymbol('H');
-
-            //Assert
-            Assert.AreEqual(expected, actual);
-        }*/
-        /// <summary>
-        /// 
-        /// </summary>
         [Test]
         public void TestingGetBoardSize_SendingIn3_ExpectingBoardSize()
         {
@@ -236,48 +172,42 @@ namespace TicTacToeTest
         public void TestingCheckForVictory_True()
         {
             //Arrange
-            Board br = new Board();
+            Board br = new Board(3);
             bool expected = true;
 
             //Act
-            br.dummyFillingArray();
+            br.initializeBoard();
+            br.newMove(3, 1, 2);
+            br.newMove(1, 1, 1);
+            br.newMove(2, 2, 2);
+            br.newMove(3, 3, 1);
+            br.newMove(1, 3, 2);
             bool actual = br.checkForVictory();
 
             //Assert
             Assert.AreEqual(expected, actual);
         }
-
-        /*[Test]
-        public void TestingDummyArray()
-        {
-            //Arrange
-            Board br = new Board();
-            var expected = 1;
-
-            //Act
-            br.dummyFillingArray();
-            var Array = br.getArray();
-            var actual = Array[2, 1];
-
-            //Assert
-            Assert.AreEqual(expected, actual);
-        }*/
-
         /// <summary>
         /// 
         /// </summary>
-        /*[Test]
+        [Test]
         public void TestingCheckForVictory_False()
         {
             //Arrange
-            Board br = new Board();
-            bool expected = true;
+            Board br = new Board(3);
+            bool expected = false;
 
             //Act
-            var actual = false;
+            br.initializeBoard();
+            br.newMove(3, 1, 2);
+            br.newMove(1, 1, 1);
+            br.newMove(2, 2, 2);
+            br.newMove(3, 3, 1);
+            br.newMove(2, 3, 2);
+            bool actual = br.checkForVictory();
 
             //Assert
-            Assert.IsTrue(actual.Equals(expected));
-        }*/
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
