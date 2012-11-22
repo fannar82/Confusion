@@ -17,7 +17,7 @@ namespace TicTacToe
         /// <summary>
         /// You have to call this function to start the game, have fun :)
         /// </summary>
-        public void startGame()
+        public void StartGame()
         {
 //            do
 //            {
@@ -32,7 +32,7 @@ namespace TicTacToe
         /// </summary>
         private void PlayNewGame()
         {
-            newBoard();
+            NewBoard();
             do
             {
                 //          while(!gameBoard.newMove(Ui.getMove()[0], Ui.getMove()[1],desidePlayersTurn());)
@@ -63,7 +63,7 @@ namespace TicTacToe
         /// <sumary>
         /// This funciton desieds witch players turn it is.
         /// </sumary>
-        public int decidePlayersTurn()
+        public int DecidePlayersTurn()
         {
             return (moveCount % 2 + 1);
         }
@@ -81,7 +81,7 @@ namespace TicTacToe
         /// <summary>
         /// Creates a new gameBoard and sets moveCount to zero.
         /// </summary>
-        public void newBoard()
+        public void NewBoard()
         {
             gameBoard = new Board();
             moveCount = 0;
@@ -99,7 +99,7 @@ namespace TicTacToe
         /// <summary>   
         /// Returns the value of gameCount
         /// </summary>
-        public int getGameCount()
+        public int GetGameCount()
         {
             return gameCount;
         }
