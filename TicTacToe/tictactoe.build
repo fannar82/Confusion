@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<project name="TicTacToe" default="build">
+  <property name="project.version" value="0.1" />
+  <property name="project.config" value="debug" />
+  <target name="init">
+	<call target="${project.config}" />
+  </target>
+  <target name="debug" >
+	<property name="project.config" value="debug" />
+	<property name="build.debug" value="true" />
+	<property name="basedir.suffix" value="debug" />
+  </target>
+  <target name="release">
+	<property name="project.config" value="release" />
+	<property name="build.debug" value="false" />
+	<property name="basedir.suffix" value="release" />
+  </target>
+  <target name="build" depends="init" description="Compiles the source code">
+	<property name="build.dir" value="${project::get-base-directory()}/builds/${basedir.suffix}" />
+	<mkdir dir="${build.dir}" />
+	<csc target="exe" output="${build.dir}/${project::get-name()}.exe" debug="${build.debug}">
+	  <sources>
+		<include name="TicTacToe/*.cs" />
+	  </sources>
+	</csc>
+	<if test="${project.config=='debug'}">
+	  <csc target="library" output="${build.dir}/${project::get-name()}_tests.dll">
+		<sources>
+		  <include name="TicTacToeTest/*.cs" />
+		  <exclude name="TicTacToeTest/Program.cs" />
+		</sources>
+		<references basedir="${build.dir}">
+		  <include name="${project::get-name()}.exe" />
+		</references>
+		<pkg-references>
+			<package name="mono-nunit" />
+		</pkg-references>
+	  </csc>
+	  <mkdir dir="${build.dir}/reports" />
+	  <nunit2>
+		<formatter type="Xml" usefile="true" extension=".xml" outputdir="${build.dir}/reports" />
+		<test assemblyname="${build.dir}/${project::get-name()}_tests.dll" />
+	  </nunit2>
+	</if>
+  </target>
+</project>
