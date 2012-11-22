@@ -11,6 +11,8 @@ else
 		echo 'New code found'
 		echo 'Autobuilding debug'
 		touch .building
+		nant
+		rm .building
 	fi
 
 fi

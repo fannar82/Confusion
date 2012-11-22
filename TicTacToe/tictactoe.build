@@ -47,6 +47,12 @@
 				property="failures">
 			</xmlpeek>
 			<echo message="${failures}"/>
+			<echo message="${build.dir}/${project::get-name()}.exe" />
+			<exec program="gendarme" output="${build.dir}/reports/codefaults.txt">
+				<arg value="--config" />
+				<arg value="rules.xml" />
+				<arg value="${build.dir}/${project::get-name()}.exe" />
+			</exec>
 		</if>
 	</target>
 </project>
