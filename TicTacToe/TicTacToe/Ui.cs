@@ -29,7 +29,7 @@ namespace TicTacToe
                     symbol = 'O';
                     break;
                 default:
-                    symbol = 'E';
+                    symbol = '\0';
                     break;
             }
             return symbol;
