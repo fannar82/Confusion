@@ -15,7 +15,7 @@ namespace TicTacToeTest
         {
             //Arrange
             GameLogic GLnewgame = new GameLogic();
-            GLnewgame.createPlayers();
+            GLnewgame.CreatePlayers();
 
             //Act
             Player ActualPlayer1, ActualPlayer2;
@@ -32,7 +32,7 @@ namespace TicTacToeTest
         {
             //Arrange
             GameLogic GLnewgame = new GameLogic();
-            GLnewgame.newBoard();
+            GLnewgame.NewBoard();
 
             //Act
             Board ActualBoard;
@@ -48,13 +48,13 @@ namespace TicTacToeTest
         {
             //Arrange
             GameLogic GLnewgame = new GameLogic();
-            GLnewgame.createPlayers();
+            GLnewgame.CreatePlayers();
             int expectedMoveCount = 0;
 
 
             //Act
             int actualMoveCount;
-            actualMoveCount = GLnewgame.getMoveCount();
+            actualMoveCount = GLnewgame.GetMoveCount();
 
             //Assert
             Assert.AreEqual(expectedMoveCount, actualMoveCount);
@@ -66,12 +66,12 @@ namespace TicTacToeTest
         {
             //Arrange
             GameLogic GLnewgame = new GameLogic();
-            GLnewgame.createPlayers();
+            GLnewgame.CreatePlayers();
             int expectedGameCount = 0;
 
             //Act
             int actualGameCount;
-            actualGameCount = GLnewgame.getGameCount();
+            actualGameCount = GLnewgame.GetGameCount();
 
             //Assert
             Assert.AreEqual(expectedGameCount, actualGameCount);
@@ -79,7 +79,7 @@ namespace TicTacToeTest
         // svolítið asnalegt próf þar sem við viljum hafa moveCount private en verðum þá að setja get og set fyrir hana til að geta testað 
         // og hver er þá tilgangurinn að vera með hana private, ATH breytti henni í public.
         [Test]
-        public void TestingDesedePlayersTurn()
+        public void TestingDecidePlayersTurn()
         {
             //Arrange - test 0
             GameLogic GLnewgame = new GameLogic();
@@ -87,14 +87,14 @@ namespace TicTacToeTest
             int expectedReturn = 1;
             //Act
             int actualReturn;
-            actualReturn = GLnewgame.decidePlayersTurn();
+            actualReturn = GLnewgame.DecidePlayersTurn();
             //Assert
             Assert.AreEqual(expectedReturn, actualReturn);
             //Arrange - test 5
             GLnewgame.setMoveCount(5);
             expectedReturn = 2;
             //Act
-            actualReturn = GLnewgame.decidePlayersTurn();
+            actualReturn = GLnewgame.DecidePlayersTurn();
             //Assert
             Assert.AreEqual(expectedReturn, actualReturn);
 
