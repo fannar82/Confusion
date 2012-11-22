@@ -13,7 +13,10 @@
 		<property name="basedir.suffix" value="release" />
 		<call target="build" />
   	</target>
-  	<target name="build" description="Compiles the source code">
+  	<target name="clean">
+		<delete dir="builds" />
+	</target>
+	<target name="build" description="Compiles the source code">
 		<property name="build.dir" value="${project::get-base-directory()}/builds/${basedir.suffix}" />
 		<mkdir dir="${build.dir}" />
 		<csc target="exe" output="${build.dir}/${project::get-name()}.exe" debug="${build.debug}">
@@ -39,6 +42,11 @@
 				<formatter type="Xml" usefile="true" extension=".xml" outputdir="${build.dir}/reports" />
 				<test assemblyname="${build.dir}/${project::get-name()}_tests.dll" />
   			</nunit2>
+			<xmlpeek file="${build.dir}/reports/${project::get-name()}_tests.dll-results.xml"
+				xpath="/test-results/@total"
+				property="failures">
+			</xmlpeek>
+			<echo message="${failures}"/>
 		</if>
 	</target>
 </project>
