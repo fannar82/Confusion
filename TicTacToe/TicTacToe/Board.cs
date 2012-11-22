@@ -12,7 +12,7 @@ namespace TicTacToe
     {
         private int[,] gameBoard;
         private int boardSize;
-        private int newValue = 2;
+        private int newValue;
 
         /// <summary>
         /// 
@@ -56,8 +56,8 @@ namespace TicTacToe
         public bool newMove(int x, int y, int value)
         {
             // Check for out of bound cases
-            if ( x >= boardSize ) return false;
-            if ( y >= boardSize ) return false;
+            if ( x > boardSize ) return false;
+            if ( y > boardSize ) return false;
             if ( x-1 < 0 ) return false;
             if ( y-1 < 0 ) return false;
             if ( gameBoard[x-1, y-1] >0 ) return false;
@@ -67,28 +67,6 @@ namespace TicTacToe
             newValue = value;
             return true;
         }
-        /*
-        public char valueToSymbol(int value)
-        {
-            char symbol;
-            switch (value)
-            {
-                case 0:
-                    symbol = ' ';
-                    break;
-                case 1:
-                    symbol = 'X';
-                    break;
-                case 2:
-                    symbol = 'O';
-                    break;
-                default:
-                    symbol = 'E';
-                    break;
-            }
-            return symbol;
-
-        }*/
         /// <summary>
         /// 
         /// </summary>
@@ -130,18 +108,6 @@ namespace TicTacToe
                 return true;
 
             return false;
-        }
-        public void dummyFillingArray()
-        {
-            gameBoard[0, 0] = 0;//1
-            gameBoard[0, 1] = 1;//2
-            gameBoard[0, 2] = 0;//3
-            gameBoard[1, 0] = 2;//4
-            gameBoard[1, 1] = 2;//5
-            gameBoard[1, 2] = 2;//6
-            gameBoard[2, 0] = 0;//7
-            gameBoard[2, 1] = 1;//8
-            gameBoard[2, 2] = 0;//9
         }
     }
 }
