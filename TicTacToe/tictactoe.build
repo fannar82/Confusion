@@ -25,6 +25,21 @@
 				<include name="TicTacToe/*.cs" />
   			</sources>
 		</csc>
+		<mkdir dir="${build.dir}/docs" />
+		<mkdir dir="${project::get-base-directory()}/www/docs" />
+		<exec program="mdoc">
+			<arg value="update" />
+			<arg value="-o" />
+			<arg value="${build.dir}/docs/" />
+			<arg value="${build.dir}/${project::get-name()}.exe" />
+		</exec>
+		<echo message="export html" />
+		<exec program="mdoc">
+			<arg value="export-html" />
+			<arg value="-o" />
+			<arg value="${project::get-base-directory()}/www/docs" />
+			<arg value="${build.dir}/docs" />
+		</exec>
 		<if test="${project.config=='debug'}">
   			<csc target="library" output="${build.dir}/${project::get-name()}_tests.dll">
 				<sources>
