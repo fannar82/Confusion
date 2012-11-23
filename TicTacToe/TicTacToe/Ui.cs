@@ -8,8 +8,8 @@ namespace TicTacToe
 {
     public static class Ui
     {
-        public static int selectedRow;
-        public static int selectedColumn;
+        private static int selectedRow;
+        private static int selectedColumn;
 
 
         /// <summary>
