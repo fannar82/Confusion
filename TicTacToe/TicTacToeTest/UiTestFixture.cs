@@ -80,6 +80,10 @@ namespace TicTacToeTest
                 Assert.AreEqual(expected, actual);
             }
 
+
+    }
+    /* Það þarf að laga testin þannig að þau dependi ekki á aðra klasa. Smá mis í gangi.
+            
             /// <summary>
             /// Tests input from keyboard and and returns string (shound not be a TDD)
             /// </summary>
@@ -99,8 +103,6 @@ namespace TicTacToeTest
             }
 
     
-    }
-    /* Það þarf að laga testin þannig að þau dependi ekki á aðra klasa. Smá mis í gangi.
 
                 [Test]
                 public void TestingDisplayPlayerName_ExpectingString_Returning_PlayerName()
