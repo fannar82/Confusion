@@ -80,8 +80,29 @@ namespace TicTacToeTest
                 Assert.AreEqual(expected, actual);
             }
 
+            /// <summary>
+            /// PrintOutTest not part of unitTest
+            /// </summary>
+            [Test]
+            public void TestingDrawBoard()
+            {
+                //Arrange
+                Board gameBoard = new Board();
+                gameBoard.initializeBoard();
+                gameBoard.newMove(1, 1, 2);
+                gameBoard.newMove(2, 1, 1);
+  
+                Ui.selectedColumn = 1;
+                Ui.selectedRow = 0;
+
+                //Act
+//                Ui.ClearScreen();
+                Ui.DrawBoard(gameBoard);
+                //Assert
+            }
 
     }
+
     /* Það þarf að laga testin þannig að þau dependi ekki á aðra klasa. Smá mis í gangi.
             
             /// <summary>
