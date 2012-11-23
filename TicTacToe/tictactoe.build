@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 <project name="TicTacToe" default="debug">
 	<property name="project.config" value="debug" />
+	<property name="nant.onfailure" value="failure" />
 	<target name="debug">
 		<property name="project.config" value="debug" />
 		<property name="build.debug" value="true" />
@@ -52,7 +53,10 @@
 				<arg value="--config" />
 				<arg value="rules.xml" />
 				<arg value="${build.dir}/${project::get-name()}.exe" />
-			</exec>
+			</exec>	
 		</if>
+	</target>
+	<target name="failure" >
+		<echo message="Failure ?" />
 	</target>
 </project>
