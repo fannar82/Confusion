@@ -21,7 +21,7 @@ namespace TicTacToeTest
             char expected = ' ';
 
             //Act
-            char actual = Ui.valueToSymbol(value);
+            char actual = Ui.ValueToSymbol(value);
 
             //Assert
             Assert.AreEqual(expected, actual);
@@ -39,7 +39,7 @@ namespace TicTacToeTest
             var expected = 'X';
 
             //Act
-            var actual = Ui.valueToSymbol(value);
+            var actual = Ui.ValueToSymbol(value);
 
             //Assert
             Assert.AreEqual(expected, actual);
@@ -57,7 +57,7 @@ namespace TicTacToeTest
             var expected = 'O';
 
             //Act
-            var actual = Ui.valueToSymbol(value);
+            var actual = Ui.ValueToSymbol(value);
 
             //Assert
             Assert.AreEqual(expected, actual);
@@ -74,12 +74,31 @@ namespace TicTacToeTest
                 var expected = '\0';
 
                 //Act
-                var actual = Ui.valueToSymbol(value);
+                var actual = Ui.ValueToSymbol(value);
 
                 //Assert
                 Assert.AreEqual(expected, actual);
             }
 
+            /// <summary>
+            /// Tests input from keyboard and and returns string (shound not be a TDD)
+            /// </summary>
+            [Test]
+            public void TestingInputFromfakeKeyboard()
+            {
+                //Arrange
+                string expected = "Player1";
+                
+
+                //Act
+                string actual = Ui.SetPlayerName(1);
+                
+
+                //Assert
+                Assert.AreEqual(expected, actual);
+            }
+
+    
     }
     /* Það þarf að laga testin þannig að þau dependi ekki á aðra klasa. Smá mis í gangi.
 
