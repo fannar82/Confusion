@@ -1,0 +1,5 @@
+<gendarme>
+	<ruleset name="default">
+		<rules include="*" from="Gendarme.Rules.Naming.dll"/>
+	</ruleset>
+</gendarme>
