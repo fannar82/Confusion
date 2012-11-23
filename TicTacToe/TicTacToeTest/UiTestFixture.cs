@@ -21,14 +21,13 @@ namespace TicTacToeTest
             char expected = ' ';
 
             //Act
-            char actual = Ui.valueToSymbol(value);
+            char actual = Ui.ValueToSymbol(value);
 
             //Assert
             Assert.AreEqual(expected, actual);
         }
-    }
+    
 
-/* Það þarf að laga testin þannig að þau dependi ekki á aðra klasa. Smá mis í gangi.
         /// <summary>
         /// Tests if input 1 return X
         /// </summary>
@@ -36,16 +35,17 @@ namespace TicTacToeTest
         public void TestingValueToSymbol_SendingIn1_ExpectingX()
         {
             //Arrange
-            Board br = new Board();
+            int value=1;
             var expected = 'X';
 
             //Act
-            var actual = br.valueToSymbol(1);
+            var actual = Ui.ValueToSymbol(value);
 
             //Assert
             Assert.AreEqual(expected, actual);
         }
 
+        
         /// <summary>
         /// Tests if input 2 return O
         /// </summary>
@@ -53,53 +53,75 @@ namespace TicTacToeTest
         public void TestingValueToSymbol_SendingIn2_ExpectingO()
         {
             //Arrange
-            Board br = new Board();
+            int value = 2;
             var expected = 'O';
 
             //Act
-            var actual = br.valueToSymbol(2);
+            var actual = Ui.ValueToSymbol(value);
 
             //Assert
             Assert.AreEqual(expected, actual);
         }
+  
+            /// <summary>
+            /// Tests if input H, returns E (Error)
+            /// </summary>
+            [Test]
+            public void TestingValueToSymbol_SendingInH_ExpectingE()
+            {
+                //Arrange
+                int value = 3;
+                var expected = '\0';
 
-        /// <summary>
-        /// Tests if input H, returns E (Error)
-        /// </summary>
-        [Test]
-        public void TestingValueToSymbol_SendingInH_ExpectingE()
-        {
-            //Arrange
-            Board br = new Board();
-            var expected = 'E';
+                //Act
+                var actual = Ui.ValueToSymbol(value);
 
-            //Act
-            var actual = br.valueToSymbol('E');
+                //Assert
+                Assert.AreEqual(expected, actual);
+            }
 
-            //Assert
-            Assert.AreEqual(expected, actual);
-        }
+            /// <summary>
+            /// Tests input from keyboard and and returns string (shound not be a TDD)
+            /// </summary>
+            [Test]
+            public void TestingInputFromfakeKeyboard()
+            {
+                //Arrange
+                string expected = "Player1";
+                
 
-        [Test]
-        public void TestingDisplayPlayerName_ExpectingString_Returning_PlayerName()
-        {
-            //Arrange
+                //Act
+                string actual = Ui.SetPlayerName(1);
+                
+
+                //Assert
+                Assert.AreEqual(expected, actual);
+            }
+
+    
+    }
+    /* Það þarf að laga testin þannig að þau dependi ekki á aðra klasa. Smá mis í gangi.
+
+                [Test]
+                public void TestingDisplayPlayerName_ExpectingString_Returning_PlayerName()
+                {
+                    //Arrange
 
             
-            Player expectedName = new Player();
-            expectedName.PlayerName = "Player1";
+                    Player expectedName = new Player();
+                    expectedName.PlayerName = "Player1";
 
-            //Act
-            string actualPlayerName = "Pla";
+                    //Act
+                    string actualPlayerName = "Pla";
 
-            //Assert
-            Assert.IsTrue(actualPlayerName == expectedName.PlayerName);
+                    //Assert
+                    Assert.IsTrue(actualPlayerName == expectedName.PlayerName);
 
-            return actualPlayerName;
-        }
+                    return actualPlayerName;
+                }
 
-           [Test]
-               public void TestNewBoard
+                   [Test]
+                       public void TestNewBoard
 
-    }*/
+            } */
 }

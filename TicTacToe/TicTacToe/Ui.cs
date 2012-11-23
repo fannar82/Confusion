@@ -14,7 +14,7 @@ namespace TicTacToe
         /// </summary>
         /// <param name="value"></param>
         /// <returns></returns>
-        public static char valueToSymbol(int value)
+        public static char ValueToSymbol(int value)
         {
             char symbol;
             switch (value)
@@ -29,11 +29,17 @@ namespace TicTacToe
                     symbol = 'O';
                     break;
                 default:
-                    symbol = 'E';
+                    symbol = '\0';
                     break;
             }
             return symbol;
-
         }
+
+        public static string SetPlayerName(int player)
+        {
+            Console.Write("Enter name for  player" + player + " name: ");
+            return (Console.ReadLine());
+        }
+
     }
 }
