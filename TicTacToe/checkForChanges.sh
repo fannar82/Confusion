@@ -1,4 +1,5 @@
-gitout=$(git pull)
+cd $1
+gitout=$(/usr/bin/git pull)
 if [ "$gitout" == 'Already up-to-date.' ]
 then
 	echo 'Nothing to do'
