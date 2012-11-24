@@ -6,26 +6,27 @@
 		<property name="project.config" value="debug" />
 		<property name="build.debug" value="true" />
 		<property name="basedir.suffix" value="debug" />
+		<call target="clean" />
 		<call target="build" />
  	</target>
   	<target name="release">
 		<property name="project.config" value="release" />
 		<property name="build.debug" value="false" />
 		<property name="basedir.suffix" value="release" />
+		<call target="clean" />
 		<call target="build" />
   	</target>
   	<target name="clean">
-		<delete dir="builds" />
+		<delete dir="${project::get-base-directory()}/builds/${basedir.suffix}" />
 	</target>
 	<target name="build" description="Compiles the source code">
 		<property name="build.dir" value="${project::get-base-directory()}/builds/${basedir.suffix}" />
-		<mkdir dir="${build.dir}" />
+		<mkdir dir="${build.dir}/docs" />
 		<csc target="exe" output="${build.dir}/${project::get-name()}.exe" debug="${build.debug}" doc="${build.dir}/docs/${project::get-name()}.xml">
   			<sources>
 				<include name="TicTacToe/*.cs" />
   			</sources>
 		</csc>
-		<mkdir dir="${build.dir}/docs" />
 		<mkdir dir="${project::get-base-directory()}/www/docs" />
 		<exec program="mdoc">
 			<arg value="update" />
