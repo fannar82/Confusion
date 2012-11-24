@@ -60,7 +60,7 @@ namespace TicTacToe
                     }
                 }
 
-               if (AllMovesPlayed())
+                if (AllMovesPlayed())
                 {
                     Ui.AnnounceDraw();
                     break;
@@ -71,9 +71,10 @@ namespace TicTacToe
         }
 
         /// <sumary>
-        /// This funciton desieds witch players turn it is.
+        /// This funciton decides which players turn it is.
         /// </sumary>
-        public Player DecidePlayersTurn()
+        /// <returns>The Player object</returns>
+        private Player DecidePlayersTurn()
         {
             if (moveCount % 2 == 0)
                 return player1;
@@ -84,7 +85,7 @@ namespace TicTacToe
         /// <summary>
         /// Creates two players and and sets gameCounts to zero.
         /// </summary>
-        public void CreatePlayers ()
+        private void CreatePlayers()
         {
             player1 = new Player();
             player1.SetPlayerName(Ui.GetPlayerName(1), 1);
@@ -96,38 +97,46 @@ namespace TicTacToe
         /// <summary>
         /// Creates a new gameBoard and sets moveCount to zero.
         /// </summary>
-        public void NewBoard()
+        private void NewBoard()
         {
             gameBoard = new Board();
             gameBoard.InitializeBoard();
             moveCount = 0;
         }
 
+        /// <summary>   
+        /// Checks how many moves have been played
+        /// </summary>
+        /// <returns>The value of gameCount</returns>
+        public int GetGameCount()
+        {
+            return gameCount;
+        }
 
         /// <summary>   
-        /// Returns the value of moveCount
+        /// Checks to see how many moves have been played
         /// </summary>
+        /// <returns>The value of moveCount</returns>
         public int GetMoveCount()
         {
             return moveCount;
         }
 
         /// <summary>   
-        /// Returns the value of gameCount
+        /// Sets the moveCount to an integer.
         /// </summary>
-        public int GetGameCount()
-        {
-            return gameCount;
-        }
-
-        public void setMoveCount(int i)
+        public void SetMoveCount(int i)
         {
             moveCount = i;
         }
         
         /// <summary>
         /// Check if minimum moves have been played to get a 
-        /// possible win
+        /// possible win.
+        /// Minimum moves to get a winning position is always one move less
+        /// than double-the-boardSize.
+        /// Note that the moveCount is not updated until after this function
+        /// will be used so the function assumes one less than that.
         /// </summary>
         /// <returns>true if a win is possible</returns>
         private bool MinimumWinningMoves()
@@ -136,15 +145,18 @@ namespace TicTacToe
         }
 
         /// <summary>
-        /// Check if all moves have been played
+        /// Check if all moves have been played.
+        /// The maximum possible number of moves is the boardsize raised
+        /// to the power of two.
         /// </summary>
         /// <returns>True if a all moves have been played</returns>
         private bool AllMovesPlayed()
         {
-            return (moveCount >= (gameBoard.GetBoardSize() * gameBoard.GetBoardSize() - 1));
+            return (
+                    moveCount
+                    >=
+                    (gameBoard.GetBoardSize() * gameBoard.GetBoardSize() - 1)
+                );
         }
-        
-
-    }
-                
-}
+    } // End of class       
+} // End of namespace
