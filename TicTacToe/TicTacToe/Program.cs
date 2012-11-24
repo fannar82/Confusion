@@ -10,7 +10,9 @@ namespace TicTacToe
         static void Main(string[] args)
         {
 
-            Console.WriteLine("Hello Worldz!");
+            GameLogic Game = new GameLogic();
+            Game.StartGame();
+            Console.WriteLine("Thank you for playing hope to see again ");
           
         }
 

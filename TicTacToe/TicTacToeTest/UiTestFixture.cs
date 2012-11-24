@@ -10,6 +10,7 @@ namespace TicTacToeTest
     [TestFixture]
     public class UiTestFixture
     {
+        const int MAX_BOARDSIZE = 3;
         /// <summary>
         ///  Tests if input 0 return ' ' space
         /// </summary>
@@ -79,6 +80,41 @@ namespace TicTacToeTest
             //Assert
             Assert.AreEqual(expected, actual);
         }
+
+        /// <summary>
+        /// Tests CorrectOutOfBounds if more than boardSize then returns 0
+        /// </summary>
+        [Test]
+        public void TestingCorrectionOutOfBoundOver()
+        {
+            //Arrange
+            int value = MAX_BOARDSIZE+1, boardSize = MAX_BOARDSIZE;
+            var expected = 0;
+
+            //Act
+            var actual = Ui.CorrectOutOfBounds(value, boardSize);
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        /// <summary>
+        /// Tests CorrectOutOfBounds if less than 0 then returns MAX_BOARDSIZE
+        /// </summary>
+        [Test]
+        public void TestingCorrectionOutOfBoundUnder()
+        {
+            //Arrange
+            int value = -1, boardSize = MAX_BOARDSIZE;
+            var expected = MAX_BOARDSIZE;
+
+            //Act
+            var actual = Ui.CorrectOutOfBounds(value, boardSize);
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
     }
         /* Það þarf að laga testin þannig að þau dependi ekki á aðra klasa. Smá mis í gangi.
 

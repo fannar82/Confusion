@@ -36,15 +36,18 @@ namespace TicTacToe
         private void PlayNewGame()
         {
             NewBoard();
-            do
+            while (true) 
             {
-                //          while(!gameBoard.newMove(Ui.getMove()[0], Ui.getMove()[1],desidePlayersTurn());)
-                //while - kallar aftur í newMove fallið í gameboard ef leikur var ólöglegur (gameboards skilaði false)       
+                Ui.DrawBoard(gameBoard);
+                do{
+                Ui.AskForPlayersMove(DecidePlayersTurn(), gameBoard);
+                } while(!gameBoard.newMove(Ui.getSelectedColumn() , Ui.getSelectedRow() ,DecidePlayersTurn()));
+                //while - kallar aftur í AskForPlayersMove fallið í Ui ef leikur var ólöglegur (gameboards skilaði false)       
                 
                 if (moveCount >= (gameBoard.getBoardSize() * gameBoard.getBoardSize()))
                 {
                     // There is a draw - break loop
-//                    Ui.PresentDraw(decidePlayersTurn());
+                    Ui.AnnounceDraw();
                     break;
                 }
 
@@ -55,12 +58,12 @@ namespace TicTacToe
                     if (gameBoard.checkForVictory())
                     {
                         //the current player is the winner
-                        //ui.presentTheWinner(decidePlayersTurn());
+                        Ui.AnnounceTheWinner(DecidePlayersTurn());
                         break;
                     }
                 }
                 moveCount++;
-            } while (true);
+            }
         }
 
         /// <sumary>
@@ -77,8 +80,9 @@ namespace TicTacToe
         public void CreatePlayers ()
         {
             player1 = new Player();
-      //      player1.SetPlayerName(Ui.GetPlayerName(moveCount));
+            player1.SetPlayerName(Ui.GetPlayerName(1));
             player2 = new Player();
+            player1.SetPlayerName(Ui.GetPlayerName(2));
             gameCount = 0;    
         }
 
@@ -88,6 +92,7 @@ namespace TicTacToe
         public void NewBoard()
         {
             gameBoard = new Board();
+            gameBoard.initializeBoard();
             moveCount = 0;
         }
 
