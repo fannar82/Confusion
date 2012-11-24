@@ -22,6 +22,8 @@ namespace TicTacToe
         {
 //            do
 //            {
+            Ui.ClearScreen();
+            Ui.DrawHeader();
                 CreatePlayers();
                 PlayNewGame();
 //            } while (Ui.PlayAnothergame());
@@ -75,6 +77,7 @@ namespace TicTacToe
         public void CreatePlayers ()
         {
             player1 = new Player();
+      //      player1.SetPlayerName(Ui.GetPlayerName(moveCount));
             player2 = new Player();
             gameCount = 0;    
         }

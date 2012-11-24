@@ -26,7 +26,7 @@ namespace TicTacToeTest
             //Assert
             Assert.AreEqual(expected, actual);
         }
-    
+
 
         /// <summary>
         /// Tests if input 1 return X
@@ -35,7 +35,7 @@ namespace TicTacToeTest
         public void TestingValueToSymbol_SendingIn1_ExpectingX()
         {
             //Arrange
-            int value=1;
+            int value = 1;
             var expected = 'X';
 
             //Act
@@ -45,7 +45,7 @@ namespace TicTacToeTest
             Assert.AreEqual(expected, actual);
         }
 
-        
+
         /// <summary>
         /// Tests if input 2 return O
         /// </summary>
@@ -62,27 +62,48 @@ namespace TicTacToeTest
             //Assert
             Assert.AreEqual(expected, actual);
         }
-  
+
+        /// <summary>
+        /// Tests if input H, returns E (Error)
+        /// </summary>
+        [Test]
+        public void TestingValueToSymbol_SendingInH_ExpectingE()
+        {
+            //Arrange
+            int value = 3;
+            var expected = '\0';
+
+            //Act
+            var actual = Ui.ValueToSymbol(value);
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+    }
+        /* Það þarf að laga testin þannig að þau dependi ekki á aðra klasa. Smá mis í gangi.
+
             /// <summary>
-            /// Tests if input H, returns E (Error)
+            /// PrintOutTest not part of unitTest
             /// </summary>
             [Test]
-            public void TestingValueToSymbol_SendingInH_ExpectingE()
+            public void TestingDrawBoard()
             {
                 //Arrange
-                int value = 3;
-                var expected = '\0';
+                Board gameBoard = new Board();
+                gameBoard.initializeBoard();
+                gameBoard.newMove(1, 1, 2);
+                gameBoard.newMove(2, 1, 1);
+  
+                Ui.selectedColumn = 1;
+                Ui.selectedRow = 0;
 
                 //Act
-                var actual = Ui.ValueToSymbol(value);
-
+//                Ui.ClearScreen();
+                Ui.DrawBoard(gameBoard);
                 //Assert
-                Assert.AreEqual(expected, actual);
             }
 
 
-    }
-    /* Það þarf að laga testin þannig að þau dependi ekki á aðra klasa. Smá mis í gangi.
             
             /// <summary>
             /// Tests input from keyboard and and returns string (shound not be a TDD)
