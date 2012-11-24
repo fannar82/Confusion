@@ -172,24 +172,24 @@ namespace TicTacToe
 
         public static void AnnounceDraw()
         {
-            Console.WriteLine("Ohh, what a pity, it is a draw.  You have to try again ");
+            Console.WriteLine("Ohh, what a pity, it is a draw. You have to try again.");
         }
 
         public static void AnnounceTheWinner(Player Pl)
         {
-            Console.WriteLine(Pl.GetPlayerName() + " is the WINNER");
-
+            Console.WriteLine(Pl.GetPlayerName() + " is the WINNER.");
         }
 
         public static bool PlayAnothergame()
         { 
-            Console.WriteLine("Press spacebar to Play another game");
-            Console.WriteLine("Press n or q to quit");
+            Console.WriteLine("Press spacebar to play another game.");
+            Console.WriteLine("Press any other key to quit.");
             ConsoleKeyInfo input = Console.ReadKey();
-            if (input.Key == ConsoleKey.N || input.Key == ConsoleKey.Q)
-                return false;
-            else
+            Console.WriteLine(" ");
+            if (input.Key == ConsoleKey.Spacebar)
                 return true;
+            else
+                return false;
             }
     }
 
