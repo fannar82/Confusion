@@ -116,8 +116,8 @@ namespace TicTacToe
             ConsoleKeyInfo input ;
             do
             {
-                Console.Write("Player" + player + " turn.  ");
-                Console.Write("Move the cursor with the arrow keys \nand confirm the selection with Enter");
+                Console.WriteLine("Player" + player + " turn.  ");
+                Console.Write("Move the cursor with the arrow keys \nand confirm the selection with spacebar");
                 input = Console.ReadKey();
                 if (input.Key == ConsoleKey.UpArrow)
                 {
