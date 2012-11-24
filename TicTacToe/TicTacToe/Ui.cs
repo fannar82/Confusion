@@ -160,38 +160,50 @@ namespace TicTacToe
             return value;
         }
 
-        public static int getSelectedRow()
+        public static int GetSelectedRow()
         {
             return selectedRow;
         }
   
-        public static int getSelectedColumn()
+        public static int GetSelectedColumn()
         {
             return selectedColumn;
         }
 
         public static void AnnounceDraw()
         {
-            Console.WriteLine("Ohh, what a pity, it is a draw. You have to try again.");
+            Console.WriteLine("Ohh, what a pity, it is a draw.  You have to try again ");
         }
 
         public static void AnnounceTheWinner(Player Pl)
         {
-            Console.WriteLine(Pl.GetPlayerName() + " is the WINNER.");
+            Console.WriteLine(Pl.GetPlayerName() + " is the WINNER");
         }
 
-        public static bool PlayAnothergame()
-        { 
-            Console.WriteLine("Press spacebar to play another game.");
-            Console.WriteLine("Press any other key to quit.");
+        public static bool PlayAnotherGame()
+        {
+            Console.WriteLine("Press Y to play again");
+            Console.WriteLine("Press N to quit");
             ConsoleKeyInfo input = Console.ReadKey();
             Console.WriteLine(" ");
-            if (input.Key == ConsoleKey.Spacebar)
-                return true;
-            else
-                return false;
-            }
+            
+            int TryAgain = 0;
+            do
+            {
+                if (input.Key == ConsoleKey.Y)
+                    return true;
+                if (input.Key == ConsoleKey.N)
+                    TryAgain = 1;
+                else
+                {
+                    Console.WriteLine("Not a valid choice. Try agin.");
+                    Console.WriteLine("");
+                    input = Console.ReadKey();
+                }
+            } while (TryAgain != 1);
+            
+            return false;
+        }
     }
-
-    }
+}
 
