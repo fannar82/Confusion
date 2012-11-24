@@ -27,7 +27,7 @@ namespace TicTacToe
             do
             {
                 PlayNewGame();
-            } while (Ui.PlayAnothergame());
+            } while (Ui.PlayAnotherGame());
         }
 
         /// <summary>
@@ -46,8 +46,8 @@ namespace TicTacToe
                     Ui.AskForPlayersMove(DecidePlayersTurn(), gameBoard);
                 } while
                     (
-                        !gameBoard.NewMove(Ui.getSelectedColumn(),
-                        Ui.getSelectedRow(),
+                        !gameBoard.NewMove(Ui.GetSelectedColumn(),
+                        Ui.GetSelectedRow(),
                         DecidePlayersTurn().GetPlayernr())
                     );
                 Ui.DrawBoard(gameBoard);
