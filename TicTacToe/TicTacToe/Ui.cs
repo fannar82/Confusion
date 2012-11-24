@@ -60,9 +60,9 @@ namespace TicTacToe
         public static void DrawBoard(Board gameBoard)
         {
             DrawHeader();
-            int gameBoardSize = gameBoard.getBoardSize();
+            int gameBoardSize = gameBoard.GetBoardSize();
             int[,] gameBoardArray = new int[gameBoardSize, gameBoardSize];
-            gameBoardArray = gameBoard.getArray();
+            gameBoardArray = gameBoard.GetArray();
             for (int y = 0; y < gameBoardSize; y++)
             {
                 for (int x = 0; x < gameBoardSize; x++)
