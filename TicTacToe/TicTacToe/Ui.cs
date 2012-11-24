@@ -180,6 +180,17 @@ namespace TicTacToe
             Console.WriteLine("Player " + Player + " is the WINNER");
 
         }
+
+        public static bool PlayAnothergame()
+        { 
+            Console.WriteLine("Press spacebar to Play another game");
+            Console.WriteLine("Press n or q to quit");
+            ConsoleKeyInfo input = Console.ReadKey();
+            if (input.Key == ConsoleKey.N || input.Key == ConsoleKey.Q)
+                return false;
+            else
+                return true;
+            }
     }
 
     }

@@ -114,10 +114,28 @@ namespace TicTacToeTest
             //Assert
             Assert.AreEqual(expected, actual);
         }
-
     }
-        /* Það þarf að laga testin þannig að þau dependi ekki á aðra klasa. Smá mis í gangi.
+               /* Það þarf að laga testin þannig að þau dependi ekki á aðra klasa. Smá mis í gangi.
 
+                /// <summary>
+        /// Tests bool play another game
+        /// </summary>
+        [Test]
+        public void TestingPlayAnotherGame()
+        {
+            //Arrange
+            bool expected = false;
+
+            //Act
+            bool actual = Ui.PlayAnothergame();
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        
+
+ 
             /// <summary>
             /// PrintOutTest not part of unitTest
             /// </summary>

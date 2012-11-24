@@ -19,14 +19,14 @@ namespace TicTacToe
         /// You have to call this function to start the game, have fun :)
         /// </summary>
         public void StartGame()
-        {
-//            do
-//            {
+        {          
             Ui.ClearScreen();
             Ui.DrawHeader();
                 CreatePlayers();
+                do
+                {
                 PlayNewGame();
-//            } while (Ui.PlayAnothergame());
+            } while (Ui.PlayAnothergame());
         }
 
 
