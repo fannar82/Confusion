@@ -6,16 +6,22 @@ using System.Text;
 namespace TicTacToe
 {
     /// <summary>
-    /// 
+    /// This class will handle gameboard information:
+    /// It will construct the gameboard,
+    /// fill the array with 0 at the beginning,
+    /// test game input, if input is ok then adding value to array,
+    /// searching array for winner,
+    /// can return current array and board size
     /// </summary>
     public class Board
     {
-        private int[,] gameBoard;
-        private int boardSize;
-        private int newValue;
+        private int[,] gameBoard; // Array storing played games
+        private int boardSize; // Storing the size of the game board
+        private int newValue; // Keeping track of last registered value to array
 
         /// <summary>
-        /// 
+        ///  Constructor without parameters,
+        ///  setting game board size to 3
         /// </summary>
         public Board()
         {
@@ -24,18 +30,18 @@ namespace TicTacToe
         }
 
         /// <summary>
-        /// 
+        /// Constuctor taking in a parameter for board size
         /// </summary>
-        /// <param name="size"></param>
+        /// <param name="size">Size of game board</param>
         public Board(int size)
         {
             gameBoard = new int[size, size];
             this.boardSize = size;
         }
         /// <summary>
-        /// 
+        /// Function initialising the game board by filling it with 0
         /// </summary>
-        public void initializeBoard()
+        public void InitializeBoard()
         {
             for (int x = 0; x < boardSize; x++)
             {
@@ -47,49 +53,33 @@ namespace TicTacToe
         }
 
         /// <summary>
-        /// Return true if the move was legal.
+        /// Function testing and adding to array new games from players.
         /// </summary>
-        /// <param name="x">x coordination</param>
-        /// <param name="y">y coordination</param>
-        /// <param name="value">the value that should be added</param>
-        /// <returns></returns>
-        public bool newMove(int x, int y, int value)
+        /// <param name="x">x coordination of the array</param>
+        /// <param name="y">y coordination of the array</param>
+        /// <param name="value">the value that should be added representing the player</param>
+        /// <returns>Returning true if the move is legal but false if not legal</returns>
+        public bool NewMove(int x, int y, int value)
         {
             // Check for out of bound cases
             if ( x > boardSize ) return false;
             if ( y > boardSize ) return false;
             if ( x-1 < 0 ) return false;
             if ( y-1 < 0 ) return false;
-            if ( gameBoard[x-1, y-1] >0 ) return false;
+            if (gameBoard[x - 1, y - 1] > 0 && gameBoard[x - 1, y - 1] < 3) return false;
 
-            // The move is legal, make it happen!
+            // The move is legal, adding to the array!
             gameBoard[x-1, y-1] = value;
-            newValue = value;
+            newValue = value; // Storing the current value for the function CheckForVictory
             return true;
         }
         /// <summary>
-        /// 
+        /// Function checking the array for a winner (3 of the same values in a row)
         /// </summary>
-        /// <returns></returns>
-        public int[,] getArray()
+        /// <returns>Returns true if game is won and false if not</returns>
+        public bool CheckForVictory()
         {
-            return gameBoard;
-        }
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <returns></returns>
-        public int getBoardSize()
-        {
-            return boardSize;
-        }
-        /// <summary>
-        /// Returns true if there is a winner
-        /// </summary>
-        /// <returns></returns>
-        public bool checkForVictory()
-        {
-
+            // Testing 8 possibilities of winning the game
             if (gameBoard[0, 0] == newValue && gameBoard[0, 1] == newValue && gameBoard[0, 2] == newValue)
                 return true;
             if (gameBoard[1, 0] == newValue && gameBoard[1, 1] == newValue && gameBoard[1, 2] == newValue)
@@ -108,6 +98,22 @@ namespace TicTacToe
                 return true;
 
             return false;
+        }
+        /// <summary>
+        /// Function with information of array content
+        /// </summary>
+        /// <returns>Returns the gameboard array with current input</returns>
+        public int[,] GetArray()
+        {
+            return gameBoard;
+        }
+        /// <summary>
+        /// Function with information of game board size
+        /// </summary>
+        /// <returns>Returns the size of the game board</returns>
+        public int GetBoardSize()
+        {
+            return boardSize;
         }
     }
 }
