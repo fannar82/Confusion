@@ -43,9 +43,9 @@ namespace TicTacToe
         /// </summary>
         /// <param name="player">an int value for player</param>
         /// <returns>a string</returns>
-        public static string GetPlayerName(int player)
+        public static string GetPlayerName(int playerNr)
         {
-            Console.Write("Player" + player + " name: ");
+            Console.Write("Player" + playerNr + " name: ");
             return (Console.ReadLine());
         }
 
@@ -112,13 +112,13 @@ namespace TicTacToe
             }
 
 
-        public static void AskForPlayersMove(int player, Board gameBoard)
+        public static void AskForPlayersMove(Player pl, Board gameBoard)
         {
             int gameBoardSize = gameBoard.GetBoardSize();
             ConsoleKeyInfo input ;
             do
             {
-                Console.WriteLine("Player" + player + " turn.  ");
+                Console.WriteLine(pl.GetPlayerName() + " it is your turn.  ");
                 Console.Write("Move the cursor with the arrow keys \nand confirm the selection with spacebar");
                 input = Console.ReadKey();
                 if (input.Key == ConsoleKey.UpArrow)
@@ -175,9 +175,9 @@ namespace TicTacToe
             Console.WriteLine("Ohh, what a pity, it is a draw.  You have to try again ");
         }
 
-        public static void AnnounceTheWinner(int Player)
+        public static void AnnounceTheWinner(Player Pl)
         {
-            Console.WriteLine("Player " + Player + " is the WINNER");
+            Console.WriteLine(Pl.GetPlayerName() + " is the WINNER");
 
         }
 
