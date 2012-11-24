@@ -12,7 +12,7 @@ else
 		echo 'New code found'
 		echo 'Autobuilding debug'
 		touch .building
-		nant
+		nant > latestBuild.txt
 		rm .building
 	fi
 

@@ -20,7 +20,7 @@
 	<target name="build" description="Compiles the source code">
 		<property name="build.dir" value="${project::get-base-directory()}/builds/${basedir.suffix}" />
 		<mkdir dir="${build.dir}" />
-		<csc target="exe" output="${build.dir}/${project::get-name()}.exe" debug="${build.debug}">
+		<csc target="exe" output="${build.dir}/${project::get-name()}.exe" debug="${build.debug}" doc="${build.dir}/docs/${project::get-name()}.xml">
   			<sources>
 				<include name="TicTacToe/*.cs" />
   			</sources>
@@ -31,6 +31,8 @@
 			<arg value="update" />
 			<arg value="-o" />
 			<arg value="${build.dir}/docs/" />
+			<arg value="-i" />
+			<arg value="${build.dir}/docs/${project::get-name()}.xml" />
 			<arg value="${build.dir}/${project::get-name()}.exe" />
 		</exec>
 		<echo message="export html" />
