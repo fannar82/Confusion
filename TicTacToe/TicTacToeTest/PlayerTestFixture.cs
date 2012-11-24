@@ -23,5 +23,22 @@ namespace TicTacToeTest
             //Assert
             Assert.IsTrue(actualPlayerName == expectedName.PlayerName);
         }
+
+        [Test]
+        public void TestSetAndGetPlayerName_ValidInputs_CorrectResult()
+        {
+            //Arrange
+            Player TestPlayer = new Player();
+            string expectedPlayerName = "Mr.Big";
+
+            //Act
+            TestPlayer.SetPlayerName("Mr.Big");
+            string actualPlayerName = TestPlayer.GetPlayerName();
+
+            //Assert
+            Assert.IsTrue(actualPlayerName == expectedPlayerName);
+        }
+
+
     }
 }

@@ -22,6 +22,8 @@ namespace TicTacToe
         {
 //            do
 //            {
+            Ui.ClearScreen();
+            Ui.DrawHeader();
                 CreatePlayers();
                 PlayNewGame();
 //            } while (Ui.PlayAnothergame());
@@ -39,7 +41,7 @@ namespace TicTacToe
                 //          while(!gameBoard.newMove(Ui.getMove()[0], Ui.getMove()[1],desidePlayersTurn());)
                 //while - kallar aftur í newMove fallið í gameboard ef leikur var ólöglegur (gameboards skilaði false)       
                 
-                if (moveCount >= (gameBoard.getBoardSize() * gameBoard.getBoardSize()))
+                if (moveCount >= (gameBoard.GetBoardSize() * gameBoard.GetBoardSize()))
                 {
                     // There is a draw - break loop
 //                    Ui.PresentDraw(decidePlayersTurn());
@@ -48,9 +50,9 @@ namespace TicTacToe
 
                 // check if we have played enaugh moves to
                 // have a possible win 
-                if (moveCount >= gameBoard.getBoardSize() * 2 - 1)
+                if (moveCount >= gameBoard.GetBoardSize() * 2 - 1)
                 {
-                    if (gameBoard.checkForVictory())
+                    if (gameBoard.CheckForVictory())
                     {
                         //the current player is the winner
                         //ui.presentTheWinner(decidePlayersTurn());
@@ -75,6 +77,7 @@ namespace TicTacToe
         public void CreatePlayers ()
         {
             player1 = new Player();
+      //      player1.SetPlayerName(Ui.GetPlayerName(moveCount));
             player2 = new Player();
             gameCount = 0;    
         }
