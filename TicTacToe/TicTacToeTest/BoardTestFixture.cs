@@ -7,59 +7,50 @@ using NUnit.Framework;
 
 namespace TicTacToeTest
 {
+    /// <summary>
+    /// This is a test class used to test functions and variables
+    /// in the board class
+    /// </summary>
     [TestFixture]
     public class BoardTestFixture
     {
         /// <summary>
-        /// 
+        /// Testing default board constructor
+        /// board size should be 3
         /// </summary>
         [Test]
-        public void TestingArray_SendingCoord_OutofRange_ToLow()
+        public void TestingDefaultConstructor()
         {
             //Arrange
             Board br = new Board();
-            var expected = false;
+            var expected = 3;
 
             //Act
-            var actual = br.newMove(0, 0, 1);
+            var actual = br.GetBoardSize();
 
             //Assert
             Assert.AreEqual(expected, actual);
         }
         /// <summary>
-        /// 
+        /// Testing board cunstructior with parmeter
+        /// board size should be 4
         /// </summary>
         [Test]
-        public void TestingArray_SendigCoord_OutofRange_ToHigh()
+        public void TestingParameterConstructor()
         {
             //Arrange
-            Board br = new Board();
-            var expected = false;
+            Board br = new Board(4);
+            var expected = 4;
 
             //Act
-            var actual = br.newMove(5, 5, 2);
+            var actual = br.GetBoardSize();
 
             //Assert
             Assert.AreEqual(expected, actual);
         }
         /// <summary>
-        /// 
-        /// </summary>
-        [Test]
-        public void TestingArray_SendigCoord_InRange()
-        {
-            //Arrange
-            Board br = new Board();
-            var expected = true;
-
-            //Act
-            var actual = br.newMove(2, 2, 1);
-
-            //Assert
-            Assert.AreEqual(expected, actual);
-        }
-        /// <summary>
-        /// 
+        /// Testing function InitializeBoard
+        /// All array coords should have 0
         /// </summary>
         [Test]
         public void TestingEmptyArray_Low()
@@ -69,16 +60,17 @@ namespace TicTacToeTest
             var expected = 0;
 
             //Act
-            br.initializeBoard();
-            var Empty_Arrey = br.getArray();
+            br.InitializeBoard();
+            var Empty_Arrey = br.GetArray();
             var actual = Empty_Arrey[0, 0];
-   
+
 
             //Assert
-            Assert.AreEqual(expected,actual);
+            Assert.AreEqual(expected, actual);
         }
         /// <summary>
-        /// 
+        /// Testing function InitializeBoard
+        /// All array coords should have 0
         /// </summary>
         [Test]
         public void TestingEmptyArray_High()
@@ -88,8 +80,8 @@ namespace TicTacToeTest
             var expected = 0;
 
             //Act
-            br.initializeBoard();
-            var Empty_Arrey = br.getArray();
+            br.InitializeBoard();
+            var Empty_Arrey = br.GetArray();
             var actual = Empty_Arrey[2, 2];
 
 
@@ -97,7 +89,8 @@ namespace TicTacToeTest
             Assert.AreEqual(expected, actual);
         }
         /// <summary>
-        /// 
+        /// Testing function InitializeBoard
+        /// All array coords should have 0
         /// </summary>
         [Test]
         public void TestingEmptyArray_Mid()
@@ -107,8 +100,8 @@ namespace TicTacToeTest
             var expected = 0;
 
             //Act
-            br.initializeBoard();
-            var Empty_Arrey = br.getArray();
+            br.InitializeBoard();
+            var Empty_Arrey = br.GetArray();
             var actual = Empty_Arrey[1, 1];
 
 
@@ -116,57 +109,112 @@ namespace TicTacToeTest
             Assert.AreEqual(expected, actual);
         }
         /// <summary>
-        /// 
+        /// Testing function NewMove if coords are out of range
+        /// NewMove function coord parameter is array coord +1
         /// </summary>
         [Test]
-        public void TestingArrayInput_SendingIn_GettingOut()
+        public void TestingNewMoveInput_SendingCoord_OutofRange_ToLow()
+        {
+            //Arrange
+            Board br = new Board();
+            var expected = false;
+
+            //Act
+            var actual = br.NewMove(0, 0, 1);//Array cords -1,-1
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+        /// <summary>
+        /// Testing function NewMove if coords are out of range
+        /// NewMove function coord parameter is array coord +1
+        /// </summary>
+        [Test]
+        public void TestingNewMoveInput_SendigCoord_OutofRange_ToHigh()
+        {
+            //Arrange
+            Board br = new Board();
+            var expected = false;
+
+            //Act
+            var actual = br.NewMove(4, 5, 2); //Array coords 3,5
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+        /// <summary>
+        /// Testing function NewMove if coords are in range
+        /// NewMove function coord parameter is array coord +1
+        /// </summary>
+        [Test]
+        public void TestingNewMoveInput_SendigCoord_InRange()
+        {
+            //Arrange
+            Board br = new Board();
+            var expected = true;
+
+            //Act
+            var actual = br.NewMove(2, 2, 1); //Array coords 1,1
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+        /// <summary>
+        /// Testing function NewMove if value is legal
+        /// value should be 1 or 2
+        /// </summary>
+        [Test]
+        public void TestingNewMoveInput_SendingValueToLow()
+        {
+            //Arrange
+            Board br = new Board();
+            var expected = false;
+
+            //Act
+            var actual = br.NewMove(0, 0, 0); // Sending in 0, not legal
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+        /// <summary>
+        /// Testing function NewMove if value is legal
+        /// value should be 1 or 2 
+        /// </summary>
+        [Test]
+        public void TestingNewMoveInput_SendingValueToHigh()
+        {
+            //Arrange
+            Board br = new Board();
+            var expected = false;
+
+            //Act
+            var actual = br.NewMove(0, 0, 3); // Sending in 3, not legal
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+        /// <summary>
+        /// Testing if legal value from function NewMove in in array
+        /// Testing function GetArray
+        /// </summary>
+        [Test]
+        public void TestingCurrentArrayValue_SendingInLegalValue()
         {
             //Arrange
             Board br = new Board();
             var expected = 2;
 
             //Act
-            br.newMove(2, 2, 2); //Array grid 1,1
-            var Array = br.getArray();
+            br.NewMove(2, 2, 2); //Legal array coord 1,1 with legal with legal value 
+            var Array = br.GetArray();
             var actual = Array[1, 1];
 
             //Assert
             Assert.AreEqual(expected, actual);
         }
         /// <summary>
-        /// 
-        /// </summary>
-        [Test]
-        public void TestingGetBoardSize_SendingIn3_ExpectingBoardSize()
-        {
-            //Arrange
-            Board br = new Board(3);
-            var expected = 3;
-
-            //Act
-            var actual = br.getBoardSize();
-
-            //Assert
-            Assert.AreEqual(expected, actual);
-        }
-        /// <summary>
-        /// 
-        /// </summary>
-        [Test]
-        public void TestingBoardConstructor()
-        {
-            //Arrange
-            Board br = new Board();
-            var expected = 3;
-
-            //Act
-            var actual = br.getBoardSize();
-
-            //Assert
-            Assert.AreEqual(expected, actual);
-        }
-        /// <summary>
-        /// 
+        /// Testing function CheckForVictory
+        /// Sending in moves that lead to victory
         /// </summary>
         [Test]
         public void TestingCheckForVictory_True()
@@ -176,19 +224,20 @@ namespace TicTacToeTest
             bool expected = true;
 
             //Act
-            br.initializeBoard();
-            br.newMove(3, 1, 2);
-            br.newMove(1, 1, 1);
-            br.newMove(2, 2, 2);
-            br.newMove(3, 3, 1);
-            br.newMove(1, 3, 2);
-            bool actual = br.checkForVictory();
+            br.InitializeBoard();
+            br.NewMove(3, 1, 2);
+            br.NewMove(1, 1, 1);
+            br.NewMove(2, 2, 2);
+            br.NewMove(3, 3, 1);
+            br.NewMove(1, 3, 2);
+            bool actual = br.CheckForVictory();
 
             //Assert
             Assert.AreEqual(expected, actual);
         }
         /// <summary>
-        /// 
+        /// Testing function CheckForVictory
+        /// Sending in moves that do not lead to victory 
         /// </summary>
         [Test]
         public void TestingCheckForVictory_False()
@@ -198,13 +247,13 @@ namespace TicTacToeTest
             bool expected = false;
 
             //Act
-            br.initializeBoard();
-            br.newMove(3, 1, 2);
-            br.newMove(1, 1, 1);
-            br.newMove(2, 2, 2);
-            br.newMove(3, 3, 1);
-            br.newMove(2, 3, 2);
-            bool actual = br.checkForVictory();
+            br.InitializeBoard();
+            br.NewMove(3, 1, 2);
+            br.NewMove(1, 1, 1);
+            br.NewMove(2, 2, 2);
+            br.NewMove(3, 3, 1);
+            br.NewMove(2, 3, 2);
+            bool actual = br.CheckForVictory();
 
             //Assert
             Assert.AreEqual(expected, actual);

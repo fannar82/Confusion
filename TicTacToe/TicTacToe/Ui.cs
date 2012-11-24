@@ -76,10 +76,12 @@ namespace TicTacToe
         {
             ClearScreen();
             DrawHeader();
-            int gameBoardSize = gameBoard.getBoardSize();
+            int gameBoardSize = gameBoard.GetBoardSize();
             int[,] gameBoardArray = new int[gameBoardSize, gameBoardSize];
-            gameBoardArray = gameBoard.getArray();
+
+            gameBoardArray = gameBoard.GetArray();
             for (int y = 1; y <= gameBoardSize; y++)
+
             {
                 for (int x = 1; x <= gameBoardSize; x++)
                 {
@@ -112,7 +114,7 @@ namespace TicTacToe
 
         public static void AskForPlayersMove(int player, Board gameBoard)
         {
-            int gameBoardSize = gameBoard.getBoardSize();
+            int gameBoardSize = gameBoard.GetBoardSize();
             ConsoleKeyInfo input ;
             do
             {
@@ -139,7 +141,6 @@ namespace TicTacToe
                 selectedColumn = CorrectOutOfBounds(selectedColumn, gameBoardSize);
                 ClearScreen();
                 DrawBoard(gameBoard);
-
             } while (input.Key != ConsoleKey.Spacebar);
         }
 
@@ -172,13 +173,12 @@ namespace TicTacToe
         public static void AnnounceDraw()
         {
             Console.WriteLine("Ohh, what a pity, it is a draw.  You have to try again ");
-            Console.ReadKey();
         }
 
         public static void AnnounceTheWinner(int Player)
         {
             Console.WriteLine("Player " + Player + " is the WINNER");
-            Console.ReadKey();
+
         }
     }
 
