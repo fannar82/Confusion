@@ -32,12 +32,28 @@ namespace TicTacToeTest
             string expectedPlayerName = "Mr.Big";
 
             //Act
-            TestPlayer.SetPlayerName("Mr.Big");
+            TestPlayer.SetPlayerName("Mr.Big",1);
             string actualPlayerName = TestPlayer.GetPlayerName();
 
             //Assert
             Assert.IsTrue(actualPlayerName == expectedPlayerName);
         }
+
+        [Test]
+        public void TestSetPlayerNameWithEmptyString()
+        {
+            //Arrange
+            Player TestPlayer = new Player();
+            string expectedPlayerName = "Player1";
+
+            //Act
+            TestPlayer.SetPlayerName("", 1);
+            string actualPlayerName = TestPlayer.GetPlayerName();
+
+            //Assert
+            Assert.AreEqual(actualPlayerName, expectedPlayerName);
+        }
+
 
 
     }

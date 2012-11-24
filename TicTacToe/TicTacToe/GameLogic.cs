@@ -41,16 +41,10 @@ namespace TicTacToe
                 Ui.DrawBoard(gameBoard);
                 do{
                 Ui.AskForPlayersMove(DecidePlayersTurn(), gameBoard);
-                } while(!gameBoard.NewMove(Ui.getSelectedColumn() , Ui.getSelectedRow() ,DecidePlayersTurn()));
+                } while(!gameBoard.NewMove(Ui.getSelectedColumn() , Ui.getSelectedRow() ,DecidePlayersTurn().GetPlayernr()));
                 //while - kallar aftur í AskForPlayersMove fallið í Ui ef leikur var ólöglegur (gameboards skilaði false)       
                 Ui.DrawBoard(gameBoard);
-                if (moveCount >= (gameBoard.GetBoardSize() * gameBoard.GetBoardSize()-1))
-                {
-                    // There is a draw - break loop
-                    Ui.AnnounceDraw();
-                    break;
-                }
-
+               
                 // check if we have played enaugh moves to
                 // have a possible win 
                 if (moveCount >= gameBoard.GetBoardSize() * 2 - 2)
@@ -62,6 +56,14 @@ namespace TicTacToe
                         break;
                     }
                 }
+
+                if (moveCount >= (gameBoard.GetBoardSize() * gameBoard.GetBoardSize() - 1))
+                {
+                    // There is a draw - break loop
+                    Ui.AnnounceDraw();
+                    break;
+                }
+
                 moveCount++;
             }
         }
@@ -69,9 +71,12 @@ namespace TicTacToe
         /// <sumary>
         /// This funciton desieds witch players turn it is.
         /// </sumary>
-        public int DecidePlayersTurn()
+        public Player DecidePlayersTurn()
         {
-            return (moveCount % 2 + 1);
+            if (moveCount % 2 == 0)
+                return player1;
+            else
+                return player2;
         }
 
         /// <summary>
@@ -80,9 +85,9 @@ namespace TicTacToe
         public void CreatePlayers ()
         {
             player1 = new Player();
-            player1.SetPlayerName(Ui.GetPlayerName(1));
+            player1.SetPlayerName(Ui.GetPlayerName(1), 1);
             player2 = new Player();
-            player1.SetPlayerName(Ui.GetPlayerName(2));
+            player2.SetPlayerName(Ui.GetPlayerName(2), 2);
             gameCount = 0;    
         }
 

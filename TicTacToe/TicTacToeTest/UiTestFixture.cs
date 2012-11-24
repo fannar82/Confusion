@@ -89,7 +89,7 @@ namespace TicTacToeTest
         {
             //Arrange
             int value = MAX_BOARDSIZE+1, boardSize = MAX_BOARDSIZE;
-            var expected = 0;
+            var expected = 1;
 
             //Act
             var actual = Ui.CorrectOutOfBounds(value, boardSize);
