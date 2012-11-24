@@ -44,7 +44,7 @@ namespace TicTacToeTest
         {
             //Arrange
             Player TestPlayer = new Player();
-            string expectedPlayerName = "Player1";
+            string expectedPlayerName = "Player 1";
 
             //Act
             TestPlayer.SetPlayerName("", 1);

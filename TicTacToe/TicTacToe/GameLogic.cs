@@ -5,15 +5,16 @@ using System.Text;
 using TicTacToe;
 
 namespace TicTacToe
-{
+{   
+    /// <summary>
+    /// This class is the main function in the game.
+    /// </summary>
     public class GameLogic
     {
-  // ath breyti moveCount og gameCount í public til að geta gert fleiri próf (sleppti því að búa til get og set á þær).
         private int moveCount, gameCount;
-        public Player player1;
-        public Player player2;
-        public Board gameBoard;
-
+        private Player player1;
+        private Player player2;
+        private Board gameBoard;
 
         /// <summary>
         /// You have to call this function to start the game, have fun :)
@@ -22,13 +23,12 @@ namespace TicTacToe
         {          
             Ui.ClearScreen();
             Ui.DrawHeader();
-                CreatePlayers();
-                do
-                {
+            CreatePlayers();
+            do
+            {
                 PlayNewGame();
             } while (Ui.PlayAnothergame());
         }
-
 
         /// <summary>
         /// This function is called to play a new game aftar createPlayers has been called.
@@ -39,27 +39,29 @@ namespace TicTacToe
             while (true) 
             {
                 Ui.DrawBoard(gameBoard);
-                do{
-                Ui.AskForPlayersMove(DecidePlayersTurn(), gameBoard);
-                } while(!gameBoard.NewMove(Ui.getSelectedColumn() , Ui.getSelectedRow() ,DecidePlayersTurn().GetPlayernr()));
-                //while - kallar aftur í AskForPlayersMove fallið í Ui ef leikur var ólöglegur (gameboards skilaði false)       
+
+                // do-while breaks if players move is legal
+                do
+                {
+                    Ui.AskForPlayersMove(DecidePlayersTurn(), gameBoard);
+                } while
+                    (
+                        !gameBoard.NewMove(Ui.getSelectedColumn(),
+                        Ui.getSelectedRow(),
+                        DecidePlayersTurn().GetPlayernr())
+                    );
                 Ui.DrawBoard(gameBoard);
-               
-                // check if we have played enaugh moves to
-                // have a possible win 
-                if (moveCount >= gameBoard.GetBoardSize() * 2 - 2)
+                if (MinimumWinningMoves())  
                 {
                     if (gameBoard.CheckForVictory())
                     {
-                        //the current player is the winner
                         Ui.AnnounceTheWinner(DecidePlayersTurn());
                         break;
                     }
                 }
 
-                if (moveCount >= (gameBoard.GetBoardSize() * gameBoard.GetBoardSize() - 1))
+               if (AllMovesPlayed())
                 {
-                    // There is a draw - break loop
                     Ui.AnnounceDraw();
                     break;
                 }
@@ -122,5 +124,27 @@ namespace TicTacToe
         {
             moveCount = i;
         }
+        
+        /// <summary>
+        /// Check if minimum moves have been played to get a 
+        /// possible win
+        /// </summary>
+        /// <returns>true if a win is possible</returns>
+        private bool MinimumWinningMoves()
+        {
+            return (moveCount >= gameBoard.GetBoardSize() * 2 - 2);
+        }
+
+        /// <summary>
+        /// Check if all moves have been played
+        /// </summary>
+        /// <returns>True if a all moves have been played</returns>
+        private bool AllMovesPlayed()
+        {
+            return (moveCount >= (gameBoard.GetBoardSize() * gameBoard.GetBoardSize() - 1));
+        }
+        
+
     }
+                
 }
