@@ -43,8 +43,8 @@ namespace TicTacToe
                 Ui.AskForPlayersMove(DecidePlayersTurn(), gameBoard);
                 } while(!gameBoard.NewMove(Ui.getSelectedColumn() , Ui.getSelectedRow() ,DecidePlayersTurn()));
                 //while - kallar aftur í AskForPlayersMove fallið í Ui ef leikur var ólöglegur (gameboards skilaði false)       
-                
-                if (moveCount >= (gameBoard.GetBoardSize() * gameBoard.GetBoardSize()))
+                Ui.DrawBoard(gameBoard);
+                if (moveCount >= (gameBoard.GetBoardSize() * gameBoard.GetBoardSize()-1))
                 {
                     // There is a draw - break loop
                     Ui.AnnounceDraw();
@@ -53,7 +53,7 @@ namespace TicTacToe
 
                 // check if we have played enaugh moves to
                 // have a possible win 
-                if (moveCount >= gameBoard.GetBoardSize() * 2 - 1)
+                if (moveCount >= gameBoard.GetBoardSize() * 2 - 2)
                 {
                     if (gameBoard.CheckForVictory())
                     {
