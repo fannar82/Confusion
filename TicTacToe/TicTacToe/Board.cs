@@ -101,11 +101,9 @@ namespace TicTacToe
         }
         
         /// <summary>
-        /// Function checking the array for a winner (3 of the same values in a row)
+        /// Function checking the array for a winner in any sized game.
         /// </summary>
         /// <returns>Returns true if game is won and false if not</returns>
-        // The followin function is not tested yet and therefore
-        // not reliable and not used.
         public bool CheckForVictory(int x, int y)
         {
             if (CheckWinHorizontal(x-1, y-1)) return true;
