@@ -5,7 +5,7 @@
 			<title>jQuery Events 201</title>
 			<link rel="stylesheet" href="style.css">
 	<script 
-src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script> 
+src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" />
 		</head> 
 	<body>
 	<div id="headline">
@@ -34,7 +34,7 @@ src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 		});
 		
 
-                $("#gendarme").load("/gendarme-error.html", function(response, status, xhr) {
+                $("#gendarme").load("/codefaults.txt", function(response, status, xhr) {
 
                 if (status == "error") {
                         var msg = "No errors to report from Gendarme";
@@ -42,7 +42,7 @@ src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
                         }
                 });
 
-                $("#nunit").load("/nunit-error.txt", function(response, status, xhr) {
+                $("#nunit").load("/TicTacToeTests.dll-results.txt", function(response, status, xhr) {
 
                 if (status == "error") {
                         var msg = "No errors to report from NUnit";
