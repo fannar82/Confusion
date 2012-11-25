@@ -10,11 +10,14 @@ namespace TicTacToeTest
     [TestFixture]
     class GameLogicTest
     {
-        /*[Test]
+        IUI ui = new MockUI();
+
+        [Test]
         public void TestingCreatePlayers()
         {
             //Arrange
-            GameLogic GLnewgame = new GameLogic();
+            IUI ui = new MockUI();
+            GameLogic GLnewgame = new GameLogic(ui);
             GLnewgame.CreatePlayers();
 
             //Act
@@ -31,7 +34,9 @@ namespace TicTacToeTest
         public void TestingNewBoard()
         {
             //Arrange
-            GameLogic GLnewgame = new GameLogic();
+
+            IUI ui = new MockUI();
+            GameLogic GLnewgame = new GameLogic(ui);
             GLnewgame.NewBoard();
 
             //Act
@@ -47,7 +52,8 @@ namespace TicTacToeTest
         public void TestingnewBoard_moveCountToZero()
         {
             //Arrange
-            GameLogic GLnewgame = new GameLogic();
+            IUI ui = new MockUI();
+            GameLogic GLnewgame = new GameLogic(ui);
             GLnewgame.CreatePlayers();
             int expectedMoveCount = 0;
 
@@ -64,7 +70,8 @@ namespace TicTacToeTest
         public void TestingCreatePlayers_GameCountToZero()
         {
             //Arrange
-            GameLogic GLnewgame = new GameLogic();
+            IUI ui = new MockUI();
+            GameLogic GLnewgame = new GameLogic(ui);
             GLnewgame.CreatePlayers();
             int expectedGameCount = 0;
 
@@ -78,11 +85,13 @@ namespace TicTacToeTest
 
         // svolítið asnalegt próf þar sem við viljum hafa moveCount private en verðum þá að setja get og set fyrir hana til að geta testað 
         // og hver er þá tilgangurinn að vera með hana private, ATH breytti henni í public.
+        /* Þessu testi er sleppt í bili, Finnbjörn og Hjalti þekkja málið.
         [Test]
-        public void TestingDecidePlayersTurn()
+        public void GetPlayersTurn()
         {
             //Arrange - test 0
-            GameLogic GLnewgame = new GameLogic();
+            IUI ui = new MockUI();
+            GameLogic GLnewgame = new GameLogic(ui);
             GLnewgame.SetMoveCount(0);
             int expectedReturn = 1;
             //Act
@@ -97,10 +106,9 @@ namespace TicTacToeTest
             actualReturn = GLnewgame.GetPlayersTurn().GetPlayernr();
             //Assert
             Assert.AreEqual(expectedReturn, actualReturn);
-
         }
-
         */
-    }
-}
+
+    } // End of GameLogicTest class
+} // End og TicTacToeTest namespace
 

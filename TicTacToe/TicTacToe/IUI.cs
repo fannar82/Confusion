@@ -5,9 +5,10 @@ using System.Text;
 
 namespace TicTacToe
 {
-    public class IUI
+    abstract public class IUI
     {
         private static int selectedRow;
+
         private static int selectedColumn;
 
         /// <summary>
@@ -15,33 +16,32 @@ namespace TicTacToe
         /// </summary>
         /// <param name="value">symbol for X, O, or white space</param>
         /// <returns>The symbol X, O or white space</returns>
-        public static char ValueToSymbol(int value);
+        abstract public char ValueToSymbol(int value);
 
         /// <summary>
         ///  Gets a string from keyboard
         /// </summary>
         /// <param name="player">an int value for player</param>
         /// <returns>a string</returns>
-        public static string GetPlayerName(int playerNr);
+        abstract public string GetPlayerName(int playerNr);
 
         /// <summary>
         ///  Draws the header of the game to a console window
         /// </summary>
-
-        public static void DrawHeader();
+        abstract public void DrawHeader();
 
         /// <summary>
         ///  clears the console window and resets t
         /// </summary>
-        public static void ClearScreen();
+        abstract public void ClearScreen();
 
         /// <summary>
         ///  Draws the status of the gameBoard to a console window
         /// </summary>
         /// <param name="gameVoard">an instance of the gameBoard</param>
-        public static void DrawBoard(Board gameBoard);
+        abstract public void DrawBoard(Board gameBoard);
 
-        public static void AskForPlayersMove(Player pl, Board gameBoard);
+        abstract public void AskForPlayersMove(Player pl, Board gameBoard);
 
         /// <summary>
         /// takes to int parameters and ensure that return value 
@@ -50,16 +50,16 @@ namespace TicTacToe
         /// <param name="value">value that must be in range from 0-gbSize</param>
         /// <param name="gbSize">Max value that the function will return</param>
         /// <returns></returns>
-        public static int CorrectOutOfBounds(int value, int gbSize);
+        abstract public int CorrectOutOfBounds(int value, int gbSize);
 
-        public static int GetSelectedRow();
+        abstract public int GetSelectedRow();
 
-        public static int GetSelectedColumn();
+        abstract public int GetSelectedColumn();
 
-        public static void AnnounceDraw();
+        abstract public void AnnounceDraw();
 
-        public static void AnnounceTheWinner(Player Pl);
+        abstract public void AnnounceTheWinner(Player Pl);
 
-        public static bool PlayAnotherGame();
+        abstract public bool PlayAnotherGame();
     }
 }

@@ -10,6 +10,7 @@ namespace TicTacToeTest
     [TestFixture]
     public class UiTestFixture
     {
+        /*
         const int MAX_BOARDSIZE = 3;
         /// <summary>
         ///  Tests if input 0 return ' ' space
@@ -201,4 +202,5 @@ namespace TicTacToeTest
                        public void TestNewBoard
 
             } */
+    }
 }

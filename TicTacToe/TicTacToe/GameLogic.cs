@@ -15,6 +15,12 @@ namespace TicTacToe
         private Player player1;
         private Player player2;
         private Board gameBoard;
+        private IUI ui;
+
+        public GameLogic(IUI ui)
+        {
+            this.ui = ui;
+        }
 
         public Player GetPlayer1()
         {
@@ -35,14 +41,14 @@ namespace TicTacToe
         /// You have to call this function to start the game, have fun :)
         /// </summary>
         public void StartGame()
-        {          
-            ConsoleUI.ClearScreen();
-            ConsoleUI.DrawHeader();
+        {
+            ui.ClearScreen();
+            ui.DrawHeader();
             CreatePlayers();
             do
             {
                 PlayNewGame();
-            } while (ConsoleUI.PlayAnotherGame());
+            } while (ui.PlayAnotherGame());
         }
 
         /// <summary>
@@ -53,31 +59,31 @@ namespace TicTacToe
             NewBoard();
             while (true) 
             {
-                ConsoleUI.DrawBoard(gameBoard);
+                ui.DrawBoard(gameBoard);
 
                 // do-while breaks if players move is legal
                 do
                 {
-                    ConsoleUI.AskForPlayersMove(GetPlayersTurn(), gameBoard);
+                    ui.AskForPlayersMove(GetPlayersTurn(), gameBoard);
                 } while
                     (
-                        !gameBoard.NewMove(ConsoleUI.GetSelectedColumn(),
-                        ConsoleUI.GetSelectedRow(),
+                        !gameBoard.NewMove(ui.GetSelectedColumn(),
+                        ui.GetSelectedRow(),
                         GetPlayersTurn().GetPlayernr())
                     );
-                ConsoleUI.DrawBoard(gameBoard);
+                ui.DrawBoard(gameBoard);
                 if (MinimumWinningMoves())  
                 {
                     if (gameBoard.CheckForVictory())
                     {
-                        ConsoleUI.AnnounceTheWinner(GetPlayersTurn());
+                        ui.AnnounceTheWinner(GetPlayersTurn());
                         break;
                     }
                 }
 
                 if (AllMovesPlayed())
                 {
-                    ConsoleUI.AnnounceDraw();
+                    ui.AnnounceDraw();
                     break;
                 }
 
@@ -103,9 +109,9 @@ namespace TicTacToe
         public void CreatePlayers()
         {
             player1 = new Player();
-            player1.SetPlayerName(ConsoleUI.GetPlayerName(1), 1);
+            player1.SetPlayerName(ui.GetPlayerName(1), 1);
             player2 = new Player();
-            player2.SetPlayerName(ConsoleUI.GetPlayerName(2), 2);
+            player2.SetPlayerName(ui.GetPlayerName(2), 2);
             gameCount = 0;    
         }
 
