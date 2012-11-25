@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="Board.cs" />
     <Compile Include="GameLogic.cs" />
+    <Compile Include="IUI.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -36,13 +36,13 @@ namespace TicTacToe
         /// </summary>
         public void StartGame()
         {          
-            Ui.ClearScreen();
-            Ui.DrawHeader();
+            ConsoleUI.ClearScreen();
+            ConsoleUI.DrawHeader();
             CreatePlayers();
             do
             {
                 PlayNewGame();
-            } while (Ui.PlayAnotherGame());
+            } while (ConsoleUI.PlayAnotherGame());
         }
 
         /// <summary>
@@ -53,31 +53,31 @@ namespace TicTacToe
             NewBoard();
             while (true) 
             {
-                Ui.DrawBoard(gameBoard);
+                ConsoleUI.DrawBoard(gameBoard);
 
                 // do-while breaks if players move is legal
                 do
                 {
-                    Ui.AskForPlayersMove(GetPlayersTurn(), gameBoard);
+                    ConsoleUI.AskForPlayersMove(GetPlayersTurn(), gameBoard);
                 } while
                     (
-                        !gameBoard.NewMove(Ui.GetSelectedColumn(),
-                        Ui.GetSelectedRow(),
+                        !gameBoard.NewMove(ConsoleUI.GetSelectedColumn(),
+                        ConsoleUI.GetSelectedRow(),
                         GetPlayersTurn().GetPlayernr())
                     );
-                Ui.DrawBoard(gameBoard);
+                ConsoleUI.DrawBoard(gameBoard);
                 if (MinimumWinningMoves())  
                 {
                     if (gameBoard.CheckForVictory())
                     {
-                        Ui.AnnounceTheWinner(GetPlayersTurn());
+                        ConsoleUI.AnnounceTheWinner(GetPlayersTurn());
                         break;
                     }
                 }
 
                 if (AllMovesPlayed())
                 {
-                    Ui.AnnounceDraw();
+                    ConsoleUI.AnnounceDraw();
                     break;
                 }
 
@@ -103,9 +103,9 @@ namespace TicTacToe
         public void CreatePlayers()
         {
             player1 = new Player();
-            player1.SetPlayerName(Ui.GetPlayerName(1), 1);
+            player1.SetPlayerName(ConsoleUI.GetPlayerName(1), 1);
             player2 = new Player();
-            player2.SetPlayerName(Ui.GetPlayerName(2), 2);
+            player2.SetPlayerName(ConsoleUI.GetPlayerName(2), 2);
             gameCount = 0;    
         }
 

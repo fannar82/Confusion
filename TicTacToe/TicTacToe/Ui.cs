@@ -6,11 +6,10 @@ using TicTacToe;
 
 namespace TicTacToe
 {
-    public static class Ui
+    public static class ConsoleUI : IUI
     {
         private static int selectedRow = 2;
         private static int selectedColumn= 2;
-
 
         /// <summary>
         ///  Input is int, returns a char
