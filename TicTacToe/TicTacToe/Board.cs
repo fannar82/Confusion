@@ -99,24 +99,27 @@ namespace TicTacToe
 
             return false;
         }
-       /* /// <summary>
+        
+        /// <summary>
         /// Function checking the array for a winner (3 of the same values in a row)
         /// </summary>
         /// <returns>Returns true if game is won and false if not</returns>
-        public bool CheckForVictory()
+        // The followin function is not tested yet and therefore
+        // not reliable and not used.
+        public bool CheckForVictory(int x, int y)
         {
-            for (int i = 0; i < boardSize; i++)
-                if (CheckWinHorizontal(0, i))return true;
+            if (CheckWinHorizontal(x, y)) return true;
 
-            for (int i = 0; i < boardSize; i++)
-                if (CheckWinVertical(i, 0)) return true;
+            if (CheckWinVertical(x, y)) return true;
 
-            if (CheckWinULLR(0, 0)) return true;
+            if ( x == y )
+                if (CheckWinULLR(0, 0)) return true;
 
-            if (CheckWinURLL(0, boardSize-1)) return true;
+            if ( (x+boardSize-1 == y) || (y+boardSize-1 == x) )
+                if (CheckWinURLL(0, boardSize-1)) return true;
 
             return false;
-        }*/
+        }
         /// <summary>
         /// Function with information of array content
         /// </summary>
