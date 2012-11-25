@@ -53,7 +53,6 @@
     <Compile Include="BoardTestFixture.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="FuncTest.cs" />
     <Compile Include="PlayerTestFixture.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
