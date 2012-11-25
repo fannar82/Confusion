@@ -11,8 +11,11 @@ else
 	else
 		echo 'New code found'
 		echo 'Autobuilding debug'
+		DATE=$(date +"%y-%m-%d-%T")
+		DATE=${DATE//:/_}
+
 		touch .building
-		nant > latestBuild.txt
+		nant -q -nolog > logs/$Date-latestBuild.txt
 		rm .building
 	fi
 
