@@ -16,6 +16,7 @@
 		<property name="basedir.suffix" value="release" />
 		<call target="clean" />
 		<call target="build" />
+		<call target="finalize" />
   	</target>
   	<target name="clean">
 		<delete dir="${project::get-base-directory()}/builds/${basedir.suffix}" />
@@ -109,6 +110,14 @@
                         tofile="/var/www/index.html" />
                 <copy file="${project::get-base-directory()}/www/green.css"
                         tofile="/var/www/green.css" />
+	</target>
+	<target name="finalize">
+		<zip zipfile="${build.dir}/tictactoe.zip">
+			<fileset basedir="${build.dir}">
+				<include name="*.exe" />
+			</fileset>
+		</zip>
+		
 	</target>
 
 </project>

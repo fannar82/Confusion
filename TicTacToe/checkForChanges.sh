@@ -4,6 +4,9 @@ LOGNAME="$1/logs/build_$DATE.txt"
 NEWNAME="$1/logs/latestBuild.txt"
 
 cd $1
+
+mkdir logs
+
 gitout=$(/usr/bin/git pull)
 if [ "$gitout" == 'Already up-to-date.' ]
 then
