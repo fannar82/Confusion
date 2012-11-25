@@ -2,6 +2,7 @@
 <project name="TicTacToe" default="debug">
 	<property name="project.config" value="debug" />
 	<property name="nant.onfailure" value="failure" />
+	<property name="nant.onsuccess" value="success" />
 	<target name="debug">
 		<property name="project.config" value="debug" />
 		<property name="build.debug" value="true" />
@@ -95,4 +96,17 @@
 		<copy file="${project::get-base-directory()}/logs/latestBuild.txt"
 			tofile="/var/www/latestBuild.txt" />
 	</target>
+	<target name="success">
+		<delete file="/var/www/*.txt" />
+		<copy todir="/var/www/docs">
+                        <fileset basedir="${project::get-base-directory()}/www/docs">
+                                <include name="**/*" />
+                        </fileset>
+                </copy>
+		<copy file="${project::get-base-directory()}/www/index_green.html"
+                        tofile="/var/www/index.html" />
+                <copy file="${project::get-base-directory()}/www/green.css"
+                        tofile="/var/www/style.css" />
+	</target>
+
 </project>
