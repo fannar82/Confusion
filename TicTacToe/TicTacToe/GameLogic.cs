@@ -16,6 +16,21 @@ namespace TicTacToe
         private Player player2;
         private Board gameBoard;
 
+        public Player GetPlayer1()
+        {
+            return player1;
+        }
+
+        public Player GetPlayer2()
+        {
+            return player2;
+        }
+
+        public Board GetGameBoard()
+        {
+            return gameBoard;
+        }
+
         /// <summary>
         /// You have to call this function to start the game, have fun :)
         /// </summary>
@@ -43,19 +58,19 @@ namespace TicTacToe
                 // do-while breaks if players move is legal
                 do
                 {
-                    Ui.AskForPlayersMove(DecidePlayersTurn(), gameBoard);
+                    Ui.AskForPlayersMove(GetPlayersTurn(), gameBoard);
                 } while
                     (
                         !gameBoard.NewMove(Ui.GetSelectedColumn(),
                         Ui.GetSelectedRow(),
-                        DecidePlayersTurn().GetPlayernr())
+                        GetPlayersTurn().GetPlayernr())
                     );
                 Ui.DrawBoard(gameBoard);
                 if (MinimumWinningMoves())  
                 {
                     if (gameBoard.CheckForVictory())
                     {
-                        Ui.AnnounceTheWinner(DecidePlayersTurn());
+                        Ui.AnnounceTheWinner(GetPlayersTurn());
                         break;
                     }
                 }
@@ -74,7 +89,7 @@ namespace TicTacToe
         /// This funciton decides which players turn it is.
         /// </sumary>
         /// <returns>The Player object</returns>
-        private Player DecidePlayersTurn()
+        public Player GetPlayersTurn()
         {
             if (moveCount % 2 == 0)
                 return player1;
@@ -85,7 +100,7 @@ namespace TicTacToe
         /// <summary>
         /// Creates two players and and sets gameCounts to zero.
         /// </summary>
-        private void CreatePlayers()
+        public void CreatePlayers()
         {
             player1 = new Player();
             player1.SetPlayerName(Ui.GetPlayerName(1), 1);
@@ -97,7 +112,7 @@ namespace TicTacToe
         /// <summary>
         /// Creates a new gameBoard and sets moveCount to zero.
         /// </summary>
-        private void NewBoard()
+        public void NewBoard()
         {
             gameBoard = new Board();
             gameBoard.InitializeBoard();

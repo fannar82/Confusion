@@ -53,6 +53,7 @@
     <Compile Include="BoardTestFixture.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="GameLogicTest.cs" />
     <Compile Include="PlayerTestFixture.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
