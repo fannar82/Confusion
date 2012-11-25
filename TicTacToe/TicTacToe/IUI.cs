@@ -8,7 +8,6 @@ namespace TicTacToe
     abstract public class IUI
     {
         private static int selectedRow;
-
         private static int selectedColumn;
 
         /// <summary>

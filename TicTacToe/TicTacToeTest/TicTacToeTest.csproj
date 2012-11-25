@@ -53,6 +53,7 @@
     <Compile Include="BoardTestFixture.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="EndToEndTest.cs" />
     <Compile Include="MockUI.cs" />
     <Compile Include="GameLogicTest.cs" />
     <Compile Include="PlayerTestFixture.cs" />
