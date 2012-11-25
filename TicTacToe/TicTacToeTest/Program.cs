@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Reflection;
 using NUnit;
+using TicTacToe;
 
 namespace TicTacToeTest
 {

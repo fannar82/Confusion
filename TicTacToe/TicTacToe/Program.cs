@@ -10,7 +10,8 @@ namespace TicTacToe
         static void Main(string[] args)
         {
 
-            GameLogic Game = new GameLogic();
+            IUI ui = new ConsoleUI();
+            GameLogic Game = new GameLogic(ui);
             Game.StartGame();
             Console.WriteLine("Thank you for playing hope to see again ");
             Console.ReadKey();
