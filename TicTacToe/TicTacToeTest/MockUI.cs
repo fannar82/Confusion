@@ -3,20 +3,60 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using TicTacToe;
-
 namespace TicTacToe
 {
     public class MockUI : IUI
     {
-        private static int selectedRow = 2;
-        private static int selectedColumn= 2;
+        /// <summary>
+        /// MoveCount counts game moves
+        /// selectRow initialized
+        /// selectColumn initialized
+        /// </summary>
+        const int COLUMNANDROW = 2;
+        private int moveCount = 0;
+        private int selectedRow = 2;
+        private int selectedColumn = 2;
+        public int[,] moves;
+        private bool announceWinner = false;
+        private bool announceDraw = false;
+        private bool anotherGame = false;
+
+        public MockUI() { }
+
+        public bool GetAnotherGame()
+        {
+            return anotherGame;
+        }
+
+        public bool GetAnnounceWinner()
+        {
+            return announceWinner;
+        }
+
+        public bool GetAnnounceDraw()
+        {
+            return announceDraw;
+        }
+
+        public MockUI(int[,] movesFromTest, int arraySize)
+        {
+            moves = new int[arraySize, COLUMNANDROW];
+            for (int i = 0; i < arraySize; i++)
+            {
+                moves[i, 0] = movesFromTest[i, 0];
+                moves[i, 1] = movesFromTest[i, 1];
+            }
+
+        }
+
+
 
         /// <summary>
-        ///  Input is int, returns a char
+        /// Input is int, returns a char
         /// </summary>
         /// <param name="value">symbol for X, O, or white space</param>
         /// <returns>The symbol X, O or white space</returns>
-        public override char ValueToSymbol(int value)
+        public  char ValueToSymbol(int value)
         {
             char symbol;
             switch (value)
@@ -36,112 +76,44 @@ namespace TicTacToe
             }
             return symbol;
         }
-
         /// <summary>
-        ///  Gets a string from keyboard
+        /// Gets a string from keyboard
         /// </summary>
         /// <param name="player">an int value for player</param>
         /// <returns>a string</returns>
-        public override string GetPlayerName(int playerNr)
+        public  string GetPlayerName(int playerNr)
         {
-            //Console.Write("Player" + playerNr + " name: ");
-            //return (Console.ReadLine());
             return "";
         }
 
         /// <summary>
-        ///  Draws the header of the game to a console window
+        /// Draws the header of the game to a console window
         /// </summary>
+        public  void DrawHeader() {}
 
-        public override void DrawHeader()
+        /// <summary>
+        /// clears the console window and resets t
+        /// </summary>
+        public  void ClearScreen()
         {
-            Console.WriteLine("###############");
-            Console.WriteLine("## TicTacToe ##");
-            Console.WriteLine("###############\n");
+//            Console.Clear();
         }
 
         /// <summary>
-        ///  clears the console window and resets t
-        /// </summary>
-        public override void ClearScreen()
-        {
-            Console.Clear();
-        }
-
-        /// <summary>
-        ///  Draws the status of the gameBoard to a console window
+        /// Draws the status of the gameBoard to a console window
         /// </summary>
         /// <param name="gameVoard">an instance of the gameBoard</param>
-        public override void DrawBoard(Board gameBoard)
+        public  void Draw(Board gameBoard)
         {
-            ClearScreen();
-            DrawHeader();
-            int gameBoardSize = gameBoard.GetBoardSize();
-            int[,] gameBoardArray = new int[gameBoardSize, gameBoardSize];
+//            drawBoardbool = false;
+        }
 
-            gameBoardArray = gameBoard.GetArray();
-            for (int y = 1; y <= gameBoardSize; y++)
-
-            {
-                for (int x = 1; x <= gameBoardSize; x++)
-                {
-                    if (x == 1)
-                        Console.Write(" " + ValueToSymbol(gameBoardArray[x-1, y-1]) + " |");
-                    else if (x == gameBoardSize)
-                        Console.Write("| " + ValueToSymbol(gameBoardArray[x-1, y-1]) + " ");
-                    else
-                        Console.Write(" " + ValueToSymbol(gameBoardArray[x-1, y-1]) + " ");
-                }
-                if (y == selectedRow)
-                {
-                    Console.Write("<");
-                }
-                Console.WriteLine();
-                if (y != gameBoardSize)
-                    Console.WriteLine("-----------");
-            }
-            Console.WriteLine();
-            for (int x=1; x <= gameBoardSize; x++)
-            {
-                if (x == selectedColumn)
-                    Console.WriteLine(" ^ ");
-                else
-                    Console.Write("    ");
-            }
-            Console.WriteLine();
-            }
-
-
-        public override void AskForPlayersMove(Player pl, Board gameBoard)
+        public  void AskForPlayersMove(Player pl, Board gameBoard)
         {
             int gameBoardSize = gameBoard.GetBoardSize();
-            ConsoleKeyInfo input ;
-            do
-            {
-                Console.WriteLine(pl.GetPlayerName() + " it is your turn.  ");
-                Console.Write("Move the cursor with the arrow keys \nand confirm the selection with spacebar");
-                input = Console.ReadKey();
-                if (input.Key == ConsoleKey.UpArrow)
-                {
-                    selectedRow = selectedRow - 1;
-                }
-                if (input.Key == ConsoleKey.DownArrow)
-                {
-                    selectedRow = selectedRow + 1;
-                }
-                if (input.Key == ConsoleKey.LeftArrow)
-                {
-                    selectedColumn = selectedColumn - 1;
-                }
-                if (input.Key == ConsoleKey.RightArrow)
-                {
-                    selectedColumn = selectedColumn + 1;
-                }
-                selectedRow = CorrectOutOfBounds(selectedRow, gameBoardSize);
-                selectedColumn = CorrectOutOfBounds(selectedColumn, gameBoardSize);
-                ClearScreen();
-                DrawBoard(gameBoard);
-            } while (input.Key != ConsoleKey.Spacebar);
+            selectedColumn = moves[moveCount, 0];
+            selectedRow = moves[moveCount, 1];
+            moveCount++;
         }
 
         /// <summary>
@@ -151,7 +123,7 @@ namespace TicTacToe
         /// <param name="value">value that must be in range from 0-gbSize</param>
         /// <param name="gbSize">Max value that the function will return</param>
         /// <returns></returns>
-        public override int CorrectOutOfBounds(int value, int gbSize)
+        public  int CorrectOutOfBounds(int value, int gbSize)
         {
             if (value > gbSize)
                 return 1;
@@ -159,51 +131,30 @@ namespace TicTacToe
                 return gbSize;
             return value;
         }
-
-        public override int GetSelectedRow()
+        public  int GetSelectedRow()
         {
             return selectedRow;
         }
-  
-        public override int GetSelectedColumn()
+
+        public  int GetSelectedColumn()
         {
             return selectedColumn;
         }
-
-        public override void AnnounceDraw()
+        
+        public  void AnnounceDraw()
         {
-            Console.WriteLine("Ohh, what a pity, it is a draw.  You have to try again ");
+            announceDraw = true;
         }
 
-        public override void AnnounceTheWinner(Player Pl)
+        public  void AnnounceTheWinner(Player pl)
         {
-            Console.WriteLine(Pl.GetPlayerName() + " is the WINNER");
+            announceWinner = true;
         }
-
-        public override bool PlayAnotherGame()
+        
+        public  bool PlayAnotherGame()
         {
-            Console.WriteLine("Press Y to play again");
-            Console.WriteLine("Press N to quit");
-            ConsoleKeyInfo input = Console.ReadKey();
-            Console.WriteLine(" ");
-            
-            int TryAgain = 0;
-            do
-            {
-                if (input.Key == ConsoleKey.Y)
-                    return true;
-                if (input.Key == ConsoleKey.N)
-                    TryAgain = 1;
-                else
-                {
-                    Console.WriteLine("Not a valid choice. Try agin.");
-                    Console.WriteLine("");
-                    input = Console.ReadKey();
-                }
-            } while (TryAgain != 1);
-            
+            anotherGame = true;
             return false;
         }
     }
 }
-

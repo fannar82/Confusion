@@ -16,7 +16,7 @@ namespace TicTacToe
         /// </summary>
         /// <param name="value">symbol for X, O, or white space</param>
         /// <returns>The symbol X, O or white space</returns>
-        public override char ValueToSymbol(int value)
+        public char ValueToSymbol(int value)
         {
             char symbol;
             switch (value)
@@ -42,7 +42,7 @@ namespace TicTacToe
         /// </summary>
         /// <param name="player">an int value for player</param>
         /// <returns>a string</returns>
-        public override string GetPlayerName(int playerNr)
+        public  string GetPlayerName(int playerNr)
         {
             Console.Write("Player" + playerNr + " name: ");
             return (Console.ReadLine());
@@ -52,7 +52,7 @@ namespace TicTacToe
         ///  Draws the header of the game to a console window
         /// </summary>
 
-        public override void DrawHeader()
+        public  void DrawHeader()
         {
             Console.WriteLine("      #     #     ");
             Console.WriteLine("      #     #     ");
@@ -66,7 +66,7 @@ namespace TicTacToe
         /// <summary>
         ///  clears the console window and resets t
         /// </summary>
-        public override void ClearScreen()
+        public  void ClearScreen()
         {
             Console.Clear();
         }
@@ -75,7 +75,7 @@ namespace TicTacToe
         ///  Draws the status of the gameBoard to a console window
         /// </summary>
         /// <param name="gameVoard">an instance of the gameBoard</param>
-        public override void DrawBoard(Board gameBoard)
+        public  void Draw(Board gameBoard)
         {
             ClearScreen();
             DrawHeader();
@@ -115,7 +115,7 @@ namespace TicTacToe
             }
 
 
-        public override void AskForPlayersMove(Player pl, Board gameBoard)
+        public  void AskForPlayersMove(Player pl, Board gameBoard)
         {
             int gameBoardSize = gameBoard.GetBoardSize();
             ConsoleKeyInfo input ;
@@ -143,7 +143,7 @@ namespace TicTacToe
                 selectedRow = CorrectOutOfBounds(selectedRow, gameBoardSize);
                 selectedColumn = CorrectOutOfBounds(selectedColumn, gameBoardSize);
                 ClearScreen();
-                DrawBoard(gameBoard);
+                Draw(gameBoard);
             } while (input.Key != ConsoleKey.Spacebar);
         }
 
@@ -154,7 +154,7 @@ namespace TicTacToe
         /// <param name="value">value that must be in range from 0-gbSize</param>
         /// <param name="gbSize">Max value that the function will return</param>
         /// <returns></returns>
-        public override int CorrectOutOfBounds(int value, int gbSize)
+        public  int CorrectOutOfBounds(int value, int gbSize)
         {
             if (value > gbSize)
                 return 1;
@@ -163,27 +163,27 @@ namespace TicTacToe
             return value;
         }
 
-        public override int GetSelectedRow()
+        public  int GetSelectedRow()
         {
             return selectedRow;
         }
   
-        public override int GetSelectedColumn()
+        public  int GetSelectedColumn()
         {
             return selectedColumn;
         }
 
-        public override void AnnounceDraw()
+        public  void AnnounceDraw()
         {
             Console.WriteLine("Ohh, what a pity, it is a draw.  You have to try again /n");
         }
 
-        public override void AnnounceTheWinner(Player Pl)
+        public  void AnnounceTheWinner(Player pl)
         {
-            Console.WriteLine(Pl.GetPlayerName() + " is the WINNER");
+            Console.WriteLine(pl.GetPlayerName() + " is the WINNER");
         }
 
-        public override bool PlayAnotherGame()
+        public  bool PlayAnotherGame()
         {
             Console.WriteLine("Do you whant to play again Y / N:");
             ConsoleKeyInfo input = Console.ReadKey();
