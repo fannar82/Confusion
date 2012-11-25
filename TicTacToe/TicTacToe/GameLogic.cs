@@ -74,7 +74,7 @@ namespace TicTacToe
                 ui.DrawBoard(gameBoard);
                 if (MinimumWinningMoves())  
                 {
-                    if (gameBoard.CheckForVictory())
+                    if (gameBoard.CheckForVictory(ui.GetSelectedColumn(), ui.GetSelectedRow()))
                     {
                         ui.AnnounceTheWinner(GetPlayersTurn());
                         break;

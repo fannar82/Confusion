@@ -108,15 +108,15 @@ namespace TicTacToe
         // not reliable and not used.
         public bool CheckForVictory(int x, int y)
         {
-            if (CheckWinHorizontal(x, y)) return true;
+            if (CheckWinHorizontal(x-1, y-1)) return true;
 
-            if (CheckWinVertical(x, y)) return true;
+            if (CheckWinVertical(x-1, y-1)) return true;
 
-            if ( x == y )
-                if (CheckWinULLR(0, 0)) return true;
+            if ( x-1 == y-1 )
+                if (CheckWinULLR(x-1, y-1)) return true;
 
-            if ( (x+boardSize-1 == y) || (y+boardSize-1 == x) )
-                if (CheckWinURLL(0, boardSize-1)) return true;
+            if ( (x-1+boardSize-1 == y-1) || (y-1+boardSize-1 == x-1) )
+                if (CheckWinURLL(x-1, y-1)) return true;
 
             return false;
         }
@@ -163,7 +163,7 @@ namespace TicTacToe
         private bool CheckWinVertical(int x, int y)
         {
             for (int i = 0; i < boardSize; i++)
-                if (gameBoard[i, x] != gameBoard[x, y])
+                if (gameBoard[i, y] != gameBoard[x, y])
                     return false;
 
             return true;
