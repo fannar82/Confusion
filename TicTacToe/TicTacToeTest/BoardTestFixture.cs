@@ -240,7 +240,34 @@ namespace TicTacToeTest
         /// Sending in moves that do not lead to victory 
         /// </summary>
         [Test]
-        public void TestingCheckForVictory_False()
+        public void TestingCheckForVictory_TrueIn9Games()
+        {
+            //Arrange
+            Board br = new Board(3);
+            bool expected = true;
+
+            //Act
+            br.InitializeBoard();
+            br.NewMove(2, 2, 2);
+            br.NewMove(1, 1, 1);
+            br.NewMove(3, 3, 2);
+            br.NewMove(3, 2, 1);
+            br.NewMove(1, 2, 2);
+            br.NewMove(2, 1, 1);
+            br.NewMove(3, 1, 2);
+            br.NewMove(2, 3, 1);
+            br.NewMove(1, 3, 2);
+            bool actual = br.CheckForVictory();
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+        /// <summary>
+        /// Testing function CheckForVictory
+        /// Sending in moves that do not lead to victory 
+        /// </summary>
+        [Test]
+        public void TestingCheckForVictory_FalseIn9Games()
         {
             //Arrange
             Board br = new Board(3);
@@ -248,10 +275,14 @@ namespace TicTacToeTest
 
             //Act
             br.InitializeBoard();
-            br.NewMove(3, 1, 2);
-            br.NewMove(1, 1, 1);
             br.NewMove(2, 2, 2);
-            br.NewMove(3, 3, 1);
+            br.NewMove(1, 1, 1);
+            br.NewMove(3, 3, 2);
+            br.NewMove(3, 2, 1);
+            br.NewMove(1, 2, 2);
+            br.NewMove(2, 1, 1);
+            br.NewMove(3, 1, 2);
+            br.NewMove(1, 3, 1);
             br.NewMove(2, 3, 2);
             bool actual = br.CheckForVictory();
 

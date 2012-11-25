@@ -79,23 +79,15 @@ namespace TicTacToe
         /// <returns>Returns true if game is won and false if not</returns>
         public bool CheckForVictory()
         {
-            // Testing 8 possibilities of winning the game
-            if (gameBoard[0, 0] == newValue && gameBoard[0, 1] == newValue && gameBoard[0, 2] == newValue)
-                return true;
-            if (gameBoard[1, 0] == newValue && gameBoard[1, 1] == newValue && gameBoard[1, 2] == newValue)
-                return true;
-            if (gameBoard[2, 0] == newValue && gameBoard[2, 1] == newValue && gameBoard[2, 2] == newValue)
-                return true;
-            if (gameBoard[0, 0] == newValue && gameBoard[1, 0] == newValue && gameBoard[2, 0] == newValue)
-                return true;
-            if (gameBoard[0, 1] == newValue && gameBoard[1, 1] == newValue && gameBoard[2, 1] == newValue)
-                return true;
-            if (gameBoard[0, 2] == newValue && gameBoard[1, 2] == newValue && gameBoard[2, 2] == newValue)
-                return true;
-            if (gameBoard[0, 0] == newValue && gameBoard[1, 1] == newValue && gameBoard[2, 2] == newValue)
-                return true;
-            if (gameBoard[0, 2] == newValue && gameBoard[1, 1] == newValue && gameBoard[2, 0] == newValue)
-                return true;
+            for (int i = 0; i < boardSize; i++)
+                if (CheckWinHorizontal(0, i))return true;
+
+            for (int i = 0; i < boardSize; i++)
+                if (CheckWinVertical(i, 0)) return true;
+
+            if (CheckWinULLR(0, 0)) return true;
+
+            if (CheckWinURLL(0, boardSize-1)) return true;
 
             return false;
         }
@@ -114,6 +106,70 @@ namespace TicTacToe
         public int GetBoardSize()
         {
             return boardSize;
+        }
+
+        /// <summary>
+        /// Checks for a win in the selected X row. It can take in
+        /// the last move and check if there is a win from that position.
+        /// </summary>
+        /// <param name="x">The X position of the last move.</param>
+        /// <param name="y">The Y position of the last move.</param>
+        /// <returns>True if there is a win in the Y row</returns>
+        private bool CheckWinHorizontal(int x, int y)
+        {
+            for (int i = 0; i < boardSize; i++)
+                if (gameBoard[x, i] != gameBoard[x, y])
+                    return false;
+
+            return true;
+        }
+
+        /// <summary>
+        /// Checks for a win in the selected Y column. It can take in
+        /// the last move and check if there is a win from that position.
+        /// </summary>
+        /// <param name="x">The X position of the last move.</param>
+        /// <param name="y">The Y position of the last move.</param>
+        /// <returns>True if there is a win in the Y row</returns>
+        private bool CheckWinVertical(int x, int y)
+        {
+            for (int i = 0; i < boardSize; i++)
+                if (gameBoard[i, x] != gameBoard[x, y])
+                    return false;
+
+            return true;
+        }
+
+        /// <summary>
+        /// Checks for a win in the upper left to lower right line. It can take
+        /// in the last move and check if there is a win from that position.
+        /// </summary>
+        /// <param name="x">The X position of the last move.</param>
+        /// <param name="y">The Y position of the last move.</param>
+        /// <returns>True if there is a win in the upper left to the lower right line.</returns>
+        private bool CheckWinULLR(int x, int y)
+        {
+            for (int i = 0; i < boardSize; i++)
+                if (gameBoard[i, i] != gameBoard[x, y])
+                    return false;
+
+            return true;
+        }
+
+        /// <summary>
+        /// Checks for a win in the upper right to lower left line. It can take
+        /// in the last move and check if there is a win from that position.
+        /// </summary>
+        /// <param name="x">The X position of the last move.</param>
+        /// <param name="y">The Y position of the last move.</param>
+        /// <returns>True if there is a win in the upper right to lower left line.</returns>
+        private bool CheckWinURLL(int x, int y)
+        {
+            for (int i = 0; i < boardSize; i++)
+                if (gameBoard[i, (boardSize-1 - i)] != gameBoard[x, y])
+                    return false;
+
+            return true;
         }
     }
 }
