@@ -20,15 +20,22 @@
 		<delete dir="${project::get-base-directory()}/builds/${basedir.suffix}" />
 	</target>
 	<target name="build" description="Compiles the source code">
-		<property name="build.dir" value="${project::get-base-directory()}/builds/${basedir.suffix}" />
+		<property name="build.dir" 
+			value="${project::get-base-directory()}/builds/${basedir.suffix}" />
 		<mkdir dir="${build.dir}/docs" />
-		<csc target="exe" output="${build.dir}/${project::get-name()}.exe" debug="${build.debug}" doc="${build.dir}/docs/${project::get-name()}.xml">
+		<mkdir dir="${build.dir}/reports" />
+		<csc target="exe"
+			verbose="${build.debug}"
+			output="${build.dir}/${project::get-name()}.exe" 
+			debug="${build.debug}" 
+			nowarn="1591,1572,1573"
+			doc="${build.dir}/docs/${project::get-name()}.xml">
   			<sources>
 				<include name="TicTacToe/*.cs" />
   			</sources>
 		</csc>
 		<mkdir dir="${project::get-base-directory()}/www/docs" />
-		<exec program="mdoc">
+		<exec program="mdoc" output="${build.dir}/reports/mdoc_update.txt" >
 			<arg value="update" />
 			<arg value="-o" />
 			<arg value="${build.dir}/docs/" />
@@ -37,7 +44,7 @@
 			<arg value="${build.dir}/${project::get-name()}.exe" />
 		</exec>
 		<echo message="export html" />
-		<exec program="mdoc">
+		<exec program="mdoc" output="${build.dir}/reports/mdoc_html.txt" >
 			<arg value="export-html" />
 			<arg value="-o" />
 			<arg value="${project::get-base-directory()}/www/docs" />
@@ -58,15 +65,9 @@
   			</csc>
   			<mkdir dir="${build.dir}/reports" />
   			<nunit2>
-				<formatter type="Xml" usefile="true" extension=".xml" outputdir="${build.dir}/reports" />
+				<formatter type="Plain" usefile="true" extension=".txt" outputdir="${build.dir}/reports" />
 				<test assemblyname="${build.dir}/${project::get-name()}_tests.dll" />
   			</nunit2>
-			<xmlpeek file="${build.dir}/reports/${project::get-name()}_tests.dll-results.xml"
-				xpath="/test-results/@total"
-				property="failures">
-			</xmlpeek>
-			<echo message="${failures}"/>
-			<echo message="${build.dir}/${project::get-name()}.exe" />
 			<exec program="gendarme" output="${build.dir}/reports/codefaults.txt">
 				<arg value="--config" />
 				<arg value="rules.xml" />
