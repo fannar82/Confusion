@@ -1,7 +1,0 @@
-      [csc] /home/jonhallur/code/Confusion/TicTacToe/tictactoe.build(28,4): Attribute 'nowarn' for <csc ... /> is deprecated.  Use the <nowarn> element instead.
-      [csc] /home/jonhallur/code/Confusion/TicTacToe/TicTacToeTest/GameLogicTest.cs(13,13): warning CS0414: The private field `TicTacToeTest.GameLogicTest.ui' is assigned but its value is never used
-
-
-/home/jonhallur/code/Confusion/TicTacToe/tictactoe.build(72,5):
-External Program Failed: gendarme (return code was 1)
-
