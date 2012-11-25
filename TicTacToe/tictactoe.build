@@ -90,5 +90,12 @@
 		<copy
 			file="${project::get-base-directory()}/www/index.html"
 			tofile="/var/www/index.html" />
+<<<<<<< HEAD
+=======
+		<copy file="${project::get-base-directory()}/www/style.css"
+			tofile="/var/www/style.css" />
+		<copy file="${project::get-base-directory()}/logs/latestBuild.txt"
+			tofile="/var/www/latestBuild.txt" />
+>>>>>>> 6d1c06dce535931594a418c13aa19c258dd46a3f
 	</target>
 </project>
