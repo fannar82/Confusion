@@ -54,9 +54,13 @@ namespace TicTacToe
 
         public override void DrawHeader()
         {
-            Console.WriteLine("###############");
-            Console.WriteLine("## TicTacToe ##");
-            Console.WriteLine("###############\n");
+            Console.WriteLine("      #   #     ");
+            Console.WriteLine("      #   #     ");
+            Console.WriteLine(" ###############");
+            Console.WriteLine("  Tic #Tac# Toe ");
+            Console.WriteLine(" ###############");
+            Console.WriteLine("      #   #     ");
+            Console.WriteLine("      #   #     \n");
         }
 
         /// <summary>
@@ -181,10 +185,9 @@ namespace TicTacToe
 
         public override bool PlayAnotherGame()
         {
-            Console.WriteLine("Press Y to play again");
-            Console.WriteLine("Press N to quit");
+            Console.WriteLine("Do you whant to play again Y / N:");
             ConsoleKeyInfo input = Console.ReadKey();
-            Console.WriteLine(" ");
+            Console.WriteLine("");
             
             int TryAgain = 0;
             do
@@ -195,9 +198,9 @@ namespace TicTacToe
                     TryAgain = 1;
                 else
                 {
-                    Console.WriteLine("Not a valid choice. Try agin.");
-                    Console.WriteLine("");
+                    Console.WriteLine("Not a valid choice. Press Y to play again or N to quit.");
                     input = Console.ReadKey();
+                    Console.WriteLine("");
                 }
             } while (TryAgain != 1);
             
