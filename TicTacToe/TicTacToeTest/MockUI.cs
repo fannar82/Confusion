@@ -46,10 +46,7 @@ namespace TicTacToe
                 moves[i, 0] = movesFromTest[i, 0];
                 moves[i, 1] = movesFromTest[i, 1];
             }
-
         }
-
-
 
         /// <summary>
         /// Input is int, returns a char
@@ -76,6 +73,7 @@ namespace TicTacToe
             }
             return symbol;
         }
+
         /// <summary>
         /// Gets a string from keyboard
         /// </summary>
@@ -131,27 +129,27 @@ namespace TicTacToe
                 return gbSize;
             return value;
         }
-        public  int GetSelectedRow()
+        public int GetSelectedRow()
         {
             return selectedRow;
         }
 
-        public  int GetSelectedColumn()
+        public int GetSelectedColumn()
         {
             return selectedColumn;
         }
         
-        public  void AnnounceDraw()
+        public void AnnounceDraw()
         {
             announceDraw = true;
         }
 
-        public  void AnnounceTheWinner(Player pl)
+        public void AnnounceTheWinner(Player pl)
         {
             announceWinner = true;
         }
         
-        public  bool PlayAnotherGame()
+        public bool PlayAnotherGame()
         {
             anotherGame = true;
             return false;
