@@ -76,6 +76,19 @@
 		</if>
 	</target>
 	<target name="failure" >
-		<echo message="Failure ?" />
+		<delete file="/usr/share/nginx/www/*.txt" />
+		<copy todir="/usr/share/nginx/www">
+			<fileset basedir="${build.dir}/reports">
+				<include name="*.txt" />
+			</fileset>
+		</copy>
+		<copy todir="/usr/share/nginx/www/docs">
+			<fileset basedir="${project::get-base-directory()}/www/docs">
+				<include name="**/*" />
+			</fileset>
+		</copy>
+		<copy
+			file="${project::get-base-directory()}/www/index.html"
+			tofile="/usr/share/nginx/www/index.html" />
 	</target>
 </project>
