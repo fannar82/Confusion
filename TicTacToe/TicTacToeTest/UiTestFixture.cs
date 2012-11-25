@@ -10,8 +10,12 @@ namespace TicTacToeTest
     [TestFixture]
     public class UiTestFixture
     {
-        /*
+//    Nýtt nafn ConsoleUITest
+        
+  
         const int MAX_BOARDSIZE = 3;
+        IUI TestConsoleUI = new ConsoleUI();
+
         /// <summary>
         ///  Tests if input 0 return ' ' space
         /// </summary>
@@ -23,13 +27,13 @@ namespace TicTacToeTest
             char expected = ' ';
 
             //Act
-            char actual = Ui.ValueToSymbol(value);
+            char actual = TestConsoleUI.ValueToSymbol(value);
 
             //Assert
             Assert.AreEqual(expected, actual);
         }
 
-
+        
         /// <summary>
         /// Tests if input 1 return X
         /// </summary>
@@ -41,13 +45,13 @@ namespace TicTacToeTest
             var expected = 'X';
 
             //Act
-            var actual = Ui.ValueToSymbol(value);
+            var actual = TestConsoleUI.ValueToSymbol(value);
 
             //Assert
             Assert.AreEqual(expected, actual);
         }
 
-
+        
         /// <summary>
         /// Tests if input 2 return O
         /// </summary>
@@ -59,12 +63,13 @@ namespace TicTacToeTest
             var expected = 'O';
 
             //Act
-            var actual = Ui.ValueToSymbol(value);
+            var actual = TestConsoleUI.ValueToSymbol(value);
 
             //Assert
             Assert.AreEqual(expected, actual);
         }
 
+        
         /// <summary>
         /// Tests if input H, returns E (Error)
         /// </summary>
@@ -76,7 +81,7 @@ namespace TicTacToeTest
             var expected = '\0';
 
             //Act
-            var actual = Ui.ValueToSymbol(value);
+            var actual = TestConsoleUI.ValueToSymbol(value);
 
             //Assert
             Assert.AreEqual(expected, actual);
@@ -93,12 +98,12 @@ namespace TicTacToeTest
             var expected = 1;
 
             //Act
-            var actual = Ui.CorrectOutOfBounds(value, boardSize);
+            var actual = TestConsoleUI.CorrectOutOfBounds(value, boardSize);
 
             //Assert
             Assert.AreEqual(expected, actual);
         }
-
+        
         /// <summary>
         /// Tests CorrectOutOfBounds if less than 0 then returns MAX_BOARDSIZE
         /// </summary>
@@ -110,15 +115,15 @@ namespace TicTacToeTest
             var expected = MAX_BOARDSIZE;
 
             //Act
-            var actual = Ui.CorrectOutOfBounds(value, boardSize);
+            var actual = TestConsoleUI.CorrectOutOfBounds(value, boardSize);
 
             //Assert
             Assert.AreEqual(expected, actual);
         }
-    }
-               /* Það þarf að laga testin þannig að þau dependi ekki á aðra klasa. Smá mis í gangi.
+                
+/* til að testa þetta fall þarf að yfirskrifa Console.ReadKey() - ToDo
 
-                /// <summary>
+        /// <summary>
         /// Tests bool play another game
         /// </summary>
         [Test]
@@ -128,79 +133,26 @@ namespace TicTacToeTest
             bool expected = false;
 
             //Act
-            bool actual = Ui.PlayAnothergame();
+            bool actual = TestConsoleUI.PlayAnotherGame();
 
             //Assert
             Assert.AreEqual(expected, actual);
         }
 
-        
-
+*/
+        /* Þetta er ekki vegna þess að þetta test er í viðmótstesti - 
+        * 
  
-            /// <summary>
-            /// PrintOutTest not part of unitTest
-            /// </summary>
-            [Test]
-            public void TestingDrawBoard()
-            {
-                //Arrange
-                Board gameBoard = new Board();
-                gameBoard.initializeBoard();
-                gameBoard.newMove(1, 1, 2);
-                gameBoard.newMove(2, 1, 1);
-  
-                Ui.selectedColumn = 1;
-                Ui.selectedRow = 0;
+        /// <summary>
+        /// PrintOutTest not part of unitTest
+        /// </summary>
+        [Test]
+        public void TestingDrawBoard()
+        {
+            //Þetta er ekki vegna þess að þetta
+            //test er í viðmótstesti
+        }
 
-                //Act
-//                Ui.ClearScreen();
-                Ui.DrawBoard(gameBoard);
-                //Assert
-            }
-
-
-            
-            /// <summary>
-            /// Tests input from keyboard and and returns string (shound not be a TDD)
-            /// </summary>
-            [Test]
-            public void TestingInputFromfakeKeyboard()
-            {
-                //Arrange
-                string expected = "Player1";
-                
-
-                //Act
-                string actual = Ui.SetPlayerName(1);
-                
-
-                //Assert
-                Assert.AreEqual(expected, actual);
-            }
-
-    
-
-                [Test]
-                public void TestingDisplayPlayerName_ExpectingString_Returning_PlayerName()
-                {
-                    //Arrange
-
-            
-                    Player expectedName = new Player();
-                    expectedName.PlayerName = "Player1";
-
-                    //Act
-                    string actualPlayerName = "Pla";
-
-                    //Assert
-                    Assert.IsTrue(actualPlayerName == expectedName.PlayerName);
-
-                    return actualPlayerName;
-                }
-
-                   [Test]
-                       public void TestNewBoard
-
-            } */
+        */
     }
 }
