@@ -2,30 +2,31 @@
 	<html> 
 		<head>
 			<meta charset=utf-8>
-			<title>jQuery Events 201</title>
+			<title>Confusion Report Page</title>
 			<link rel="stylesheet" href="style.css">
 	<script 
-src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" />
+src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" ></script>
 		</head> 
 	<body>
-	<div id="headline">
-		*Error* <br />
-		Danger Will Robinson Danger! <br />
-		*Error* <br />
-	</div>
+	<h1>
+		Danger Will Robinson Danger!
+	</h1>
 	<a href="docs/index.html">Code Documentation</a>	
-	<div id="errorReport">Error Report_</div>
-	
-	<div id="csc"> </div>
-	<div id="gendarme"> </div>
-	<div id="nunit"> </div>
+	<h2>Error Report</h2>
+	<div></div>
+	<h3>Compiler output</h3>
+	<pre id="csc"> </pre>
+	<h3>Gendarme output</h3>
+	<pre id="gendarme"> </pre>
+	<h3>Nunit output</h3>
+	<pre id="nunit"> </pre>
 
-	<script>
+	<script type="text/javascript">
 	
 		// If there is an error it checks the error reporting and displays the error
 	 
 		
-		$("#csc").load("/csc-error.html", function(response, status, xhr) {
+		$("#csc").load("/latestBuild.txt", function(response, status, xhr) {
 	
 		if (status == "error") {
 			var msg = "No errors to report from CSC";
@@ -42,7 +43,7 @@ src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" />
                         }
                 });
 
-                $("#nunit").load("/TicTacToeTests.dll-results.txt", function(response, status, xhr) {
+                $("#nunit").load("/TicTacToe_tests.dll-results.txt", function(response, status, xhr) {
 
                 if (status == "error") {
                         var msg = "No errors to report from NUnit";
