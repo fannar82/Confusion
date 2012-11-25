@@ -17,9 +17,10 @@ namespace TicTacToe
         private Board gameBoard;
         private IUI ui;
 
-        public GameLogic(IUI ui)
+ //       public GameLogic()
+          public GameLogic(IUI iui)
         {
-            this.ui = ui;
+            this.ui = iui;
         }
 
         public Player GetPlayer1()
@@ -59,7 +60,7 @@ namespace TicTacToe
             NewBoard();
             while (true) 
             {
-                ui.DrawBoard(gameBoard);
+                ui.Draw(gameBoard);
 
                 // do-while breaks if players move is legal
                 do
@@ -71,7 +72,7 @@ namespace TicTacToe
                         ui.GetSelectedRow(),
                         GetPlayersTurn().GetPlayernr())
                     );
-                ui.DrawBoard(gameBoard);
+                ui.Draw(gameBoard);
                 if (MinimumWinningMoves())  
                 {
                     if (gameBoard.CheckForVictory(ui.GetSelectedColumn(), ui.GetSelectedRow()))

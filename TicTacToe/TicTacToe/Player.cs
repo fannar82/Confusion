@@ -15,9 +15,9 @@ namespace TicTacToe
 
 
 
-        public void SetPlayerName(string Pname, int plNr)
+        public void SetPlayerName(string pname, int plNr)
         {
-            name = Pname;
+            name = pname;
             playerNr = plNr;
         }
 
