@@ -79,6 +79,32 @@ namespace TicTacToe
         /// <returns>Returns true if game is won and false if not</returns>
         public bool CheckForVictory()
         {
+            // Testing 8 possibilities of winning the game
+            if (gameBoard[0, 0] == newValue && gameBoard[0, 1] == newValue && gameBoard[0, 2] == newValue)
+                return true;
+            if (gameBoard[1, 0] == newValue && gameBoard[1, 1] == newValue && gameBoard[1, 2] == newValue)
+                return true;
+            if (gameBoard[2, 0] == newValue && gameBoard[2, 1] == newValue && gameBoard[2, 2] == newValue)
+                return true;
+            if (gameBoard[0, 0] == newValue && gameBoard[1, 0] == newValue && gameBoard[2, 0] == newValue)
+                return true;
+            if (gameBoard[0, 1] == newValue && gameBoard[1, 1] == newValue && gameBoard[2, 1] == newValue)
+                return true;
+            if (gameBoard[0, 2] == newValue && gameBoard[1, 2] == newValue && gameBoard[2, 2] == newValue)
+                return true;
+            if (gameBoard[0, 0] == newValue && gameBoard[1, 1] == newValue && gameBoard[2, 2] == newValue)
+                return true;
+            if (gameBoard[0, 2] == newValue && gameBoard[1, 1] == newValue && gameBoard[2, 0] == newValue)
+                return true;
+
+            return false;
+        }
+       /* /// <summary>
+        /// Function checking the array for a winner (3 of the same values in a row)
+        /// </summary>
+        /// <returns>Returns true if game is won and false if not</returns>
+        public bool CheckForVictory()
+        {
             for (int i = 0; i < boardSize; i++)
                 if (CheckWinHorizontal(0, i))return true;
 
@@ -90,7 +116,7 @@ namespace TicTacToe
             if (CheckWinURLL(0, boardSize-1)) return true;
 
             return false;
-        }
+        }*/
         /// <summary>
         /// Function with information of array content
         /// </summary>
