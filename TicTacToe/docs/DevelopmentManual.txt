@@ -11,3 +11,29 @@ Step 7. add buildAndTest.sh into crontab.
 
 Buildscript
 
+
+Step 1. 
+sudo apt-get update
+
+sudo apt-get install -y git
+
+sudo apt-get install -y nant
+
+sudo apt-get install -y monodoc-base
+
+sudo apt-get install -y gendarme
+
+sudo apt-get install -y apache2
+
+cd /var
+sudo chmod 777 www/
+sudo chmod 777 www/index.html
+
+Step 2.
+git clone https://github.com/fannar82/Confusion.git
+
+Step 3.
+cd Confusion/TicTacToe
+
+Step 4.
+

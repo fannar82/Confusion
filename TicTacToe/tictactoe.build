@@ -2,6 +2,7 @@
 <project name="TicTacToe" default="debug">
 	<property name="project.config" value="debug" />
 	<property name="nant.onfailure" value="failure" />
+	<property name="nant.onsuccess" value="success" />
 	<target name="debug">
 		<property name="project.config" value="debug" />
 		<property name="build.debug" value="true" />
@@ -76,19 +77,38 @@
 		</if>
 	</target>
 	<target name="failure" >
-		<delete file="/usr/share/nginx/www/*.txt" />
-		<copy todir="/usr/share/nginx/www">
+		<delete file="/var/www/*.txt" />
+		<delete file="/var/www/index.html" />
+		<copy todir="/var/www">
 			<fileset basedir="${build.dir}/reports">
 				<include name="*.txt" />
 			</fileset>
 		</copy>
-		<copy todir="/usr/share/nginx/www/docs">
+		<copy todir="/var/www/docs">
 			<fileset basedir="${project::get-base-directory()}/www/docs">
 				<include name="**/*" />
 			</fileset>
 		</copy>
 		<copy
 			file="${project::get-base-directory()}/www/index.html"
-			tofile="/usr/share/nginx/www/index.html" />
+			tofile="/var/www/index.html" />
+		<copy file="${project::get-base-directory()}/www/style.css"
+			tofile="/var/www/style.css" />
+		<copy file="${project::get-base-directory()}/logs/latestBuild.txt"
+			tofile="/var/www/latestBuild.txt" />
 	</target>
+	<target name="success">
+		<delete file="/var/www/*.txt" />
+		<delete file="/var/www/index.html" />
+		<copy todir="/var/www/docs">
+                        <fileset basedir="${project::get-base-directory()}/www/docs">
+                                <include name="**/*" />
+                        </fileset>
+                </copy>
+		<copy file="${project::get-base-directory()}/www/index_green.html"
+                        tofile="/var/www/index.html" />
+                <copy file="${project::get-base-directory()}/www/green.css"
+                        tofile="/var/www/green.css" />
+	</target>
+
 </project>
