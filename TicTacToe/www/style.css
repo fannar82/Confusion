@@ -1,0 +1,29 @@
+body {
+    width: 700px;
+	background-color:red;
+    margin: auto;
+    text-align: center;
+}
+#headline {
+     position: relative;
+        text-align:center;
+        font-size: 48px;
+        margin-top: 20px;
+        color:blue;
+		  font-family: 'Myriad-Pro', 'Myriad', helvetica, arial, 
+sans-serif;
+        text-shadow: 2px 3px 3px #292929;
+        letter-spacing: -1px;
+        -webkit-text-stroke: 1px black;
+}
+#errorReport {
+	margin-top:20px;
+	font-family: 'Myrad-Pro', 'Myriad', 'Helvetica', 'Arial', sans-serif;
+	font-size:36px;
+	color:blue;
+}
+#csc{
+	border:solid 1px black;
+	margin-top:20px;
+	}
+

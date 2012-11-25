@@ -1,0 +1,58 @@
+<!doctype html> <html> <head>
+	<meta charset=utf-8>
+	<title>jQuery Events 201</title>
+	<link rel="stylesheet" href="style.css">
+	<script 
+src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script> 
+</head> <body>
+	<div id="headline">
+		*Error* <br />
+		Danger Will Robinson Danger! <br />
+		*Error* <br />
+	</div>
+		
+	<div id="errorReport">Error Report</div>
+	
+	<div id="csc"> </div>
+	<div id="gendarme"> </div>
+	<div id="nunit"> </div>
+
+	<script>
+	
+		// If there is an error it checks the error reporting and displays the error
+	 
+		
+		$("#csc").load("/csc-error.html", function(response, status, xhr) {
+	
+		if (status == "error") {
+			var msg = "No errors to report from CSC";
+			$("#csc").html(msg);
+			}
+		});
+		
+
+                $("#gendarme").load("/gendarme-error.html", function(response, status, xhr) {
+
+                if (status == "error") {
+                        var msg = "No errors to report from Gendarme";
+                        $("#gendarme").html(msg);
+                        }
+                });
+
+                $("#nunit").load("/nunit-error.txt", function(response, status, xhr) {
+
+                if (status == "error") {
+                        var msg = "No errors to report from NUnit";
+                        $("#nunit").html(msg);
+                        }
+		});
+
+		// Refreshes the site every one min
+		function timedRefresh() {
+		setTimeout("location.reload(true);",60000);
+		}
+		timedRefresh();
+	
+	</script> 
+</body> 
+</html>
