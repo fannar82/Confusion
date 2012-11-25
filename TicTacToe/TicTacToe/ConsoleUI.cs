@@ -54,13 +54,13 @@ namespace TicTacToe
 
         public override void DrawHeader()
         {
-            Console.WriteLine("      #   #     ");
-            Console.WriteLine("      #   #     ");
-            Console.WriteLine(" ###############");
-            Console.WriteLine("  Tic #Tac# Toe ");
-            Console.WriteLine(" ###############");
-            Console.WriteLine("      #   #     ");
-            Console.WriteLine("      #   #     \n");
+            Console.WriteLine("      #     #     ");
+            Console.WriteLine("      #     #     ");
+            Console.WriteLine(" #################");
+            Console.WriteLine("  Tic # Tac # Toe ");
+            Console.WriteLine(" #################");
+            Console.WriteLine("      #     #     ");
+            Console.WriteLine("      #     #     \n");
         }
 
         /// <summary>
@@ -175,7 +175,7 @@ namespace TicTacToe
 
         public override void AnnounceDraw()
         {
-            Console.WriteLine("Ohh, what a pity, it is a draw.  You have to try again ");
+            Console.WriteLine("Ohh, what a pity, it is a draw.  You have to try again /n");
         }
 
         public override void AnnounceTheWinner(Player Pl)
