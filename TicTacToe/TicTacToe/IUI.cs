@@ -5,7 +5,7 @@ using System.Text;
 
 namespace TicTacToe
 {
-    public static class IUI
+    public class IUI
     {
         private static int selectedRow;
         private static int selectedColumn;

@@ -6,7 +6,7 @@ using TicTacToe;
 
 namespace TicTacToe
 {
-    public static class ConsoleUI : IUI
+    public class ConsoleUI : IUI
     {
         private static int selectedRow = 2;
         private static int selectedColumn= 2;
