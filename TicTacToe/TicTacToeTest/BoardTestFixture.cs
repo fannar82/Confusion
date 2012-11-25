@@ -230,7 +230,7 @@ namespace TicTacToeTest
             br.NewMove(2, 2, 2);
             br.NewMove(3, 3, 1);
             br.NewMove(1, 3, 2);
-            bool actual = br.CheckForVictory();
+            bool actual = br.CheckForVictory(1, 3);
 
             //Assert
             Assert.AreEqual(expected, actual);
@@ -257,7 +257,7 @@ namespace TicTacToeTest
             br.NewMove(3, 1, 2);
             br.NewMove(2, 3, 1);
             br.NewMove(1, 3, 2);
-            bool actual = br.CheckForVictory();
+            bool actual = br.CheckForVictory(1, 3);
 
             //Assert
             Assert.AreEqual(expected, actual);
@@ -284,7 +284,7 @@ namespace TicTacToeTest
             br.NewMove(3, 1, 2);
             br.NewMove(1, 3, 1);
             br.NewMove(2, 3, 2);
-            bool actual = br.CheckForVictory();
+            bool actual = br.CheckForVictory(2, 3);
 
             //Assert
             Assert.AreEqual(expected, actual);
