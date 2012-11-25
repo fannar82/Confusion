@@ -78,6 +78,7 @@
 	</target>
 	<target name="failure" >
 		<delete file="/var/www/*.txt" />
+		<delete file="/var/www/index.html" />
 		<copy todir="/var/www">
 			<fileset basedir="${build.dir}/reports">
 				<include name="*.txt" />
@@ -98,6 +99,7 @@
 	</target>
 	<target name="success">
 		<delete file="/var/www/*.txt" />
+		<delete file="/var/www/index.html" />
 		<copy todir="/var/www/docs">
                         <fileset basedir="${project::get-base-directory()}/www/docs">
                                 <include name="**/*" />
@@ -106,7 +108,7 @@
 		<copy file="${project::get-base-directory()}/www/index_green.html"
                         tofile="/var/www/index.html" />
                 <copy file="${project::get-base-directory()}/www/green.css"
-                        tofile="/var/www/style.css" />
+                        tofile="/var/www/green.css" />
 	</target>
 
 </project>
