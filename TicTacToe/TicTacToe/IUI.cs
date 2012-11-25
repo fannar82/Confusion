@@ -7,8 +7,10 @@ namespace TicTacToe
 {
     abstract public class IUI
     {
-        private static int selectedRow;
-        private static int selectedColumn;
+
+        //private static int selectedRow;
+
+        //private static int selectedColumn;
 
         /// <summary>
         ///  Input is int, returns a char
