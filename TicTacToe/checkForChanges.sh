@@ -1,8 +1,3 @@
-DATE=$(date +"%y-%m-%d-%T")
-DATE=${DATE//:/_}
-LOGNAME="$1/logs/build_$DATE.txt"
-NEWNAME="$1/logs/latestBuild.txt"
-
 cd $1
 
 mkdir logs
@@ -20,9 +15,8 @@ else
 		echo 'New code found'
 		echo 'Autobuilding debug'
 		touch .building
-		nant -q -nologo > $LOGNAME
+		nant -q -nologo > logs/latestBuild.txt
 		rm .building
-		cp $LOGNAME $NEWNAME
 	fi
 
 fi
