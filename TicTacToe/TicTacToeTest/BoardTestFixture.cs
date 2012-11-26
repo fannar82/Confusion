@@ -134,7 +134,7 @@ namespace TicTacToeTest
         {
             //Arrange
             Board br = new Board();
-            var expected = false;
+            var expected = true;
 
             //Act
             var actual = br.NewMove(4, 5, 2); //Array coords 3,5
