@@ -1,4 +1,4 @@
 TIC_PATH=$(pwd)
-echo "* * * * * $TIC_PATH/checkForChanges.sh $TIC_PATH > $TIC_PATH/logs/cronlog.txt" > cron.txt
+echo "* * * * * $TIC_PATH/checkForChanges.sh $TIC_PATH" > cron.txt
 crontab cron.txt
 rm cron.txt
