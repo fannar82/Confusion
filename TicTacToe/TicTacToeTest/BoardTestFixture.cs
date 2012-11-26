@@ -40,7 +40,7 @@ namespace TicTacToeTest
         {
             //Arrange
             Board br = new Board(4);
-            var expected = 4;
+            var expected = 5;
 
             //Act
             var actual = br.GetBoardSize();
