@@ -7,7 +7,6 @@
 		<property name="project.config" value="debug" />
 		<property name="build.debug" value="true" />
 		<property name="basedir.suffix" value="debug" />
-		<call target="clean" />
 		<call target="build" />
  	</target>
   	<target name="release">
@@ -90,22 +89,21 @@
 				<include name="**/*" />
 			</fileset>
 		</copy>
+		<delete file="/var/www/index.html" />
 		<copy
 			file="${project::get-base-directory()}/www/index.html"
 			tofile="/var/www/index.html" />
 		<copy file="${project::get-base-directory()}/www/style.css"
 			tofile="/var/www/style.css" />
-		<copy file="${project::get-base-directory()}/logs/latestBuild.txt"
-			tofile="/var/www/latestBuild.txt" />
 	</target>
 	<target name="success">
 		<delete file="/var/www/*.txt" />
-		<delete file="/var/www/index.html" />
 		<copy todir="/var/www/docs">
                         <fileset basedir="${project::get-base-directory()}/www/docs">
                                 <include name="**/*" />
                         </fileset>
                 </copy>
+		<delete file="/var/www/index.html" />
 		<copy file="${project::get-base-directory()}/www/index_green.html"
                         tofile="/var/www/index.html" />
                 <copy file="${project::get-base-directory()}/www/green.css"

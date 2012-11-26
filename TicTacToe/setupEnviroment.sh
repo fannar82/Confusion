@@ -7,9 +7,8 @@ sudo apt-get install -y gendarme
 sudo apt-get install -y apache2
 
 sudo chmod 777 /var/www/
-sudo chmod 777 /var/www/index.html
+sudo chmod 777 /var/www/index.htm
 
-cd Confusion/TicTacToe
 sudo chmod 600 confusion-openssh
 
 ./setupCron.sh
