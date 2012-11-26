@@ -23,6 +23,7 @@
 	<target name="build" description="Compiles the source code">
 		<property name="build.dir" 
 			value="${project::get-base-directory()}/builds/${basedir.suffix}" />
+		<delete dir="${build.dir}/docs" />
 		<mkdir dir="${build.dir}/docs" />
 		<mkdir dir="${build.dir}/reports" />
 		<csc target="exe"
@@ -35,7 +36,6 @@
 				<include name="TicTacToe/*.cs" />
   			</sources>
 		</csc>
-		<delete dir="${build.dir}/docs" />
 		<mkdir dir="${project::get-base-directory()}/www/docs" />
 		<exec program="mdoc" output="${build.dir}/reports/mdoc_update.txt" >
 			<arg value="update" />
