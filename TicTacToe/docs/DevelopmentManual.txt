@@ -17,6 +17,8 @@ sudo apt-get update
 
 sudo apt-get install -y git
 
+git clone https://github.com/fannar82/Confusion.git
+
 sudo apt-get install -y nant
 
 sudo apt-get install -y monodoc-base
@@ -29,11 +31,7 @@ cd /var
 sudo chmod 777 www/
 sudo chmod 777 www/index.html
 
-Step 2.
-git clone https://github.com/fannar82/Confusion.git
-
-Step 3.
 cd Confusion/TicTacToe
+sudo chmod 600 confusion-openssh
 
-Step 4.
-
+./setupCron.sh
