@@ -112,7 +112,7 @@
 	</target>
 	<target name="finalize">
 		<copy file="${project::get-base-directory()}/www/TicTacToeMacOSX.sh"
-			tofile="${build.dir}/" />
+			tofile="${build.dir}/TicTacToeMacOSX.sh" />
 		<zip zipfile="${build.dir}/tictactoe.zip">
 			<fileset basedir="${build.dir}">
 				<include name="*.exe" />
