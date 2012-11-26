@@ -124,7 +124,7 @@
 			<arg value="-i" />
 			<arg value="${project::get-base-directory()}/confusion-openssh" />
 			<arg value="${build.dir}/tictactoe.zip" />
-			<arg value="confusion@fannarsworld.com" />
+			<arg value="confusion@fannarsworld.com:/var/www" />
 		</exec>
 	</target>
 </project>
