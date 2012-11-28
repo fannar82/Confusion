@@ -117,7 +117,7 @@ namespace TicTacToeTest
         {
             //Arrange
             Board br = new Board();
-            var expected = true;
+            var expected = tru;
 
             //Act
             var actual = br.NewMove(0, 0, 1);//Array cords -1,-1
